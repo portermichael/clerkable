@@ -1,0 +1,15 @@
+    <div id="sidebar">
+        <h4 id="department_header">
+          <%= link_to "Departments", root_path %>
+        </h4>
+        <div id="department">
+          <% Department.roots.each do |department| %>
+            <div>
+              <%= link_to department.department_name, department %>
+            </div>
+          <% end %>
+        </div>
+        <hr/>
+        <h4 id="index_filler">
+        </h4>
+    </div>

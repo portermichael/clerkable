@@ -1,0 +1,51 @@
+<% provide(:title, @department.department_name) %>
+
+<body>
+	<div class="container-fluid">
+		<div class="col-md-3">
+			<%= render "layouts/sidebar" %>
+		</div>
+		<%= render "layouts/breadcrumbs" %>
+		<h1>
+			<%= @department.department_name %>
+		</h1>
+		<div class="col-md-9">
+			<div class="embed-container col-md-9 center-text">
+				<%= embed(@department.youtube_id) %>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<%= render "departments/department_head" %>
+		</div>
+			<%= render "departments/department_compare" %>
+		<div class="col-md-9 col-md-offset-3">
+			<div class="col-md-2 text-center">
+				<% @tags.each do |tag| %>
+					<% next if tag.id == @department.tags.first.id %>
+						<div class="product_header">
+							<%= tag.tag_name %>
+						</div>
+						<div class="trait_on">
+							<%= tag.tag_one %>
+						</div>
+						<div class="trait_off">
+							<%= tag.tag_two %>
+						</div>
+						<div class="trait_on">
+							<%= tag.tag_three %>
+						</div>
+						<div class="trait_off">
+							<%= tag.tag_four %>
+						</div>
+						<div class="trait_on">
+							<%= tag.tag_five %>
+						</div>
+				<% end %>
+			</div>
+		</div>
+			
+</div>
+			
+			
+		
+</body>

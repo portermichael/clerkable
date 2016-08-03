@@ -1,0 +1,31 @@
+
+		<div class="row head_room">
+			<% @department.children.each do |department| %>
+				<div class="col-md-3 text-center">
+					<div class="product_content">
+						<div class="product_header">
+							<%= link_to department.department_name, department %>
+						</div>
+						<div class="embed-thumbnail-container col-md-12 text-center">
+							<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	
+		<div class="row">			
+			<% @items.each do |item| %>
+				<div class="col-md-3 text-center">
+					<div class="product_content">
+						<div class="product_header">
+							<%= link_to item.product_name, item %>
+						</div>
+						<div class="embed-thumbnail-container col-md-12 text-center">
+							<%= embed_thumbnail(@department.youtube_id) %>
+						</div>
+						
+					</div>
+				</div>
+			<% end %>
+		</div>

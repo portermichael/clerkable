@@ -1,0 +1,341 @@
+
+
+/* navbar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  float: left;
+  z-index: 1030;
+  margin: 0 0 0 0;
+  padding-right: 0;
+  padding-left: 0;
+  background-color: #333333;
+  border-bottom: solid black 1px;
+    -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+
+}
+
+#logo {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  float: left;
+  margin-left: 40px;
+  margin-right: 10px;
+  font-size: 1.6em;
+  color: #fff;
+  letter-spacing: -0.5px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* universal */
+
+body {
+  padding: 0px;
+  margin-top: 60px;
+  background-color: #FFFFF0;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428;
+}
+
+#content {
+  padding-top: 60px;
+  float: left;
+  padding-bottom: 10px;
+
+}
+a:link {
+  color: black;
+  text-decoration: none;
+
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  text-decoration: none;
+}
+
+a:active {
+  color: silver;
+  text-decoration: none;
+}
+hr {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-color: #777;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 36px;
+}
+h2 {
+  font-weight: 500;
+  font-size: 30px;
+}
+h3 {
+  font-weight: 500;
+  font-size: 24px;
+}
+h4 {
+  font-weight: 500;
+  font-size: 18px;
+}
+h5 {
+  font-weight: 500;
+  font-size: 14px;
+}
+h6 {
+  font-weight: 500;
+  font-size: 12px;
+}
+/* sidebar */
+
+#sidebar {
+  float: left;
+  width: 243px;
+  margin-left: 30px;
+}
+
+#department_header {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: solid #777 1px;
+  border-right: solid #777 1px;
+  color: #000000;
+
+}
+
+#index_filler {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: solid #777 1px;
+  border-right: solid #777 1px;
+  color: #000000;
+
+}
+
+#subdepartment_header {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: solid #777 1px;
+  border-right: solid #777 1px;
+  color: #000000;
+}
+
+#department {
+  padding-bottom: 15px;
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: solid #777 1px;
+  border-right: solid #777 1px;
+}
+
+#subdepartment {
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: solid #777 1px;
+  border-right: solid #777 1px;
+}
+
+#parent {
+  padding-left: 20px;
+  padding-bottom: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  border-left: solid #777 1px;
+  border-right: solid #777 1px;
+  border-bottom: dotted #777 1px;
+}
+
+#siblings {
+
+  padding-top: 4px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left: solid #777 1px;
+  border-right: solid #777 1px;
+}
+
+/* youtubeframe */
+
+#content_header {
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+
+}
+#title_header {
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  float: left;
+  width: 560px;
+  height: 315px;
+}
+
+.embed-thumbnail-container iframe,
+.embed-container object,
+.embed-container embed {
+  float: left;
+  width: 160px;
+  height: 90px;
+}
+
+/* kids fuller */
+
+#mini_title {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: solid #777 1px;
+  
+
+}
+
+
+
+/* benefits */
+
+.benefits_section {
+  
+  height: 150px;
+  background-color: #FFCCD5;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-style: solid #777 1px;
+  font-size: 1.35em;
+  font-style: italic;
+  font-weight: 500;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.benefits_items{
+  padding-top: 4px;
+  
+}
+
+/* products */
+  
+.tag_title {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 1.2em;
+}
+
+.trait_text {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #b3d9ff;
+  margin-right: 0px;
+}
+.product_content{
+  float: left;
+  margin: 10px 0px 10px 0px;
+
+}
+.product_header{
+  
+  margin-bottom: 7px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 1.2em;
+  width: 190px;
+  height: 60px;
+  
+}
+
+.amazon_box{
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  width: 190px;
+  height: 60px;
+}
+.amazon_box button{
+
+  margin: 5px 0px 5px 5px;
+  width: 50px;
+  
+}
+
+
+.head_room{
+  padding-top: 30px;
+}
+
+.trait_on{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  
+  width: 190px;
+  height: 50px;
+  background-color: #99ccff;
+}
+
+.trait_off{
+  width: 190px;
+  height: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #e7feff;
+}
+
+.green{
+  background-color: green;
+}
+
+.cyan{
+  background-color: cyan;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.left{
+  float: left;
+}
