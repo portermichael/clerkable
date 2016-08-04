@@ -1,5 +1,4 @@
 
-
 /* navbar */
 
 .navbar {
@@ -26,12 +25,13 @@
   float: left;
   margin-left: 80px;
   margin-right: 10px;
-  font-size: 1.6em;
   color: #fff;
   letter-spacing: -0.5px;
   padding-top: 10px;
   padding-bottom: 5px;
   font-weight: bold;
+  font-size: 160%;
+
 }
 
 #logo:hover {
@@ -49,18 +49,48 @@ body {
   background-color: #FFFFF0;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 87.5%;
   line-height: 1.428;
 }
 
+.content {
+  position: absolute;
+  left:50%;
+  @media (min-width: 360px){
+    margin-left: -180px;
+  }
+  @media (min-width: 550px) {
+    margin-left: -225px;
+  }
 
+  @media (min-width: 746px) {
+    margin-left: -363px;  
+  }
+  @media (min-width: 1042px){
+  margin-left: -521px;
+  }
+}
 
 /* sidebar */
 
 #sidebar {
   float: left;
-  width: 243px;
-  margin-left: 30px;
+  margin-left: 10px;
+  @media (min-width: 360px) and (max-width: 549px) {
+    display:none
+
+  }
+  @media (min-width: 550px) and (max-width: 745px) {
+    width: 160px;
+    margin-left: 0;
+  }
+
+  @media (min-width: 746px) {
+    width: 230px; 
+  }
+  @media (min-width: 1042px){
+    width: 243px;
+  }
 }
 
 #department_header {
@@ -74,6 +104,12 @@ body {
   border-right: solid #777 1px;
   color: #000000;
 
+  @media (min-width: 550px) and (max-width: 745px) {
+    border-left: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
 }
 
 hr.breaker {
@@ -84,6 +120,11 @@ hr.breaker {
   border: 0;
   height: 1px;
   background: #777;
+  @media (min-width: 550px) and (max-width: 745px) {
+
+    margin-left: 0;
+  }
+
   
 }
 
@@ -98,6 +139,9 @@ hr.breaker {
   border-left: solid #777 1px;
   border-right: solid #777 1px;
   color: #000000;
+    @media (min-width: 550px) and (max-width: 745px) {
+    border-left: 0;
+  }
 
 }
 
@@ -121,6 +165,12 @@ hr.breaker {
   margin-right: 20px;
   border-left: solid #777 1px;
   border-right: solid #777 1px;
+    @media (min-width: 550px) and (max-width: 745px) {
+    border-left: 0;
+    padding-left: 0;
+    margin-left: 0;
+
+  }
 }
 
 #subdepartment {
@@ -171,9 +221,28 @@ hr.breaker {
 .embed-container object,
 .embed-container embed {
   float: left;
-  width: 560px;
-  height: 315px;
   margin-left: 20px;
+  margin-right: 30px;
+  @media (min-width: 360px){
+    width: 300px;
+    height: 169px;
+  }
+  @media (min-width: 550px) and (max-width: 745px) {
+    width: 330px;
+    height: 185px;
+    margin-left: 0;
+  }
+
+  @media (min-width: 746px) {
+    width: 448px;
+    height: 252px;  
+  }
+  @media (min-width: 1042px){
+    width: 560px;
+    height: 315px;
+  }
+
+  
 }
 
 .embed-thumbnail-container iframe,
@@ -184,20 +253,17 @@ hr.breaker {
   height: 90px;
   margin-left: 13px;
   margin-right: 13px;
-}
-
-/* kids fuller */
-
-#mini_title {
-  padding-top: 40px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: solid #777 1px;
   
+  @media (min-width: 360px) and (max-width: 549px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 
+  @media (min-width: 550px) and (max-width: 745px) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
 }
-
-
 
 /* benefits */
 
@@ -208,7 +274,7 @@ hr.breaker {
   padding-top: 18px;
   padding-bottom: 18px;
   border-style: solid #777 1px;
-  font-size: 1.35em;
+  font-size: 135%;
   font-style: italic;
   font-weight: 500;
   font-family: Impact, Charcoal, sans-serif;
@@ -224,7 +290,7 @@ hr.breaker {
 .tag_title {
   padding-top: 8px;
   padding-bottom: 8px;
-  font-size: 1.2em;
+  font-size: 120%;
 }
 
 .trait_text {
@@ -235,43 +301,81 @@ hr.breaker {
 }
 .product_content{
   float: left;
-  margin: 20px 20px 20px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
   
+  background-color: green;
   text-align: center;
+  @media (min-width: 360px){
+    margin-right: 0;
+    margin-left: 0;
+  }
 
+  @media (min-width: 360px) and (max-width: 549px) {
+    width: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  @media (min-width: 550px) and (max-width: 745px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  @media (min-width: 746px) {
+    margin-right: 30px;
+  }
+  @media (min-width: 1042px){
+    margin-right: 38px;
+  }
 
 }
+
 .product_header{
   
   margin-bottom: 7px;
   padding-top: 8px;
   padding-bottom: 8px;
-  font-size: 1.2em;
+  font-size: 120%;
   width: 190px;
   height: 40px;
   text-align: center;
-  
-}
 
-.amazon_box{
-  margin-bottom: 8px;
-  padding-bottom: 8px;
-  width: 190px;
-  height: 60px;
-}
-.amazon_box button{
+  @media (min-width: 360px) and (max-width: 549px) {
+    width: 160px;
+    height: 20px;
+  }
 
-  margin: 5px 0px 5px 5px;
-  width: 50px;
-  
-}
+  @media (min-width: 550px) and (max-width: 745px) {
+    width: 160px;
+  }
 
+
+}
 
 .head_room{
   padding-top: 30px;
   overflow: auto;
-  width: 1080px;
-  margin-left: 50px;
+  
+  
+  @media (min-width: 360px) and (max-width: 549px) {
+    padding-top: 20px;
+    width: 350px;
+    margin-left: 10px;
+  }
+  @media (min-width: 550px) and (max-width: 745px) {
+    width: 496px;
+    margin-left: 30px;
+  }
+
+  @media (min-width: 746px) {
+    width: 744px;  
+    margin-left: 40px;
+  }
+  @media (min-width: 1042px){
+    width: 992px;
+    margin-left: 50px;
+  }
 }
 
 .trait_on{
@@ -289,29 +393,6 @@ hr.breaker {
   padding-top: 8px;
   padding-bottom: 8px;
   background-color: #e7feff;
-}
-
-#content {
-  padding-top: 60px;
-  float: left;
-  padding-bottom: 10px;
-
-}
-
-.green{
-  background-color: green;
-}
-
-.cyan{
-  background-color: cyan;
-}
-
-.yellow{
-  background-color: yellow;
-}
-
-.left{
-  float: left;
 }
 
 a:link {
@@ -338,7 +419,8 @@ a:active {
 
 h1 {
   font-weight: 500;
-  font-size: 36px;
+  font-size: 225%;
+
 }
 
 h1.front {
@@ -348,21 +430,22 @@ h1.front {
 
 h2 {
   font-weight: 500;
-  font-size: 30px;
+  font-size: 187.5%;
 }
 h3 {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 150%;
 }
 h4 {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 112.5%;
+
 }
 h5 {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 87.5%;
 }
 h6 {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 75%;
 }
