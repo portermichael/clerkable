@@ -1,31 +1,25 @@
 
 
 <body>
-<div class="content">
+  <div class="content">
       <%= render "departments/index_sidebar" %>
-    
     <h1 class="front">
       Clerkable
     </h1>
-      <div class="embed-container">
-        <%= embed("Rd8n74XDQUY") %>
-      </div>
-    
+    <div class="embed-container">
+      <%= embed("Rd8n74XDQUY") %>
+    </div>  
     <div class="head_room">
-      <% Department.roots.each do |department| %>
-        
-          <div class="product_content">
-            <div class="product_header">
-              <%= link_to department.department_name, department %>
-            </div>
-            <div class="embed-thumbnail-container">
-              <%= embed_thumbnail(department.youtube_thumbnail_id) %>
-            </div>
-
+      <% Department.roots.each do |department| %>    
+        <div class="product_content">
+          <div class="product_header">
+            <%= link_to department.department_name, department %>
           </div>
-          
-
-      
+          <div class="embed-thumbnail-container">
+            <%= embed_thumbnail(department.youtube_thumbnail_id) %>
+          </div>
+        </div>  
       <% end %>
-    </div></div>
+    </div>
+  </div>
 </body>

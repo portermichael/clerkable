@@ -1,0 +1,30 @@
+<% provide(:title, @product.product_name) %>
+
+<body>
+	<div class="container-fluid">
+		<div class="col-md-3">
+			<%= render "products/product_sidebar" %>
+		</div>
+		<%= render "layouts/breadcrumbs" %>
+		<h1>
+			<%= @product.product_name %>
+		</h1>
+		<div class="col-md-9">
+			<div class="embed-container col-md-8 text-center">
+				<%= embed(@product.youtube_id) %>
+			</div>
+			<div class="col-md-4 pull-left">
+				Here I want, a playlist, or thumnails of additional helpful videos. That covers things like, unboxing, ports, all the data I can think of.
+				Here I want, a playlist, or thumnails of additional helpful videos. That covers things like, unboxing, ports, all the data I can think of.
+			</div>
+		</div>
+		<div class="col-md-9">
+			<%= render "products/product_head" %>
+		</div>
+		
+			<%= render "products/product_compare" %>
+		
+	</div>
+
+
+</body>

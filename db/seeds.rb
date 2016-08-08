@@ -84,3 +84,20 @@ department_list = [
 department_list.each do |name, ancestry, youtube_id, youtube_thumbnail_id |
   Department.create( department_name: name, ancestry: ancestry, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id)
 end
+
+product_list = [
+
+  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "High Quality, Voice Search, Mobile App, Headphone Jack, Connect on the Go"],
+  [ "Roku 2", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Great Price Point, Mobile App, Connect on the Go"],
+  [ "Apple TV", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "High Quality"],
+  [ "Roku 4", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Highest End Device, 4K Content!, Lost Remote Finder, Headphone Jack, Voice Search"],
+  [ "Nvidia Shield", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "High End Product, Great for Gaming"],
+  [ "Roku 1", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Great Price Point, Mobile App, Connect on the Go"],
+  [ "Google Whatever", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Good Price Point"],
+  [ "Amazon Fire", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Good Price Point"],
+
+]
+
+product_list.each do |product_name, department_id, youtube_id, youtube_thumbnail_id, benefits|
+  Product.create( product_name: product_name, department_id: department_id, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, benefits: benefits)
+end

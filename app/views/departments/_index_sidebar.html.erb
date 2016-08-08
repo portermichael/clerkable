@@ -1,6 +1,6 @@
-    <div id="sidebar">
+    <div class="sidebar">
         <h4 id="department_header">
-          <%= link_to "Departments", root_path %>
+          <%= link_to_unless_current "Departments", root_path %>
         </h4>
         <div id="department">
           <% Department.roots.each do |department| %>

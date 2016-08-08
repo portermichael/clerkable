@@ -1,0 +1,86 @@
+		
+	
+		<div class="col-md-3 col-md-offset-3 text-center">
+			<div class="col-md-6 ">
+				<div class="product_header">
+					<%= @tag.tag_name %>
+				</div>
+				<div class="trait_on">
+					<%= @tag.tag_one %>
+				</div>
+				<div class="trait_off">
+					<%= @tag.tag_two %>
+				</div>
+				<div class="trait_on">
+					<%= @tag.tag_three %>
+				</div>
+				<div class="trait_off">
+					<%= @tag.tag_four %>
+				</div>
+				<div class="trait_on">
+					<%= @tag.tag_five %>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="col-md-4 text-center">
+				<% @product.traits.each do |trait| %>
+					<div class="amazon_box">
+							$10,000.00 
+							<button>Buy</button>
+							<br>
+							^^^^^^^^
+					</div>
+						<div class="trait_on">
+							<%= trait.trait_one %>
+						</div>
+						<div class="trait_off">
+							<%= trait.trait_two %>
+						</div>
+						<div class="trait_on">
+							<%= trait.trait_three %>
+						</div>
+						<div class="trait_off">
+							<%= trait.trait_four %>
+						</div>
+						<div class="trait_on">
+							<%= trait.trait_five %>
+						</div>
+				<% end %>
+			</div>
+			<div class="col-md-8 text-center">
+				<div class="row">
+				<% @quirks.each do |trait| %>
+					<div class="col-md-6 text-center">
+						<div class="amazon_box">
+							$10,000.00 
+							<button>Buy</button>
+							<br>
+							^^^^^^^^
+						</div>
+						
+							<div class="trait_on">
+								<%= trait.trait_one %>
+							</div>
+							<div class="trait_off">
+								<%= trait.trait_two %>
+							</div>
+							<div class="trait_on">
+								<%= trait.trait_three %>
+							</div>
+							<div class="trait_off">
+								<%= trait.trait_four %>
+							</div>
+							<div class="trait_on">
+								<%= trait.trait_five %>
+							</div>
+						
+					</div>
+				<% end %>
+
+				<div class="text-center">
+					<%= will_paginate @items %>	
+				</div></div>
+			</div>
+		</div>
