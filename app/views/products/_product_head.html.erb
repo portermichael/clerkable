@@ -1,6 +1,6 @@
 		
-	<div class="row head_room">
-		<div class="col-md-4 benefits_section">
+	<div class="head_room">
+		<div class="benefits_section">
 			<% @product.benefits.split(', '). each do |split| %>
 				<span class="benefits_items">
 					<%= "\u2022" %>&nbsp;&nbsp;<%= split %>&nbsp;&nbsp;
@@ -8,8 +8,8 @@
 			<% end %>
 		</div>
 		
-		<div class="col-md-8">
-			<div class="col-md-4 text-center">
+		
+			
 				<div class="product_content">
 					<div class="product_header">
 						<%= @product.product_name %>
@@ -17,24 +17,63 @@
 					<div class="embed-thumbnail-container col-md-12 text-center">
 						<%= embed_thumbnail(@product.youtube_thumbnail_id) %>
 					</div>
+					<div class="affiliate_box">
+						<div class="price_box">
+							$<%= @product.msrp %>
+							</br>
+							$<%= @product.expected %>
+							</br>
+							$<%= @product.amazon_price %>
+							</br>
+							$<%= @product.walmart_price %>
+						</div>
+						<div class="source_box">
+							MSRP
+							</br>
+							Expected
+							</br>
+							<%= link_to "Amazon", @product.amazon_link %>
+							
+							</br>
+							<%= link_to "Walmart", @product.walmart_link %>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-md-8 text-center">
-				<div class="row">			
+			
+						
 					<% @items.each do |product| %>
-					<div class="col-md-6 text-center">
+					
 						<div class="product_content">
 							<div class="product_header">
 								<%= link_to product.product_name, product %>
 							</div>
-							<div class="embed-thumbnail-container col-md-12 text-center">
+							<div class="embed-thumbnail-container">
 								<%= embed_thumbnail(product.youtube_thumbnail_id) %>
 							</div>
+							<div class="affiliate_box">
+								<div class="price_box">
+									$<%= product.msrp %>
+									</br>
+									$<%= product.expected %>
+									</br>
+									$<%= product.amazon_price %>
+									</br>
+									$<%= product.walmart_price %>
+								</div>
+								<div class="source_box">
+									MSRP
+									</br>
+									Expected Price
+									</br>
+									<%= link_to "Amazon", product.amazon_link %>
+									</br>
+									<%= link_to "Walmart", product.walmart_link %>
+								</div>
+							</div>
 						</div>
-					</div>
+					
 					<% end %>
 					
-				</div>
-			</div>
-		</div>
+				
+		
 	</div>

@@ -1,31 +1,26 @@
 <% provide(:title, @department.department_name) %>
 
 <body>
-	<div class="container-fluid">
-		<div class="col-md-3">
-			<%= render "layouts/sidebar" %>
+	<div class="content">
+	
+		<%= render "layouts/sidebar" %>
+		<div class="front">
+			<%= render "layouts/breadcrumbs" %>
+			<h1>
+				<%= @department.department_name %>
+			</h1>
 		</div>
-		<%= render "layouts/breadcrumbs" %>
-		<h1>
-			<%= @department.department_name %>
-		</h1>
-		<div class="col-md-9">
-			<div class="embed-container col-md-9 center-text">
-				<%= embed(@department.youtube_id) %>
-			</div>
+		<div class="embed-container">
+			<%= embed(@department.youtube_id) %>
 		</div>
-		<div class="col-md-9">
-			<%= render "departments/department_head" %>
-		</div>
-			
-		<div class="col-md-9 col-md-offset-3">
-			<div class="col-md-2 text-center">
-				
-			</div>
-		</div>
-			
-</div>
-			
-			
 		
+		<%= render "departments/department_head" %>
+		<div>
+			More Less
+		</div>
+
+		<div class="center">
+			<%= will_paginate @items %>	
+		</div>	
+	</div>
 </body>

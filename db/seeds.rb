@@ -87,17 +87,17 @@ end
 
 product_list = [
 
-  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "High Quality, Voice Search, Mobile App, Headphone Jack, Connect on the Go"],
-  [ "Roku 2", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Great Price Point, Mobile App, Connect on the Go"],
-  [ "Apple TV", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "High Quality"],
-  [ "Roku 4", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Highest End Device, 4K Content!, Lost Remote Finder, Headphone Jack, Voice Search"],
-  [ "Nvidia Shield", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "High End Product, Great for Gaming"],
-  [ "Roku 1", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Great Price Point, Mobile App, Connect on the Go"],
-  [ "Google Whatever", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Good Price Point"],
-  [ "Amazon Fire", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", "Good Price Point"],
+  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 39.99, 35.99, 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "High Quality, Voice Search, Mobile App, Headphone Jack, Connect on the Go"],
+  [ "Roku 2", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 45.99, 45.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Great Price Point, Mobile App, Connect on the Go"],
+  [ "Apple TV", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 50.00, 50.00, 50.00, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "High Quality"],
+  [ "Roku 4", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 30.00, 30.00, 30.00, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Highest End Device, 4K Content!, Lost Remote Finder, Headphone Jack, Voice Search"],
+  [ "Nvidia Shield", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 25.99, 25.99, 25.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "High End Product, Great for Gaming"],
+  [ "Roku 1", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 49.99, 49.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Great Price Point, Mobile App, Connect on the Go"],
+  [ "Google Whatever", 26, "jK7SFNx5mug", 22.99, 22.99, 22.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Eqm8r1jXAt8", "Good Price Point"],
+  [ "Amazon Fire", 26, "jK7SFNx5mug", 14.99, 14.99, 14.99, "Eqm8r1jXAt8", "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Good Price Point"],
 
 ]
 
-product_list.each do |product_name, department_id, youtube_id, youtube_thumbnail_id, benefits|
-  Product.create( product_name: product_name, department_id: department_id, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, benefits: benefits)
+product_list.each do |product_name, department_id, youtube_id, youtube_thumbnail_id, msrp, expected, amazon_price, amazon_link, walmart_price, walmart_link, benefits|
+  Product.create( product_name: product_name, department_id: department_id, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, msrp: msrp, expected: expected, amazon_price: amazon_price, amazon_link: amazon_link, walmart_price: walmart_price, walmart_link: walmart_link, benefits: benefits)
 end

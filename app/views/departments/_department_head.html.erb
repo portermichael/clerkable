@@ -1,31 +1,49 @@
 
-		<div class="row head_room">
+		<div class="head_room">
 			<% @department.children.each do |department| %>
-				<div class="col-md-3 text-center">
+				
 					<div class="product_content">
 						<div class="product_header">
 							<%= link_to department.department_name, department %>
 						</div>
-						<div class="embed-thumbnail-container col-md-12 text-center">
+						<div class="embed-thumbnail-container">
 							<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
 						</div>
 					</div>
-				</div>
+				
 			<% end %>
-		</div>
-	
-		<div class="row">			
+		
 			<% @items.each do |item| %>
-				<div class="col-md-3 text-center">
+				
 					<div class="product_content">
 						<div class="product_header">
 							<%= link_to item.product_name, item %>
 						</div>
-						<div class="embed-thumbnail-container col-md-12 text-center">
+						<div class="embed-thumbnail-container">
 							<%= embed_thumbnail(@department.youtube_id) %>
+						</div>
+						<div class="affiliate_box">
+							<div class="price_box">
+								$<%= item.msrp %>
+								</br>
+								$<%= item.expected %>
+								</br>
+								$<%= item.amazon_price %>
+								</br>
+								$<%= item.walmart_price %>
+							</div>
+							<div class="source_box">
+								MSRP
+								</br>
+								Expected Price
+								</br>
+								<%= link_to "Amazon", item.amazon_link %>
+								</br>
+								<%= link_to "Walmart", item.walmart_link %>
+							</div>
 						</div>
 						
 					</div>
-				</div>
+				
 			<% end %>
 		</div>

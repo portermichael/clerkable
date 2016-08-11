@@ -3,12 +3,14 @@
 <body>
   <div class="content">
       <%= render "departments/index_sidebar" %>
-    <h1 class="front">
-      Clerkable
-    </h1>
+    <div class="front">
+      <h1>
+        Clerkable
+      </h1>
+    </div>
     <div class="embed-container">
       <%= embed("Rd8n74XDQUY") %>
-    </div>  
+    </div>
     <div class="head_room">
       <% Department.roots.each do |department| %>    
         <div class="product_content">
