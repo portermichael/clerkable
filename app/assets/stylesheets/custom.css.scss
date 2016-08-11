@@ -331,7 +331,7 @@ hr.breaker {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 10px;
-  background-color: #b3ffb3;
+  background-color: #70EB8F;
   border-style: solid;
   border-width: 1px;
   border-color: #66ff66;
@@ -419,7 +419,8 @@ hr.breaker {
     border: solid;
     border-color: black;
     border-width: 1px;
-    background-color: white;
+    border-radius: 4px;
+    background-color: #bfffd9;
     padding: 2px 4px 2px 4px;
 
   }
@@ -496,4 +497,8 @@ h5 {
 h6 {
   font-weight: 500;
   font-size: 75%;
+}
+
+.frog {
+  float: left;
 }
