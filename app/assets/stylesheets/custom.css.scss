@@ -1,4 +1,4 @@
-
+@import 'slick';
 /* navbar */
 
 .navbar {
@@ -55,7 +55,7 @@ body {
 }
 
 .content {
-  position: absolute;
+  position: relative;
   left:50%;
   @media (min-width: 360px){
     margin-left: -180px;
@@ -500,5 +500,26 @@ h6 {
 }
 
 .frog {
+div {
   float: left;
+  }
+}
+
+.scroller {
+  div {
+    
+    
+  }
+}
+
+.slick-prev::before, .slick-next::before {
+  color: #000;
+}
+
+.slick-next {
+  
+}
+
+.slick-prev {
+  left: -5px;
 }
