@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'jquery-slick-rails'
 gem 'will_paginate', '3.1.0'
 gem 'ancestry'
 # Use SCSS for stylesheets

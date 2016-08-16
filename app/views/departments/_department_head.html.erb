@@ -13,37 +13,41 @@
 				
 			<% end %>
 		
-			<% @items.each do |item| %>
-				
-					<div class="product_content">
-						<div class="product_header">
-							<%= link_to item.product_name, item %>
-						</div>
-						<div class="embed-thumbnail-container">
+		<div class="scroller">
+				<% @products.each do |product| %>
+				<div class="product_content">
+					
+					<span class="product_head">
+					<%= link_to product.product_name, product %>
+					</span>
+					
+					<span class="embed-thumbnail-container">
 							<%= embed_thumbnail(@department.youtube_id) %>
-						</div>
-						<div class="affiliate_box">
-							<div class="price_box">
-								$<%= item.msrp %>
+						</span>
+					<span class="affiliate_box">
+							<span class="price_box">
+								$<%= product.msrp %>
 								</br>
-								$<%= item.expected %>
+								$<%= product.expected %>
 								</br>
-								$<%= item.amazon_price %>
+								$<%= product.amazon_price %>
 								</br>
-								$<%= item.walmart_price %>
-							</div>
-							<div class="source_box">
+								$<%= product.walmart_price %>
+							</span>
+							<span class="source_box">
 								MSRP
 								</br>
-								Expected Price
+								Expected
 								</br>
-								<%= link_to "Amazon", item.amazon_link %>
+								<%= link_to "Amazon", product.amazon_link %>
 								</br>
-								<%= link_to "Walmart", item.walmart_link %>
-							</div>
-						</div>
-						
-					</div>
-				
-			<% end %>
+								<%= link_to "Walmart", product.walmart_link %>
+							</span>
+						</span>
+				</div>
+				<% end %>
+
+			</div>
 		</div>
+		
+
