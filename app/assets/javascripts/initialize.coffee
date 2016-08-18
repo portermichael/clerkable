@@ -2,5 +2,5 @@ jQuery ->
   $('.scroller').slick({
     dots: true,
     arrows: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
   });
