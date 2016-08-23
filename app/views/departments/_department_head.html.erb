@@ -2,11 +2,11 @@
 		<div class="head_room">
 			<% @department.children.each do |department| %>
 				
-					<div class="product_content">
-						<div class="product_header">
+					<div class="dept_content">
+						<div class="dept_header">
 							<%= link_to department.department_name, department %>
 						</div>
-						<div class="embed-thumbnail-container">
+						<div class="embed-dept-thumbnail-container">
 							<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
 						</div>
 					</div>

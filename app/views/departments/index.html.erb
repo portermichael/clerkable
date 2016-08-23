@@ -7,21 +7,21 @@
       <h1 class="breadsecond">
         Clerkable
       </h1>
-      <div class="embed-container">
+      <div class="embed-dept-container">
         <%= embed("Rd8n74XDQUY") %>
       </div>
-      <div class="index_room">
+    </div>
+      <div class="dept_room">
         <% Department.roots.each do |department| %>    
-          <div class="index_content">
-            <div class="index_header">
+          <div class="dept_content">
+            <div class="dept_header">
               <%= link_to department.department_name, department %>
             </div>
-            <div class="embed-thumbnail-container">
+            <div class="embed-dept-thumbnail-container">
               <%= embed_thumbnail(department.youtube_thumbnail_id) %>
             </div>
           </div>  
         <% end %>
       </div>
-    </div>
   </div>
 </body>

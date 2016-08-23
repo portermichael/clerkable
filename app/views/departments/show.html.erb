@@ -4,18 +4,16 @@
 	<div class="page">
 		<%= render "layouts/sidebar" %>
 		<div class="content">
-		<div class="breadcrumbs">
-			<%= render "layouts/breadcrumbs" %>
-		</div>
-			<h1 class="breadsecond">
-				<%= @department.department_name %>
-			</h1>
-
-		<div class="embed-container">
-			<%= embed(@department.youtube_id) %>
-		</div>
-		
-		<%= render "departments/department_head" %>
+			<div class="breadcrumbs">
+				<%= render "layouts/breadcrumbs" %>
+			</div>
+				<h1 class="breadsecond">
+					<%= @department.department_name %>
+				</h1>
+			<div class="embed-container">
+				<%= embed(@department.youtube_id) %>
+			</div>
+			<%= render "departments/department_head" %>
 		</div>
 	</div>
 </body>
