@@ -1,53 +1,49 @@
-
-		<div class="head_room">
-			<% @department.children.each do |department| %>
-				
-					<div class="dept_content">
-						<div class="dept_header">
-							<%= link_to department.department_name, department %>
-						</div>
-						<div class="embed-dept-thumbnail-container">
-							<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
-						</div>
-					</div>
-				
-			<% end %>
-		
+	
+	<div class="head_room">
 		<div class="scroller">
-				<% @products.each do |product| %>
+			<% @products.each do |product| %>
 				<div class="product_content">
-					
 					<span class="product_head">
-					<%= link_to product.product_name, product %>
+						<%= link_to product.product_name, product %>
 					</span>
-					
 					<span class="embed-thumbnail-container">
 							<%= embed_thumbnail(@department.youtube_id) %>
-						</span>
+					</span>
 					<span class="affiliate_box">
-							<span class="price_box">
-								$<%= product.msrp %>
-								</br>
-								$<%= product.expected %>
-								</br>
-								$<%= product.amazon_price %>
-								</br>
-								$<%= product.walmart_price %>
-							</span>
-							<span class="source_box">
-								MSRP
-								</br>
-								Expected
-								</br>
-								<%= link_to "Amazon", product.amazon_link %>
-								</br>
-								<%= link_to "Walmart", product.walmart_link %>
-							</span>
+						<span class="price_box">
+							$<%= product.msrp %>
+							</br>
+							$<%= product.expected %>
+							</br>
+							$<%= product.amazon_price %>
+							</br>
+							$<%= product.walmart_price %>
 						</span>
+						<span class="source_box">
+							MSRP
+							</br>
+							Expected
+							</br>
+							<%= link_to "Amazon", product.amazon_link %>
+							</br>
+							<%= link_to "Walmart", product.walmart_link %>
+						</span>
+					</span>
 				</div>
-				<% end %>
-
-			</div>
+			<% end %>
 		</div>
+
+		<% @department.children.each do |department| %>
+			<div class="dept_content">
+				<div class="dept_header">
+					<%= link_to department.department_name, department %>
+				</div>
+				<div class="embed-dept-thumbnail-container">
+					<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
+				</div>
+			</div>	
+		<% end %>
+	</div>
+
 		
 
