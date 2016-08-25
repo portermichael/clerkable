@@ -65,10 +65,10 @@ body {
     margin-left: -340px;
   }
   @media (min-width: 880px){
-    margin-left: -448px;
+    margin-left: -458px;
   }
-  @media (min-width: 1070px){
-    margin-left: -535px;
+  @media (min-width: 1090px){
+    margin-left: -545px;
   }
 }
 
@@ -143,10 +143,11 @@ body {
 }
 
 #department_header {
-  padding-top: 20px;
+  padding-top: 15px;
   padding-bottom: 10px;
   padding-left: 20px;
   margin-bottom: 0px;
+  margin-top: 35px;
   border-left: solid #777 1px;
   border-right: solid #777 1px;
   color: #000000;
@@ -406,10 +407,9 @@ hr.breaker {
   padding-right: 15px;
   width: 160px;
   background-color: #ffffff;
-  border-style: dashed;
+  border-style: solid;
   border-width: 1px;
-  border-color: #737373;
-  border-left: none;
+  border-color: #e6e6e6;
   text-align: center;
   display: block;
   @media (max-width: 679px) {
@@ -434,6 +434,7 @@ hr.breaker {
     width: 171px;
     height: 36px;
   }
+
 }
 
 .product_head {
@@ -450,6 +451,14 @@ hr.breaker {
     width: 144px;
     height: 36px;
   }
+  @media (min-width: 680px) {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 120px;
+    height: 27px;
+    margin-bottom: 13px;
+    border-bottom: solid 1px black;
+  }
 }
 .index_room{
   padding-top: 30px;
@@ -464,11 +473,11 @@ hr.breaker {
   }
   @media (min-width: 880px) {
     width: 768px;  
-    margin-left: 40px;
+    margin-left: 65px;
   }
-  @media (min-width: 1070px){
+  @media (min-width: 1090px){
     width: 960px;
-    margin-left: 40px;
+    margin-left: 65px;
   }
 }
 .dept_room{
@@ -523,22 +532,21 @@ hr.breaker {
 .head_room{
   float: left;
   padding-top: 30px;
-  overflow: auto;
   display: block;
 
   @media (max-width: 679px) {
     width: 320px;
   }
-  @media (min-width: 680px) {  
-    width: 100%;
+  @media (min-width: 680px) {
+    width: 668px;
     margin-left: 10px;
   }
   @media (min-width: 880px){
-    width: 100%;
+    width: 668px;
     margin-left: 10px;
   }
-  @media (min-width: 1070px){
-    width: 100%px;
+  @media (min-width: 1090px){
+    width: 861px;
     margin-left: 10px;
   }
 }
@@ -673,6 +681,8 @@ h6 {
       width: 578px;
       }
     @media (min-width: 1090px){
+    margin-left: 2px;
+    margin-right: 3px;
     width: 771px;
     }
   }
