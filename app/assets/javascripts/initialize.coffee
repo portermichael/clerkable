@@ -6,17 +6,10 @@ jQuery ->
     slidesToShow: 4,
   	responsive: [
     {
-    breakpoint: 1090,
+    breakpoint: 1070,
     settings: {
     slidesToShow: 3
     }
     },
-    {
-    breakpoint: 680,
-    settings: {
-    slidesToScroll: 2,
-    slidesToShow: 2
-    }
-    }
     ]
   });

@@ -1,14 +1,8 @@
 		
 	<div class="head_room">
-		<div class="benefits_section">
-			<% @product.benefits.split(', '). each do |split| %>
-				<span class="benefits_items">
-					<%= "\u2022" %>&nbsp;&nbsp;<%= split %>&nbsp;&nbsp;
-				</span>
-			<% end %>
-		</div>
+
 				<div class="product_content">
-					<div class="product_header">
+					<div class="product_head">
 						<%= @product.product_name %>
 					</div>	
 					<div class="embed-thumbnail-container">
@@ -36,9 +30,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="head_room">
-			<div class="scroller">
+
+
+			<div class="product_room">
+			<div class="boiller">
 				<% @products.each do |product| %>
 				<div class="product_content">
 					
@@ -74,6 +69,6 @@
 
 			</div>
 		</div>
+				</div>
 				
-		
 	</div>

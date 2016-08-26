@@ -10,12 +10,10 @@
 			<h1 class="breadsecond">
 				<%= @product.product_name %>
 			</h1>
-		
-		<div class="embed-container">
-			<%= embed(@product.youtube_id) %>
-		</div>
-
-		<%= render "products/product_head" %>
+			<div class="embed-container">
+				<%= embed(@product.youtube_id) %>
+			</div>
+			<%= render "products/product_head" %>
 		</div>
 	</div>
 </body>
