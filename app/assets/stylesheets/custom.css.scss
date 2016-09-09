@@ -111,7 +111,7 @@ body {
     background-color: white;
     border-style: solid;
     border-width: 1px;
-    border-color: #ffffff;
+    border-color: black;
     line-height: 2;
     box-shadow: 5px 5px 10px;
     float: none;
@@ -121,12 +121,56 @@ body {
     width: 203px;
   }
 }
-
+.hidenames{
+  position: absolute;
+  width: 163px;
+  padding-left: 40px;
+  top: 760px;
+  text-align: center;
+  display: block;
+  float: left;
+  line-height: 2;
+  font-size: 100%;
+}
+.uptriangles{
+  float: left;
+  width: 300px;
+  height: 40px;
+  border: solid 1px black;
+}
+.hideseller{
+  display: none;
+}
+.sellerfiller{
+  color: white;
+}
+.on{
+  background-color: #ccffcc;
+  width: 100%;
+  display: block;
+}
+.off{
+  width: 100%;
+  display: block;
+}
+.gap{
+  height: 10px;
+  display: block;
+}
+.hideglance{
+  display: none;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+.hidefeature{
+  display: none;
+}
+.hidespec{
+  display: none;
+}
 .open{
-  @media (min-width: 320px) and (max-width: 879px) {
     display: initial;
-    border-color: black;
-  }
+  
 }
 
 .departments{
@@ -165,7 +209,7 @@ hr.breaker {
   margin-bottom: 5px;
   border: 0;
   height: 1px;
-  background: #777;
+  background: #777777;
   @media (max-width: 879px) {
     
   }
@@ -474,22 +518,21 @@ hr.breaker {
   height: 40px;
   text-align: center;
   display: block;
+  margin-bottom: 13px;
+  border-bottom: solid 1px black;
   @media (max-width: 679px) {
     font-size: 100%;
     margin-left: 10px;
     margin-right: 10px;
     width: 80px;
     height: 30px;
-        margin-bottom: 13px;
-    border-bottom: solid 1px black;
   }
   @media (min-width: 680px) {
     margin-left: 20px;
     margin-right: 20px;
     width: 120px;
     height: 27px;
-    margin-bottom: 13px;
-    border-bottom: solid 1px black;
+
   }
 }
 .index_room{
