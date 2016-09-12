@@ -121,6 +121,17 @@ body {
     width: 203px;
   }
 }
+.hidenames2{
+  position: absolute;
+  width: 163px;
+  padding-left: 270px;
+  top: 733px;
+  text-align: left;
+  display: block;
+  float: left;
+  line-height: 2;
+  font-size: 100%;
+}
 .hidenames{
   position: absolute;
   width: 163px;
@@ -148,10 +159,27 @@ body {
   background-color: #ccffcc;
   width: 100%;
   display: block;
+  margin-top: 29px;
+
+}
+.onname{
+  background-color: #e6e6e6;
+  width: 100%;
+  display: block;
+    border-bottom: solid 1px #e6e6e6;
+      margin-top: 28px;
+}
+.offname{
+  background-color: #e6e6e6;
+  width: 100%;
+  display: block;
+  border-bottom: solid 1px #e6e6e6;
+    margin-top: 28px;
 }
 .off{
   width: 100%;
   display: block;
+    margin-top: 29px;
 }
 .gap{
   height: 10px;
