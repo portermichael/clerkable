@@ -1,92 +1,92 @@
-			<div class="head_room">
-				<div class="scroller">
-				<% @products.each do |product| %>
-					<div class="product_content">
-						<span class="product_head">
-							<%= link_to product.product_name, product %>
-						</span>
-						<span class="embed-thumbnail-container">
-							<%= embed_thumbnail(@department.youtube_id) %>
-						</span>
-						<span class="affiliate_box">
-							<span class="price_box">
-								$<%= product.msrp %>
-								</br>
-								$<%= product.expected %>
-								</br>
-								$<%= product.first_price %>
-								</br>
-								$<%= product.second_price %>
-								<span class="hideseller">
-								</br>
-								$<%= product.third_price %>
-								</br>
-								$<%= product.fourth_price %>
-								</br>
-								$<%= product.fifth_price %>
-								</span>
-							</span>
-							<span class="source_box">
-								MSRP
-								</br>
-								Expected
-								</br>
-								<%= link_to product.first_seller, product.first_link %>
-								</br>
-								<%= link_to product.second_seller, product.second_link %>
-								<span class="hideseller">
-								</br>
-								<%= link_to product.third_seller, product.third_link %>
-								</br>
-								<%= link_to product.fourth_seller, product.fourth_link %>
-								</br>
-								<%= link_to product.fifth_seller, product.fifth_link %>
-								</span>
-								<span class="hideglance">
-									<span class="gap"></span>
-									<span class="on"><%= product.first_glance %></span>
-									<span class="off"><%= product.second_glance %></span>
-									<span class="on"><%= product.third_glance %></span>
-									<span class="off"><%= product.fourth_glance %></span>
-									<span class="on"><%= product.fifth_glance %></span>
-								</span>
-								<span class="hidefeature">
-									<span class="gap"></span>
-									<span class="on"><%= product.first_feature %></span>
-									<span class="off"><%= product.second_feature %></span>
-									<span class="on"><%= product.third_feature %></span>
-									<span class="off"><%= product.fourth_feature %></span>
-									<span class="on"><%= product.fifth_feature %></span>
-								</span>
-								<span class="hidespec">
-									<span class="gap"></span>
-									<span class="on"><%= product.first_spec %></span>
-									<span class="off"><%= product.second_spec %></span>
-									<span class="on"><%= product.third_spec %></span>
-									<span class="off"><%= product.fourth_spec %></span>
-									<span class="on"><%= product.fifth_spec %></span>
-								</span>
-							</span>
-						</span>
-					</div>
-				<% end %>
-				</div>
-				<div class="uptriangles">
-					<button class="seller">More Sellers</button>
-					<button class="glance">At a Glance</button>
-					<button class="feature">Features</button>
-					<button class="spec">Specs</button>
-				</div>
-				<div class="dept_room">
-				<% @department.children.each do |department| %>
-				<div class="dept_content">
-					<div class="dept_header">
-						<%= link_to department.department_name, department %>
-					</div>
-					<div class="embed-dept-thumbnail-container">
-						<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
-					</div>
-				</div>	
-				<% end %>
-			</div>
+<div class="head_room">
+	<div class="scroller">
+		<% @products.each do |product| %>
+		<div class="product_content">
+			<span class="product_header">
+				<span class="centertext">
+					<%= link_to product.product_name, product %>
+				</span>
+				<hr class="dept"/>
+			</span>
+			<span class="embed-thumbnail-container">
+				<%= embed_thumbnail(@department.youtube_id) %>
+			</span>
+			<span class="affiliate_box">
+				<span class="price_box">
+					$<%= product.msrp %>
+					</br>
+					$<%= product.expected %>
+					</br>
+					$<%= product.first_price %>
+					</br>
+					$<%= product.second_price %>
+					<span class="hideseller">
+						</br>
+						$<%= product.third_price %>
+						</br>
+						$<%= product.fourth_price %>
+						</br>
+						$<%= product.fifth_price %>
+					</span>
+				</span>
+				<span class="source_box">
+					MSRP
+					</br>
+					Expected
+					</br>
+					<%= link_to product.first_seller, product.first_link %>
+					</br>
+					<%= link_to product.second_seller, product.second_link %>
+					<span class="hideseller">
+						</br>
+						<%= link_to product.third_seller, product.third_link %>
+						</br>
+						<%= link_to product.fourth_seller, product.fourth_link %>
+						</br>
+						<%= link_to product.fifth_seller, product.fifth_link %>
+					</span>
+				</span>
+				<span class="hideglance">
+					<span class="gap"></span>
+					<span class="on"><%= product.first_glance %></span>
+					<span class="off"><%= product.second_glance %></span>
+					<span class="on"><%= product.third_glance %></span>
+					<span class="off"><%= product.fourth_glance %></span>
+					<span class="ontwo"><span class="centertext"><%= product.fifth_glance %></span></span>
+				</span>
+				<span class="hidefeature">
+					<span class="gap"></span>
+					<span class="on"><%= product.first_feature %></span>
+					<span class="off"><%= product.second_feature %></span>
+					<span class="on"><%= product.third_feature %></span>
+					<span class="offtwo"><span class="centertext"><%= product.fourth_feature %></span></span>
+					<span class="ontwo"><span class="centertext"><%= product.fifth_feature %></span></span>
+				</span>
+				<span class="hidespec">
+					<span class="gap"></span>
+					<span class="on"><%= product.first_spec %></span>
+					<span class="off"><%= product.second_spec %></span>
+					<span class="on"><%= product.third_spec %></span>
+					<span class="offtwo"><span class="centertext"><%= product.fourth_spec %></span></span>
+					<span class="ontwo"><span class="centertext"><%= product.fifth_spec %></span></span>
+				</span>
+			</span>
 		</div>
+		<% end %>
+	</div>
+	<div class="dept_room">
+		<% @department.children.each do |department| %>
+		<div class="dept_content">
+			<div class="dept_header">
+				<span class="centertext">
+					<%= link_to department.department_name, department %>
+				</span>
+				<hr class="dept"/>
+			</div>
+			<div class="embed-dept-thumbnail-container">
+				<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
+			</div>
+		</div>	
+		<% end %>
+	</div>
+</div>
