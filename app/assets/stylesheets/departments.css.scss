@@ -1,16 +1,11 @@
 .dept_room{
   overflow: auto;
   float: left;
-  margin-top: -30px;
-  @media (min-width: 320px) and (max-width: 499px) {
+  @media (min-width: 320px) and (max-width: 679px) {
     width: 320px;
-  }
-  @media (min-width: 500px) and (max-width: 679px) {
-   width: 320px;
   }
   @media (min-width: 680px) and (max-width: 879px) {
     width: 460px;
-    margin-left: 0px;
   }
   @media (min-width: 880px) {
     margin-left: 35px;
@@ -70,22 +65,18 @@
 
 .dept_content{
   float: left;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  margin-left: 0px;
+  margin: 20px 0 5px 0;
   border: none;
   text-align: center;
   @media (max-width: 499px){
     width: 100px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin: 10px 3px 0px 3px;
   }
   @media (min-width: 500px) and (max-width: 679px) {
     width: 100px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin: 10px 3px 0px 3px;
   }
-  @media (min-width: 680px) {
+  @media (min-width: 680px) and (max-width: 879px){
     width: 140px;
     margin-left: 6px;
     margin-right: 6px;
@@ -98,36 +89,35 @@
 }
 
 
-.hidenames{
+.hidetopic{
   position: absolute;
   width: 163px;
   padding-left: 40px;
-  top: 760px;
+  top: 771px;
   text-align: center;
   display: block;
   float: left;
   line-height: 2;
+  z-index: -1;
   font-size: 100%;
   @media (max-width: 499px){
-  font-size: 80%;
-  width: 90px;
-  padding-left: 12px;
-  z-index: 1;
-  top: 524px;
+    font-size: 80%;
+    width: 90px;
+    padding-left: 9px;
+    top: 506px;
   }
   @media (min-width: 500px) and (max-width: 679px){
     font-size: 80%;
-  width: 90px;
-  padding-left: 172px;
-  z-index: 1;
-  top: 530px;
+    width: 90px;
+    padding-left: 170px;
+    top: 515px;
   }
   @media (min-width: 680px) and (max-width: 879px){
-      font-size: 80%;
-  width: 120px;
-  padding-left: 65px;
-  z-index: 1;
-  top: 617px;
+    font-size: 80%;
+    width: 120px;
+    padding-left: 65px;
+    top: 622px;
+    z-index: 2;
   }
 }
 

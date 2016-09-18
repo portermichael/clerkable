@@ -55,6 +55,7 @@
     width: 120px;
     padding-left: 8px;
     padding-right: 8px;
+    margin-left: 6px;
   }
 }
 
@@ -66,8 +67,9 @@
     width: 216px;
     margin-left: 0px;
   }
-  @media (min-width: 680px) {
+  @media (min-width: 680px) and (max-width: 879px){
     width: 316px;
+    margin-left: 0px;
   }
   @media (min-width: 880px){
     width: 456px;
@@ -80,32 +82,31 @@
 .hideproducts{
   position: absolute;
   width: 163px;
-  padding-left: 30px;
-  top: 760px;
+  padding-left: 40px;
+  top: 771px;
   text-align: center;
   display: block;
   float: left;
   line-height: 2;
   font-size: 100%;
+  z-index: -1;
   @media (max-width: 499px){
-  font-size: 80%;
-  width: 90px;
-  padding-left: 6px;
-  z-index: 1;
-  top: 524px;
+    font-size: 80%;
+    width: 90px;
+    padding-left: 6px;
+    top: 506px;
   }
     @media (min-width: 500px) and (max-width: 679px){
     font-size: 80%;
     width: 90px;
-    padding-left: 166px;
-    z-index: 1;
-    top: 530px;
+    padding-left: 167px;
+    top: 515px;
   }
   @media (min-width: 680px) and (max-width: 879px){
     font-size: 80%;
     width: 120px;
     padding-left: 65px;
-    z-index: 1;
-    top: 617px;
+    top: 622px;
+    z-index: 2;
   }
 }

@@ -1,4 +1,19 @@
 <div class="head_room">
+	<div class="dept_room">
+		<% @department.children.each do |department| %>
+		<div class="dept_content">
+			<div class="dept_header">
+				<span class="centertext">
+					<%= link_to department.department_name, department %>
+				</span>
+				<hr class="dept"/>
+			</div>
+			<div class="embed-dept-thumbnail-container">
+				<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
+			</div>
+		</div>	
+		<% end %>
+	</div>
 	<div class="scroller">
 		<% @products.each do |product| %>
 		<div class="product_content">
@@ -72,21 +87,6 @@
 				</span>
 			</span>
 		</div>
-		<% end %>
-	</div>
-	<div class="dept_room">
-		<% @department.children.each do |department| %>
-		<div class="dept_content">
-			<div class="dept_header">
-				<span class="centertext">
-					<%= link_to department.department_name, department %>
-				</span>
-				<hr class="dept"/>
-			</div>
-			<div class="embed-dept-thumbnail-container">
-				<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
-			</div>
-		</div>	
 		<% end %>
 	</div>
 </div>

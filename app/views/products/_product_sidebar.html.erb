@@ -1,43 +1,47 @@
 		<div class="sidebar">
 			<div id="top_filler">
         	</div>
-			<h4 id="department_header">
-				<%= link_to "Departments", root_path %>
-			</h4>
-			<div id="department">
-				<% Department.roots.each do |department| %>
-    				<div>
-    					<%= link_to department.department_name, department %>
-    				</div>
-    			<% end %>
-    		</div>
+        	<div class="departments">
+				<h4 id="department_header">
+					<%= link_to "Departments", root_path %>
+				</h4>
+				<div id="department">
+					<% Department.roots.each do |department| %>
+    					<div>
+    						<%= link_to department.department_name, department %>
+    					</div>
+    				<% end %>
+    			</div>
+			</div>
     		<hr class="breaker"/>
-    		<h4 id="subdepartment_header">
-    			<%= link_to "Browse", root_path %>
-    		</h4>
-			<div id="parent">
-				<% unless @department.is_root? %>
-					<% @department.ancestors.each do |department| %>
+    		<div class="subdepartments">
+	    		<h4 id="subdepartment_header">
+    				<%= link_to "Browse", root_path %>
+    			</h4>
+				<div id="parent">
+					<% unless @department.is_root? %>
+						<% @department.ancestors.each do |department| %>
+							<div>
+								<%= link_to department.department_name, department %>
+							</div>
+						<% end %>
+					<% end %>
+					<div>
+						<%= link_to @department.department_name, @department %>
+					</div>
+				</div>
+				<div id="siblings">
+					<% @department.children.each do |department| %>
 						<div>
-							<%= link_to department.department_name, department %>
+							<%= link_to_unless_current department.department_name, department %>
 						</div>
 					<% end %>
-				<% end %>
-				<div>
-					<%= link_to @department.department_name, @department %>
+					<% @department.products.each do |product| %>
+						<div>
+							<%= link_to_unless_current product.product_name, product %>
+						</div>
+					<% end %>
 				</div>
-			</div>
-			<div id="siblings">
-				<% @department.children.each do |department| %>
-					<div>
-						<%= link_to_unless_current department.department_name, department %>
-					</div>
-				<% end %>
-				<% @department.products.each do |product| %>
-					<div>
-						<%= link_to_unless_current product.product_name, product %>
-					</div>
-				<% end %>
 			</div>
 			<div id="bottom_filler">
         	</div>

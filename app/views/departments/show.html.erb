@@ -15,49 +15,6 @@
 			</div>
 			<%= render "departments/department_head" %>
 		</div>
-		<div class="hidenames">
-		    <div class="hideseller">
-		    	<span class="sellerfiller">
-		        	secret
-		        	</br>
-		        	place
-		        	</br>
-		        	here
-		        	</br>
-		       	</span>
-		    </div>
-			<span class="hideglance">
-				<span class="gap"></span>
-				<span class="onname"><%= @department.first_glance_name %></span>
-				<span class="offname"><%= @department.second_glance_name %></span>
-				<span class="onname"><%= @department.third_glance_name %></span>
-				<span class="offname"><%= @department.fourth_glance_name %></span>
-				<span class="onnametwo"><span class="centertext"><%= @department.fifth_glance_name %></span></span>
-			</span>
-			<span class="hidefeature">
-				<span class="gap"></span>
-				<span class="onname"><%= @department.first_feature_name %></span>
-				<span class="offname"><%= @department.second_feature_name %></span>
-				<span class="onname"><%= @department.third_feature_name %></span>
-				<span class="offnametwo"><span class="centertext"><%= @department.fourth_feature_name %></span></span>
-				<span class="onnametwo"><span class="centertext"><%= @department.fifth_feature_name %></span></span>
-			</span>
-			<span class="hidespec">
-				<span class="gap"></span>
-				<span class="onname"><%= @department.first_spec_name %></span>
-				<span class="offname"><%= @department.second_spec_name %></span>
-				<span class="onname"><%= @department.third_spec_name %></span>
-				<span class="offnametwo"><span class="centertext"><%= @department.fourth_spec_name %></span></span>
-				<span class="onnametwo"><span class="centertext"><%= @department.fifth_spec_name %></span></span>
-			</span>
-		</div>
-		<% unless @department.has_children? %>
-		<div class="uptriangles">
-			<button class="seller">More Sellers</button>
-			<button class="glance">At a Glance</button>
-			<button class="feature">Features</button>
-			<button class="spec">Specs</button>
-		</div>
-		<% end %>
+		<%= render "departments/department_topic" %>
 	</div>
 </body>
