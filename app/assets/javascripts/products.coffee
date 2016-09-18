@@ -1,5 +1,5 @@
 $ ->
-  $('.boiller').slick
+  $('.scrollprod').slick
     dots: true
     arrows: true
     lazyLoad: 'ondemand'
@@ -8,7 +8,6 @@ $ ->
       breakpoint: 1070
       settings: {
       slidesToShow: 2
-      slidesToScroll: 2
       }
     } ]
   return

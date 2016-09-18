@@ -862,7 +862,7 @@ h6 {
 
 /* reducing px removes side borders */
 
-.scroller {
+.scrolldept {
   margin-left: 30px;
   margin-right: 30px;
   @media (max-width: 679px){
@@ -897,7 +897,7 @@ h6 {
   }
 }
 
-.boiller {
+.scrollprod {
   margin-left: 30px;
   margin-right: 30px;
   @media (max-width: 679px){
@@ -1032,7 +1032,7 @@ h6 {
     @media (max-width: 679px){
       top: 96%;
     }
-    @media (max-width: 879px){
+    @media (min-width: 680px) and (max-width: 879px){
       top: 96%;
     }
 }

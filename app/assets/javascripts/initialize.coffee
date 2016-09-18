@@ -1,5 +1,5 @@
 jQuery ->
-  $('.scroller').slick({
+  $('.scrolldept').slick({
     dots: true,
     arrows: true,
     lazyLoad: 'ondemand',
