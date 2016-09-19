@@ -484,9 +484,12 @@ hr.breaker {
 
 .uptriangles{
   float: left;
-  width: 300px;
-  height: 40px;
-  border: solid 1px black;
+  width: 100%;
+  background-color: pink;
+  text-align: center;
+  @media (max-width: 679px){
+    margin-top: 20px;
+  }
 }
 .on{
   background-color: #ccffcc;
@@ -581,6 +584,35 @@ hr.breaker {
 .gap{
   height: 10px;
   display: block;
+}
+.seller{
+  width: 60px;
+  display: inline-block;
+  float: left;
+  margin: 5px 5px 5px 5px;
+  background-color: pink;
+}
+.glance{
+  width: 60px;
+  display: inline-block;
+  float: left;
+  margin: 5px 5px 5px 5px;
+  background-color: green;
+}
+.feature{
+  width: 70px;
+  display: inline-block;
+  float: left;
+  margin: 5px 5px 5px 5px;
+  background-color: yellow;
+  
+}
+.spec{
+  width: 60px;
+  display: inline-block;
+  float: left;
+  margin: 5px 5px 5px 5px;
+  background-color: blue;
 }
 .hideseller{
   display: none;
@@ -939,13 +971,20 @@ h6 {
 }
 
 .slick-dots{
-    bottom: -45px;
+    bottom: -20px;
+    position: absolute;
     display: block;
-    margin-top: 0;
-    width: 100%;
+    margin: 0 17% 14px 17%;
+    width: 66%;
     padding: 0;
     list-style: none;
     text-align: center;
+    @media (max-width: 679px){
+      bottom: -60px;
+    }
+    @media (min-width: 680px) and (max-width: 879px){
+      bottom: -40px;
+    }
 }
 
 .slick-dots li{
@@ -1024,16 +1063,18 @@ h6 {
     height: 20px;
     margin-top: -10px;
     padding: 0;
-    top: 35%;
     cursor: pointer;
     color: transparent;
     border: none;
     outline: none;
     @media (max-width: 679px){
-      top: 96%;
+      bottom: -10px;
     }
     @media (min-width: 680px) and (max-width: 879px){
-      top: 96%;
+      bottom: -10px;
+    }
+    @media (min-width: 880px){
+    top: 120px;
     }
 }
 
