@@ -89,4 +89,12 @@
 		</div>
 		<% end %>
 	</div>
+	<% unless @department.has_children? %>
+		<div class="showstats">
+			<button class="seller">More Sellers</button>
+			<button class="glance">At a Glance</button>
+			<button class="feature">Features</button>
+			<button class="spec">Specs</button>
+		</div>
+	<% end %>
 </div>

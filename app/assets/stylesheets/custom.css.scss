@@ -482,15 +482,7 @@ hr.breaker {
   line-height: normal;
 }
 
-.uptriangles{
-  float: left;
-  width: 100%;
-  background-color: pink;
-  text-align: center;
-  @media (max-width: 679px){
-    margin-top: 20px;
-  }
-}
+
 .on{
   background-color: #ccffcc;
   width: 100%;
@@ -585,35 +577,74 @@ hr.breaker {
   height: 10px;
   display: block;
 }
-.seller{
-  width: 60px;
-  display: inline-block;
+.showstats{
+  text-align: center;
+  width: 100%;
   float: left;
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  margin-bottom: 20px;
+}
+
+.seller{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  width: 60px;
   margin: 5px 5px 5px 5px;
-  background-color: pink;
+  background-color: #fffff0;
+  border: solid 1px #000000;
+  border-radius: 3px;
+}
+.seller:hover{
+  color: green;
+  border: solid 1px green;
 }
 .glance{
-  width: 60px;
   display: inline-block;
-  float: left;
+  vertical-align: middle;
+  line-height: normal;
+  width: 60px;
   margin: 5px 5px 5px 5px;
-  background-color: green;
+  background-color: #fffff0;
+  border: solid 1px #000000;
+  border-radius: 3px;
+}
+.glance:hover{
+  color: green;
+  border: solid 1px green;
 }
 .feature{
-  width: 70px;
   display: inline-block;
-  float: left;
+  vertical-align: middle;
+  line-height: normal;
+  width: 70px;
   margin: 5px 5px 5px 5px;
-  background-color: yellow;
-  
+  background-color: #fffff0;
+  border: solid 1px #000000;
+  border-radius: 3px;
+  height: 34px;
+}
+.feature:hover{
+  color: green;
+  border: solid 1px green;
 }
 .spec{
-  width: 60px;
   display: inline-block;
-  float: left;
+  vertical-align: middle;
+  line-height: normal;
+  width: 60px;
   margin: 5px 5px 5px 5px;
-  background-color: blue;
+  background-color: #fffff0;
+  border: solid 1px #000000;
+  border-radius: 3px;
+  height: 34px;
 }
+.spec:hover{
+  color: green;
+  border: solid 1px green;
+  }
 .hideseller{
   display: none;
 }
@@ -967,7 +998,10 @@ h6 {
 /* Dots */
 
 .slick-slider{
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  @media (max-width: 679px){
+    margin-bottom: 50px;
+  }
 }
 
 .slick-dots{
