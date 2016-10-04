@@ -109,7 +109,7 @@ body {
   float: left;
   margin-left: 0;
   margin-right: 0;
-  z-index: 1;
+  z-index: 2;
   @media (max-width: 499px) {
     margin-top: 25px;
     position: absolute;
@@ -272,6 +272,7 @@ hr.breaker {
 }
 .breadcrumbs {
   margin: 24px 0 -18px 20px;
+  display: block;
   @media (min-width: 500px){
   margin-top: 29px;
   }
@@ -697,11 +698,6 @@ hr.dept {
   }
 }
 
-
-
-
-
-
 .index_room{
   padding-top: 30px;
   overflow: auto;
@@ -821,8 +817,8 @@ hr.dept {
   display: block;
   @media (max-width: 679px) {
     font-size: 80%;
-    width: 90px;
-    margin: 5px 5px 8px 5px;
+    width: 96px;
+    margin: 5px 2px 8px 2px;
   }
   @media (min-width: 680px) and (max-width: 879px) {
     font-size: 80%;
@@ -839,7 +835,7 @@ hr.dept {
   float: left;
   display: inline-block;
   @media (max-width: 679px){
-    width: 36px;
+    width: 42px;
   }
   @media (min-width: 680px){
     width: 49px;
@@ -848,11 +844,10 @@ hr.dept {
     width: 65px;
   }
 }
-
 .source_box{
   text-align: center;
   display: inline-block;
-  @media (min-width: 679px){
+  @media (max-width: 679px){
     width: 54px;
   }
   @media (min-width: 680px){
@@ -868,6 +863,65 @@ hr.dept {
     background-color: white;
     padding: 2px 4px 2px 4px;
     border-radius: 3px;
+  }
+  a:hover{
+    border: solid 1px green;
+  }
+}
+
+.price{
+  display: block;
+  @media (max-width: 679px){
+    font-size: 85%;
+    height: 18px;
+    line-height: 18px;
+    margin-top: 6px;
+  }
+  @media (min-width: 680px) and (max-width: 879px){
+    height: 20px;
+    line-height: 20px;
+    margin-top: 4px;
+  }
+  @media (min-width: 880px){
+    height: 22px;
+    line-height: 22px;
+    margin-top: 5px;
+  }
+}
+.source{
+  display: block;
+  @media (max-width: 679px){
+    font-size: 85%;
+    height: 18px;
+    line-height: 18px;
+    margin-top: 6px;
+  }
+  @media (min-width: 680px) and (max-width: 879px){
+    height: 20px;
+    line-height: 20px;
+    margin-top: 4px;
+  }
+  @media (min-width: 880px){
+    height: 22px;
+    line-height: 22px;
+    margin-top: 5px;
+  }
+}
+.basic{
+  display: block;
+  @media (max-width: 679px){
+    font-size: 85%;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 1px;
+  }
+  @media (min-width: 680px) and (max-width: 879px){
+    height: 18px;
+    line-height: 18px;
+  }
+  @media (min-width: 880px){
+    height: 22px;
+    line-height: 22px;
   }
 }
 .center{
@@ -1102,10 +1156,10 @@ h6 {
     border: none;
     outline: none;
     @media (max-width: 679px){
-      bottom: -10px;
+      bottom: -20px;
     }
     @media (min-width: 680px) and (max-width: 879px){
-      bottom: -10px;
+      bottom: -20px;
     }
     @media (min-width: 880px){
     top: 120px;

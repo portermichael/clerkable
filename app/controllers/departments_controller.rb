@@ -1,5 +1,4 @@
 class DepartmentsController < ApplicationController
-    caches_page :show
 # GET /departments
   # GET /departments.json
   def index

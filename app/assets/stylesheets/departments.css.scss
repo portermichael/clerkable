@@ -1,8 +1,10 @@
 .dept_room{
   overflow: auto;
   float: left;
+  margin-top: -30px;
   @media (min-width: 320px) and (max-width: 679px) {
     width: 320px;
+    margin-top: -50px;
   }
   @media (min-width: 680px) and (max-width: 879px) {
     width: 460px;
@@ -82,7 +84,7 @@
     margin-right: 6px;
   }
   @media (min-width: 880px){
-      width: 162px;
+    width: 162px;
     margin-left: 14px;
     margin-right: 14px;
   }
@@ -93,7 +95,7 @@
   position: absolute;
   width: 163px;
   padding-left: 40px;
-  top: 771px;
+  top: 761px;
   text-align: center;
   display: block;
   float: left;
@@ -102,27 +104,28 @@
   font-size: 100%;
   @media (max-width: 499px){
     font-size: 80%;
-    width: 90px;
-    padding-left: 9px;
-    top: 506px;
+    width: 96px;
+    padding-left: 6px;
+    top: 501px;
   }
   @media (min-width: 500px) and (max-width: 679px){
     font-size: 80%;
-    width: 90px;
-    padding-left: 170px;
-    top: 515px;
+    width: 96px;
+    padding-left: 167px;
+    top: 510px;
   }
   @media (min-width: 680px) and (max-width: 879px){
     font-size: 80%;
     width: 120px;
     padding-left: 65px;
-    top: 622px;
+    top: 619px;
     z-index: 2;
   }
 }
 
-.sellerfiller{
+.sellerfiller span span{
   opacity: 0;
+
 }
 
 

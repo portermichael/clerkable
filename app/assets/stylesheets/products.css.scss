@@ -83,7 +83,7 @@
   position: absolute;
   width: 163px;
   padding-left: 40px;
-  top: 771px;
+  top: 760px;
   text-align: center;
   display: block;
   float: left;
@@ -92,21 +92,21 @@
   z-index: -1;
   @media (max-width: 499px){
     font-size: 80%;
-    width: 90px;
-    padding-left: 6px;
-    top: 506px;
+    width: 96px;
+    padding-left: 3px;
+    top: 501px;
   }
     @media (min-width: 500px) and (max-width: 679px){
     font-size: 80%;
-    width: 90px;
-    padding-left: 167px;
-    top: 515px;
+    width: 96px;
+    padding-left: 164px;
+    top: 510px;
   }
   @media (min-width: 680px) and (max-width: 879px){
     font-size: 80%;
     width: 120px;
     padding-left: 65px;
-    top: 622px;
+    top: 618px;
     z-index: 2;
   }
 }

@@ -11,37 +11,25 @@
 		</div>
 		<div class="affiliate_box">
 			<div class="price_box">
-				$<%= @product.msrp %>
-				</br>
-				$<%= @product.expected %>
-				</br>
-				$<%= @product.first_price %>
-				</br>
-				$<%= @product.second_price %>
+				<span class="basic"><span class="centertext">$<%= @product.msrp %></span></span>
+				<span class="basic"><span class="centertext">$<%= @product.expected %></span></span>
+				<span class="price"><span class="centertext">$<%= @product.first_price %></span></span>
+				<span class="price"><span class="centertext">$<%= @product.second_price %></span></span>
 				<span class="hideseller">
-					</br>
-					$<%= @product.third_price %>
-					</br>
-					$<%= @product.fourth_price %>
-					</br>
-					$<%= @product.fifth_price %>
+					<span class="price"><span class="centertext">$<%= @product.third_price %></span></span>
+					<span class="price"><span class="centertext">$<%= @product.fourth_price %></span></span>
+					<span class="price"><span class="centertext">$<%= @product.fifth_price %></span></span>
 				</span>
 			</div>
 			<div class="source_box">
-				MSRP
-				</br>
-				Expected
-				</br>
-				<%= link_to @product.first_seller, @product.first_link %>
-				</br>
-				<%= link_to @product.second_seller, @product.second_link %>
+				<span class="basic"><span class="centertext">MSRP</span></span>
+				<span class="basic"><span class="centertext">Expected</span></span>
+				<span class="source"><span class="centertext"><%= link_to @product.first_seller, @product.first_link %></span></span>
+				<span class="source"><span class="centertext"><%= link_to @product.second_seller, @product.second_link %></span></span>
 				<span class="hideseller">
-					</br>
-					<%= link_to @product.third_seller, @product.third_link %>
-					</br>
-					<%= link_to @product.fourth_seller, @product.fourth_link %>
-					</br>
-					<%= link_to @product.fifth_seller, @product.fifth_link %>
+					<span class="source"><span class="centertext"><%= link_to @product.third_seller, @product.third_link %></span></span>
+					<span class="source"><span class="centertext"><%= link_to @product.fourth_seller, @product.fourth_link %></span></span>
+					<span class="source"><span class="centertext"><%= link_to @product.fifth_seller, @product.fifth_link %></span></span>
 				</span>
 			</div>
 			<span class="hideglance">
@@ -85,37 +73,25 @@
 				</span>
 				<span class="affiliate_box">
 					<span class="price_box">
-						$<%= product.msrp %>
-						</br>
-						$<%= product.expected %>
-						</br>
-						$<%= product.first_price %>
-						</br>
-						$<%= product.second_price %>
+						<span class="basic"><span class="centertext">$<%= product.msrp %></span></span>
+						<span class="basic"><span class="centertext">$<%= product.expected %></span></span>
+						<span class="price"><span class="centertext">$<%= product.first_price %></span></span>
+						<span class="price"><span class="centertext">$<%= product.second_price %></span></span>
 						<span class="hideseller">
-							</br>
-							$<%= product.third_price %>
-							</br>
-							$<%= product.fourth_price %>
-							</br>
-							$<%= product.fifth_price %>
+							<span class="price"><span class="centertext">$<%= product.third_price %></span></span>
+							<span class="price"><span class="centertext">$<%= product.fourth_price %></span></span>
+							<span class="price"><span class="centertext">$<%= product.fifth_price %></span></span>
 						</span>
 					</span>
 					<span class="source_box">
-						MSRP
-						</br>
-						Expected
-						</br>
-						<%= link_to product.first_seller, product.first_link %>
-						</br>
-						<%= link_to product.second_seller, product.second_link %>
+						<span class="basic"><span class="centertext">MSRP</span></span>
+						<span class="basic"><span class="centertext">Expected</span></span>
+						<span class="source"><span class="centertext"><%= link_to product.first_seller, product.first_link %></span></span>
+						<span class="source"><span class="centertext"><%= link_to product.second_seller, product.second_link %></span></span>
 						<span class="hideseller">
-							</br>
-							<%= link_to product.third_seller, product.third_link %>
-							</br>
-							<%= link_to product.fourth_seller, product.fourth_link %>
-							</br>
-							<%= link_to product.fifth_seller, product.fifth_link %>
+							<span class="source"><span class="centertext"><%= link_to product.third_seller, product.third_link %></span></span>
+							<span class="source"><span class="centertext"><%= link_to product.fourth_seller, product.fourth_link %></span></span>
+							<span class="source"><span class="centertext"><%= link_to product.fifth_seller, product.fifth_link %></span></span>
 						</span>
 					</span>
 					<span class="hideglance">
