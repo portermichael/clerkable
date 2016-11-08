@@ -978,7 +978,9 @@ h6 {
 }
 
 /* reducing px removes side borders */
-
+.dept {
+  margin-top: 30px;
+}
 .scrolldept {
   margin-left: 30px;
   margin-right: 30px;
@@ -1264,4 +1266,20 @@ h6 {
 [dir='rtl'] .slick-next:before
 {
     content: '>';
+}
+
+.pogo{
+  padding-top: 20px;
+
+  background-color: pink;
+}
+.pogo2{
+  padding-top: 20px;
+
+  background-color: blue;
+}
+.pogo3{
+  padding-top: 20px;
+
+  background-color: red;
 }

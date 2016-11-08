@@ -1,7 +1,6 @@
 .dept_room{
   overflow: auto;
   float: left;
-  margin-top: -30px;
   @media (min-width: 320px) and (max-width: 679px) {
     width: 320px;
     margin-top: -50px;
@@ -90,12 +89,42 @@
   }
 }
 
-
+.deptprod_content {
+  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 47px;
+  margin-right: 47px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 160px;
+  float: left;
+  background-color: rgba(0,0,0,0);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  text-align: center;
+  display: block;
+  @media (max-width: 679px) {
+    width: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  @media (min-width: 680px) and (max-width: 879px) {
+    width: 120px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 6px;
+  }
+}
+.fititin{
+  position: relative;
+}
 .hidetopic{
   position: absolute;
   width: 163px;
-  padding-left: 40px;
-  top: 761px;
+  left: -150px;
+  bottom: 29px;
   text-align: center;
   display: block;
   float: left;
