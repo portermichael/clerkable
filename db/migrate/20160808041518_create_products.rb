@@ -16,6 +16,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :third_seller
       t.decimal :third_price
       t.string :third_link
+      t.integer :user_id
       t.string :fourth_seller
       t.decimal :fourth_price
       t.string :fourth_link

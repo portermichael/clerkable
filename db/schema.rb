@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160808041518) do
+ActiveRecord::Schema.define(version: 20161108032858) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "department_name"
     t.string   "ancestry"
     t.string   "youtube_id"
     t.string   "youtube_thumbnail_id"
+    t.integer  "user_id"
     t.string   "first_glance_name"
     t.string   "second_glance_name"
     t.string   "third_glance_name"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160808041518) do
     t.string   "third_seller"
     t.decimal  "third_price"
     t.string   "third_link"
+    t.integer  "user_id"
     t.string   "fourth_seller"
     t.decimal  "fourth_price"
     t.string   "fourth_link"
@@ -78,5 +80,16 @@ ActiveRecord::Schema.define(version: 20160808041518) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "user_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

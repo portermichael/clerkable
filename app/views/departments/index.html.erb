@@ -5,6 +5,10 @@
       <h1 class="indexlocale">
         Clerkable
       </h1>
+      <div class="flash">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %></div>
       <div class="embed-dept-container">
         <%= embed("Rd8n74XDQUY") %>
       </div>

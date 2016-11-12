@@ -5,6 +5,7 @@ class CreateDepartments < ActiveRecord::Migration
       t.string :ancestry
       t.string :youtube_id
       t.string :youtube_thumbnail_id
+      t.integer :user_id
       t.string :first_glance_name
       t.string :second_glance_name
       t.string :third_glance_name

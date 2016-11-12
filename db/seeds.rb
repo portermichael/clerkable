@@ -1,21 +1,31 @@
+user_first_list = [
+
+  [ "bigfoot", "bigfoot@gmail.com", "frogtime", "frogtime"],
+
+]
+
+user_first_list.each do |name, email, password, password_confirmation |
+  User.create( user_name: name, email: email, password: password, password_confirmation: password_confirmation)
+end
+
 #1-10
 department_root_list = [
 
-  [ "Books & Audible", nil, "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Movies", nil, "PUBnqS1qcvk", "lPwlfbeQOBg"],
-  [ "Music", nil, "lN-rVlMIJZs", "lPwlfbeQOBg"],
-  [ "Games", nil, "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Electronics", nil, "PUBnqS1qcvk", "lPwlfbeQOBg"],
-  [ "Computers", nil, "lN-rVlMIJZs", "lPwlfbeQOBg"],
-  [ "Home and Garden", nil, "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Tools", nil, "PUBnqS1qcvk", "lPwlfbeQOBg"],
-  [ "Beauty & Health", nil, "lN-rVlMIJZs", "lPwlfbeQOBg"],
-  [ "Grocery", nil, "BzmFbfCEv9k", "lPwlfbeQOBg"],
+  [ "Books & Audible", nil, "BzmFbfCEv9k", "lPwlfbeQOBg", 1],
+  [ "Movies", nil, "PUBnqS1qcvk", "lPwlfbeQOBg", 1],
+  [ "Music", nil, "lN-rVlMIJZs", "lPwlfbeQOBg", 1],
+  [ "Games", nil, "BzmFbfCEv9k", "lPwlfbeQOBg", 1],
+  [ "Electronics", nil, "PUBnqS1qcvk", "lPwlfbeQOBg", 1],
+  [ "Computers", nil, "lN-rVlMIJZs", "lPwlfbeQOBg", 1],
+  [ "Home and Garden", nil, "BzmFbfCEv9k", "lPwlfbeQOBg", 1],
+  [ "Tools", nil, "PUBnqS1qcvk", "lPwlfbeQOBg", 1],
+  [ "Beauty & Health", nil, "lN-rVlMIJZs", "lPwlfbeQOBg", 1],
+  [ "Grocery", nil, "BzmFbfCEv9k", "lPwlfbeQOBg", 1],
 
   ]
 
-department_root_list.each do |name, ancestry, youtube_id, youtube_thumbnail_id |
-  Department.create( department_name: name, ancestry: ancestry, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id)
+department_root_list.each do |name, ancestry, youtube_id, youtube_thumbnail_id, user_id |
+  Department.create!( department_name: name, ancestry: ancestry, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, user_id: user_id)
 end
 
 #10-20
