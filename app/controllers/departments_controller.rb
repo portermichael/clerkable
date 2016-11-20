@@ -1,5 +1,5 @@
 class DepartmentsController < ApplicationController
-
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   def index
     @departments = Department.all
   end
@@ -22,7 +22,13 @@ class DepartmentsController < ApplicationController
   end
 
   def create
-    @department = Department.new(params[:department])
+    @department = current_user.departments.build(department_params)
+    if @department.save
+      flash[:success] = "Department Created!"
+      redirect_to root_url
+    else
+      redirect_to root_url
+    end
   end
 
   def update

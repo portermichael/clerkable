@@ -1,8 +1,8 @@
 class Department < ActiveRecord::Base
-	has_many :products
+	has_many :products, dependent: :destroy
 	has_ancestry
 	belongs_to :user
-
+	#validates :user_id, presence: true;
 	validates :department_name, presence: true;
 	validates :youtube_id, presence: true;
 	validates :youtube_thumbnail_id, presence: true;

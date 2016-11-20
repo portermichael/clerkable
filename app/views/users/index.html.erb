@@ -1,7 +1,12 @@
 
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
-
-<% @users.each do |user| %>
-<%= link_to user.user_name, user %>
-<% end %>
+<div class="page">
+	<div class="content">
+		<div class="indexlocale">
+			<h1>All users</h1>
+			<% @users.each do |user| %>
+				<div class="form"><%= link_to user.user_name, user %></div>
+			<% end %>
+		</div>
+	</div>
+</div>

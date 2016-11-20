@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :logged_in_user, only: [:index, :show, :edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
 	def index
 		@users = User.all
 	end
@@ -11,18 +12,21 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-	def create
-    	@user = User.new(user_params)
-    	if @user.save
-	      flash[:info] = "Please check your email to activate your account."
-    	  redirect_to root_url
-    	else
-      	render 'new'
-    	end
-  	end
+  def create
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      log_in user
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      redirect_back_or user
+    else
+      flash.now[:danger] = 'Invalid email/password combination'
+      render 'new'
+    end
+  end
 	
-	def edit
-	end
+  def edit
+    @user = User.find(params[:id])
+  end
 
 	def update
       if @user.update_attributes(user_params)
@@ -45,5 +49,14 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:user_name, :email, :password,
                                    :password_confirmation)
+    end
+
+        # Before filters
+
+
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
     end
 end

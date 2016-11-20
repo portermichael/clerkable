@@ -1,22 +1,28 @@
 
 <% provide(:title, 'Edit user') %>
-<h1>Edit profile</h1>
-  <div>
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+<div class="page">
+  <div class="content">
+    <div class="indexlocale">
+      <h1>Edit profile</h1>
+      <div>
+        <%= form_for(@user) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+  
+          <div class="form"><%= f.label :user_name %>
+          <%= f.text_field :user_name, class: 'form-control' %></div>
     
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+          <div class="form"><%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %></div>
       
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+          <div class="form"><%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %></div>
       
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+          <div class="form"><%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %></div>
       
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-      
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
-    <% end %>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
