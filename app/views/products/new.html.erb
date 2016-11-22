@@ -1,0 +1,123 @@
+<% provide(:title, 'Create Product') %>
+<div class="page">
+  <div class="content">
+    <div class="indexlocale">
+      <h1>Create Product</h1>
+      <div>
+        <%= form_for(@product) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+    
+          <div class="form"><%= f.label :product_name %>
+          <%= f.text_field :product_name, class: 'form-control' %></div>
+      
+          <div class="form"><%= f.label :department_id %>
+          <%= f.number_field :department_id, class: 'form-control' %></div>
+      
+          <div class="form"><%= f.label :youtube_id %>
+          <%= f.text_field :youtube_id, class: 'form-control' %></div>
+      
+          <div class="form"><%= f.label :youtube_thumbnail_id %>
+          <%= f.text_field :youtube_thumbnail_id, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :msrp %>
+          <%= f.text_field :msrp, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :expected %>
+          <%= f.text_field :expected, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_seller %>
+          <%= f.text_field :first_seller, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_price %>
+          <%= f.text_field :first_price, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_link %>
+          <%= f.text_field :first_link, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :second_seller %>
+          <%= f.text_field :second_seller, class: 'form-control' %></div>
+
+           <div class="form"><%= f.label :second_price %>
+          <%= f.text_field :second_price, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :second_link %>
+          <%= f.text_field :second_link, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_seller %>
+          <%= f.text_field :third_seller, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_price %>
+          <%= f.text_field :third_price, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_link %>
+          <%= f.text_field :third_link, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_seller %>
+          <%= f.text_field :fourth_seller, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_price %>
+          <%= f.text_field :fourth_price, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_link %>
+          <%= f.text_field :fourth_link, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_price %>
+          <%= f.text_field :fifth_price, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_link %>
+          <%= f.text_field :fifth_link, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_glance %>
+          <%= f.text_field :first_glance, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :second_glance %>
+          <%= f.text_field :second_glance, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_glance %>
+          <%= f.text_field :third_glance, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_glance %>
+          <%= f.text_field :fourth_glance, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_glance %>
+          <%= f.text_field :fifth_glance, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_feature %>
+          <%= f.text_field :fifth_glance, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :second_feature %>
+          <%= f.text_field :second_feature, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_feature %>
+          <%= f.text_field :third_feature, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_feature %>
+          <%= f.text_field :fourth_feature, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_feature %>
+          <%= f.text_field :fifth_feature, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_spec %>
+          <%= f.text_field :first_spec, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :second_spec %>
+          <%= f.text_field :second_spec, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_spec %>
+          <%= f.text_field :third_spec, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_spec %>
+          <%= f.text_field :fourth_spec, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_spec %>
+          <%= f.text_field :fifth_spec, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :benefits %>
+          <%= f.text_field :benefits, class: 'form-control' %></div>
+      
+          <%= f.submit "Create Product", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

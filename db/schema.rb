@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(version: 20161108032858) do
     t.datetime "updated_at",           null: false
   end
 
+  add_index "departments", ["ancestry"], name: "index_departments_on_ancestry"
+  add_index "departments", ["user_id"], name: "index_departments_on_user_id"
+
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.integer  "department_id"
@@ -80,6 +83,8 @@ ActiveRecord::Schema.define(version: 20161108032858) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "products", ["department_id"], name: "index_products_on_department_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"

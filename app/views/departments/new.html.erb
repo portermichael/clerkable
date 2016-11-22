@@ -1,0 +1,72 @@
+<% provide(:title, 'Create Department') %>
+<div class="page">
+  <div class="content">
+    <div class="indexlocale">
+      <h1>Create Department</h1>
+      <div>
+        <%= form_for(@department) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+    
+          <div class="form"><%= f.label :department_name %>
+          <%= f.text_field :department_name, class: 'form-control' %></div>
+      
+          <div class="form"><%= f.label :ancestry %>
+          <%= f.text_field :ancestry, class: 'form-control' %></div>
+      
+          <div class="form"><%= f.label :youtube_id %>
+          <%= f.text_field :youtube_id, class: 'form-control' %></div>
+      
+          <div class="form"><%= f.label :youtube_thumbnail_id %>
+          <%= f.text_field :youtube_thumbnail_id, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_glance_name %>
+          <%= f.text_field :first_glance_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :second_glance_name %>
+          <%= f.text_field :second_glance_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_glance_name %>
+          <%= f.text_field :third_glance_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_glance_name %>
+          <%= f.text_field :fourth_glance_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_glance_name %>
+          <%= f.text_field :fifth_glance_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_feature_name %>
+          <%= f.text_field :first_feature_name, class: 'form-control' %></div>
+
+           <div class="form"><%= f.label :second_feature_name %>
+          <%= f.text_field :second_feature_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_feature_name %>
+          <%= f.text_field :third_feature_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_feature_name %>
+          <%= f.text_field :fourth_feature_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_feature_name %>
+          <%= f.text_field :fifth_feature_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :first_spec_name %>
+          <%= f.text_field :first_spec_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :second_spec_name %>
+          <%= f.text_field :second_spec_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :third_spec_name %>
+          <%= f.text_field :third_spec_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fourth_spec_name %>
+          <%= f.text_field :fourth_spec_name, class: 'form-control' %></div>
+
+          <div class="form"><%= f.label :fifth_spec_name %>
+          <%= f.text_field :fifth_spec_name, class: 'form-control' %></div>
+      
+          <%= f.submit "Create my account", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

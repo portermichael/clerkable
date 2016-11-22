@@ -2,7 +2,7 @@ class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
       t.string :product_name
-      t.integer :department_id
+      t.references :department, index: true, foreign_key: true
       t.string :youtube_id
       t.string :youtube_thumbnail_id
       t.decimal :msrp

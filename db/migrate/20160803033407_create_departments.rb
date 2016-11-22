@@ -5,7 +5,7 @@ class CreateDepartments < ActiveRecord::Migration
       t.string :ancestry
       t.string :youtube_id
       t.string :youtube_thumbnail_id
-      t.integer :user_id
+      t.references :user, index:true, foreign_key: true
       t.string :first_glance_name
       t.string :second_glance_name
       t.string :third_glance_name
@@ -24,5 +24,6 @@ class CreateDepartments < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :departments, [:ancestry]
   end
 end

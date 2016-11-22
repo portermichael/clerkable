@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :show, :edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 	def index
 		@users = User.all
 	end
@@ -12,17 +12,16 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
-  def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
-    else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
-    end
-  end
+  #def create
+  #  user = User.find_by(email: params[:session][:email].downcase)
+  #  if user && user.authenticate(params[:session][:password])
+  #    log_in user
+  #    redirect_back_or user
+  #  else
+  #    flash.now[:danger] = 'Invalid email/password combination'
+  #    render 'new'
+  #  end
+  #end
 	
   def edit
     @user = User.find(params[:id])
@@ -51,8 +50,7 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 
-        # Before filters
-
+    # Before filters
 
     # Confirms the correct user.
     def correct_user
