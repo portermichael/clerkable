@@ -3,6 +3,16 @@
 <div class="page">
 	<div class="content">
 	<div class="indexlocale">
-		It's you mike.
+		<% @departments.each do |departments| %>
+			<%= departments.department_name %>
+			<% end %>
+
+		<% @products.each do |products| %>
+		  <%= products.product_name %>
+		  <% end %>
+		<% @relationships.each do |relationships| %>
+		  <%= relationships.follower %>
+		  <%= relationships.following %>
+		  <% end %>
 	</div></div>
 </div>

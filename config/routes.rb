@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :departments
   resources :products
   resources :users
+  resources :relationships
 end

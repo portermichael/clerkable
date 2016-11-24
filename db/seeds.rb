@@ -111,3 +111,14 @@ product_list = [
 product_list.each do |product_name, department_id, youtube_id, youtube_thumbnail_id, msrp, expected, first_seller, first_price, first_link, second_seller, second_price, second_link, third_seller, third_price, third_link, fourth_seller, fourth_price, fourth_link, fifth_seller, fifth_price, fifth_link, first_glance, second_glance, third_glance, fourth_glance, fifth_glance, first_feature, second_feature, third_feature, fourth_feature, fifth_feature, first_spec, second_spec, third_spec, fourth_spec, fifth_spec, benefits|
   Product.create( product_name: product_name, department_id: department_id, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, msrp: msrp, expected: expected, first_seller: first_seller, first_price: first_price, first_link: first_link, second_seller: second_seller, second_price: second_price, second_link: second_link, third_seller: third_seller, third_price: third_price, third_link: third_link, fourth_seller: fourth_seller, fourth_price: fourth_price, fourth_link: fourth_link, fifth_seller: fifth_seller, fifth_price: fifth_price, fifth_link: fifth_link, first_glance: first_glance, second_glance: second_glance, third_glance: third_glance, fourth_glance: fourth_glance, fifth_glance: fifth_glance, first_feature: first_feature, second_feature: second_feature, third_feature: third_feature, fourth_feature: fourth_feature, fifth_feature: fifth_feature, first_spec: first_spec, second_spec: second_spec, third_spec: third_spec, fourth_spec: fourth_spec, fifth_spec: fifth_spec, benefits: benefits)
 end
+
+relationship_list = [
+
+  [40, 26, 1],
+  [30, 40, 1],
+
+]
+
+relationship_list.each do |follower_id, followed_id, user_id |
+  Relationship.create( follower_id: follower_id, followed_id: followed_id, user_id: user_id )
+end

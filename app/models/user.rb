@@ -2,6 +2,14 @@ class User < ActiveRecord::Base
   attr_accessor :remember_token
 	has_many :departments, dependent: :destroy
 	has_many :products, dependent: :destroy
+  has_many :relationships
+
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id"
+  has_many :following, through: :active_relationships, source: :follower_id
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id"
+  has_many :followers, through: :passive_relationships, source: :follower
+
+
 
   before_save { self.email = email.downcase }
   validates :user_name, presence: true, length: { in: 5..50 }

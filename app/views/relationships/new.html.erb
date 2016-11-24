@@ -1,0 +1,21 @@
+<% provide(:title, 'Create Relationship') %>
+<div class="page">
+  <div class="content">
+    <div class="indexlocale">
+      <h1>Create Relationship</h1>
+      <div>
+        <%= form_for(@relationship) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+    
+          <div class="form"><%= f.label :follower_id %>
+          <%= f.text_field :follower_id, class: 'form-control' %></div>
+      
+          <div class="form"><%= f.label :followed_id %>
+          <%= f.number_field :followed_id, class: 'form-control' %></div>
+      
+          <%= f.submit "Create Relationship", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

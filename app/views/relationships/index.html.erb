@@ -1,0 +1,12 @@
+
+<% provide(:title, 'All Relationships') %>
+<div class="page">
+	<div class="content">
+		<div class="indexlocale">
+			<h1>All Relationships</h1>
+			<% @relationships.each do |relationship| %>
+				<div class="form"><%= relationship.follower_id %><%= relationship.followed_id %></div>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -6,6 +6,9 @@ class UsersController < ApplicationController
 	end
 	def show
 		@user = User.find(params[:id])
+    @departments = @user.departments
+    @products = @user.products
+    @relationships = @user.relationships
 	end
 
 	def new
