@@ -1,18 +1,33 @@
 
 <% provide(:title, @user.user_name) %>
 <div class="page">
-	<div class="content">
-	<div class="indexlocale">
-		<% @departments.each do |departments| %>
-			<%= departments.department_name %>
-			<% end %>
-
-		<% @products.each do |products| %>
-		  <%= products.product_name %>
+  <div class="content">
+    <div class="indexlocale">
+      <h2>User Departments</h2>
+		<div>
+		  <% @departments.each do |departments| %>
+            <div>
+              <%= departments.department_name %>
+            </div>
 		  <% end %>
-		<% @relationships.each do |relationships| %>
-		  <%= relationships.follower %>
-		  <%= relationships.following %>
+		</div>
+	  <h2>User Products</h2>
+		<div>
+		  <% @products.each do |products| %>
+		    <div>
+		      <%= products.product_name %>
+		    </div>
 		  <% end %>
-	</div></div>
+		</div>
+	  <h2>User Relationships</h2>
+		<div>
+		  <% @relationships.each do |relationships| %>
+		    <div>
+		      <%= relationships.follower_id %>
+		      <%= relationships.followed_id %>
+		    </div>
+		  <% end %>
+		</div>
+		
+	</div>
 </div>

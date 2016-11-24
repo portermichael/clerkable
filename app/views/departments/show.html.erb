@@ -12,7 +12,11 @@
 				<%= embed(@department.youtube_id) %>
 			</div>
 			<%= render "departments/department_head" %>
+
+					<% @followers.each do |followers| %>
+		<%= followers.department_name %>
+		<% end %>
 		</div>
-		
+
 	</div>
 </body>

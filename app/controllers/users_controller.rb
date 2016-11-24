@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @departments = @user.departments
     @products = @user.products
     @relationships = @user.relationships
-	end
+  end
 
 	def new
 		@user = User.new
