@@ -2,6 +2,12 @@
 <% provide(:title, @user.user_name) %>
 <div class="page">
   <div class="content">
+      <div class="usernav">
+    	<span class="userlink"><%= link_to "Users", users_path %></span>
+    	<span class="userlink"><%= link_to "Profile", current_user %></span>
+    	<span class="userlink"><%= link_to "Log out", logout_path, method: "delete" %></span>
+        <span class="userlink"><%= link_to "Settings", edit_user_path(current_user) %></span>
+      </div>
     <div class="indexlocale">
       <h2>User Departments</h2>
 		<div>
@@ -23,8 +29,8 @@
 		<div>
 		  <% @relationships.each do |relationships| %>
 		    <div>
+		      <%= relationships.department_id %>
 		      <%= relationships.follower_id %>
-		      <%= relationships.followed_id %>
 		    </div>
 		  <% end %>
 		</div>

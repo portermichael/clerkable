@@ -85,7 +85,20 @@
 				<hr class="dept"/>
 			</div>
 			<div class="embed-dept-thumbnail-container">
-				<%= embed_thumbnail(@department.youtube_thumbnail_id) %>
+				<%= embed_thumbnail(department.youtube_thumbnail_id) %>
+			</div>
+		</div>	
+		<% end %>
+		<% @followers.each do |follower| %>
+		<div class="dept_content">
+			<div class="dept_header">
+				<span class="centertext">
+					<%= link_to follower.department_name, follower %>
+				</span>
+				<hr class="dept"/>
+			</div>
+			<div class="embed-dept-thumbnail-container">
+				<%= embed_thumbnail(follower.youtube_thumbnail_id) %>
 			</div>
 		</div>	
 		<% end %>

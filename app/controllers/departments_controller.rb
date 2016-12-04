@@ -9,6 +9,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     @products = @department.products
     @followers = @department.followers
+    @following = @department.following
       respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @department }

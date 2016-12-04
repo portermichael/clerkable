@@ -114,11 +114,15 @@ end
 
 relationship_list = [
 
-  [40, 26, 1],
-  [30, 40, 1],
+  [5, 26, 1],
+  [5, 40, 1],
+  [5, 31, 1],
+  [5, 32, 1],
+  [5, 33, 1],
+  [26, 31, 1],
 
 ]
 
-relationship_list.each do |follower_id, followed_id, user_id |
-  Relationship.create( follower_id: follower_id, followed_id: followed_id, user_id: user_id )
+relationship_list.each do |department_id, follower_id, user_id |
+  Relationship.create( department_id: department_id, follower_id: follower_id, user_id: user_id )
 end

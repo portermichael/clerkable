@@ -7,11 +7,11 @@
         <%= form_for(@relationship) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
     
-          <div class="form"><%= f.label :follower_id %>
-          <%= f.text_field :follower_id, class: 'form-control' %></div>
+          <div class="form"><%= f.label :department_id %>
+          <%= f.text_field :department_id, class: 'form-control' %></div>
       
-          <div class="form"><%= f.label :followed_id %>
-          <%= f.number_field :followed_id, class: 'form-control' %></div>
+          <div class="form"><%= f.label :follower_id %>
+          <%= f.number_field :follower_id, class: 'form-control' %></div>
       
           <%= f.submit "Create Relationship", class: "btn btn-primary" %>
         <% end %>
