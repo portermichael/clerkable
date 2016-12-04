@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 		@department = Department.find(@product.department_id)
 		@products = @department.products
+    @following = @department.following
 	end
 
 	def new

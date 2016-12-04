@@ -1,24 +1,21 @@
 	
 <span class="breadcrumbs">
-<span class="breadinside">
+	<span class="breadinside">
   	<% @department.ancestors.each do |department| %>
     	<%= link_to department.department_name, department %> /
   	<% end %>
   	<%= @department.department_name %>
-</span>
-
   	<% @following.each do |following| %>
   		<% unless following.is_root? %>
-	    	<span class="breadinside">
 	    	</br>
 	    	<% following.ancestors.each do |ancestor| %> 
  		   		<%= link_to ancestor.department_name, ancestor %> /
     		<% end %>
     		<%= link_to following.department_name, following %> /
     			<%= @department.department_name %>
-			</span>
     	<% end %>
   	<% end %>
+  	</span>
 </span>
 
   	
