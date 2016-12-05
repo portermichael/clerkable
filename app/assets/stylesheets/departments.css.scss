@@ -93,11 +93,11 @@
   
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 47px;
-  margin-right: 47px;
+  margin-left: 17px;
+  margin-right: 17px;
   padding-left: 12px;
   padding-right: 12px;
-  width: 160px;
+  width: 220px;
   float: left;
   background-color: rgba(0,0,0,0);
   border-style: solid;
@@ -109,12 +109,56 @@
     width: 100px;
     padding-left: 0px;
     padding-right: 0px;
+    margin: 0px 2px 0px 2px;
   }
   @media (min-width: 680px) and (max-width: 879px) {
     width: 120px;
     padding-left: 8px;
     padding-right: 8px;
-    margin-left: 6px;
+    margin: 0px 7px 0px 8px;
+  }
+  @media (min-width: 880px) and (max-width: 1069px) {
+    width: 160px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 0px 19px 0px 19px;
+  }
+}
+
+.deptprod_header {
+  position: relative;
+  font-size: 120%;
+  margin: 0 0 0 0;
+  width: 220px;
+  height: 50px;
+  text-align: center;
+  display: block;
+  line-height: 50px;
+  margin-bottom: 13px;
+  @media (max-width: 679px) {
+    font-size: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 90px;
+    height: 47px;
+    line-height: 47px;
+  }
+  @media (min-width: 680px) and (max-width: 879px) {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 120px;
+        height: 47px;
+    line-height: 47px;
+  }
+    @media (min-width: 880px) and (max-width: 1069px) {
+    width: 162px;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: 44px;
+    line-height: 44px;
+  }
+  @media (min-width: 1070px) {
+  
   }
 }
 .fititin{
@@ -157,5 +201,25 @@
 
 }
 
-
-
+hr.dept {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 120px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
+  @media (max-width: 499px){
+    width: 84px;
+  }
+  @media (min-width: 500px) and (max-width: 679px) {
+    width: 84px;
+  }
+  @media (min-width: 680px) and (max-width: 1069px) {
+      width: 120px;
+  }
+  @media (min-width: 680px) and (max-width: 1069px) {
+      width: 120px;
+  }
+}

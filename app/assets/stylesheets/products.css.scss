@@ -15,15 +15,15 @@
     height: 47px;
     line-height: 47px;
   }
-  @media (min-width: 680px) {
+  @media (min-width: 680px) and (max-width: 879px) {
     margin-left: 0px;
     margin-right: 0px;
     width: 120px;
         height: 47px;
     line-height: 47px;
   }
-    @media (min-width: 880px) {
-    width: 162px;
+    @media (min-width: 880px) and (max-width: 1069px) {
+    width: 160px;
     margin-left: 0px;
     margin-right: 0px;
     height: 44px;
@@ -108,5 +108,22 @@
     padding-left: 65px;
     top: 618px;
     z-index: 2;
+  }
+}
+
+hr.prod {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 120px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
+  @media (max-width: 499px){
+    width: 84px;
+  }
+  @media (min-width: 500px) and (max-width: 679px) {
+    width: 84px;
   }
 }

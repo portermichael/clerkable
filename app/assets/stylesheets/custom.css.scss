@@ -432,7 +432,7 @@ hr.breaker {
 .embed-container object,
 .embed-container embed {
   float: left;
-  width: 160px;
+    width: 160px;
   height: 90px;
   margin-bottom: 8px;
   border: solid 1px #808080;
@@ -460,7 +460,40 @@ hr.breaker {
     border-left: none;
     border-right: none;
   }
-  @media (min-width: 880px){
+  @media (min-width: 880px) and (max-width: 1069px) {
+
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.embed-deptprod-thumbnail-container iframe,
+.embed-container object,
+.embed-container embed {
+  float: left;
+  width: 220px;
+  height: 123px;
+  margin-bottom: 8px;
+  border: solid 1px #808080;
+  @media (max-width: 679px){
+    width: 100px;
+    height: 56px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-left: none;
+    border-right: none;
+  }
+  @media (min-width: 680px) and (max-width: 879px) {
+    width: 120px;
+    height: 68px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-left: none;
+    border-right: none;
+  }
+  @media (min-width: 880px) and (max-width: 1069px) {
+    width: 160px;
+  height: 90px;
     margin-left: 0px;
     margin-right: 0px;
   }
@@ -711,8 +744,26 @@ hr.dept {
   @media (min-width: 500px) and (max-width: 679px) {
     width: 84px;
   }
+  @media (min-width: 680px) and (max-width: 1069px) {
+      width: 120px;
+  }
 }
-
+hr.prod {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 120px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
+  @media (max-width: 499px){
+    width: 84px;
+  }
+  @media (min-width: 500px) and (max-width: 679px) {
+    width: 84px;
+  }
+}
 .index_room{
   padding-top: 30px;
   overflow: auto;
@@ -1047,12 +1098,12 @@ h6 {
       }
     @media (min-width: 680px){
       margin-left: 2px;
-      margin-right: 2px;
+      margin-right: 3px;
       width: 284px;
       }
     @media (min-width: 880px){
       margin-left: 3px;
-      margin-right: 3px;
+      margin-right: 4px;
       width: 384px;
       }
     @media (min-width: 1070px){
