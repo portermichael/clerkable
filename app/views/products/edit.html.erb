@@ -1,6 +1,11 @@
 <% provide(:title, 'Edit Product') %>
 <div class="page">
   <div class="content">
+    <div class="usernav">
+      <span class="userlink"><%= link_to "Profile", current_user %></span>
+      <span class="userlink"><%= link_to "Products", products_path %></span>
+      <span class="userlink"><%= link_to "Create", new_product_path %></span>
+    </div>
     <div class="indexlocale">
       <h1>Edit Product</h1>
       <div>

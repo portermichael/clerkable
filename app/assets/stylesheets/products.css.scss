@@ -3,7 +3,8 @@
   font-size: 120%;
   margin: 0 0 0 0;
   width: 160px;
-  height: 40px;
+  height: 44px;
+  line-height: 44px;
   text-align: center;
   display: block;
   margin-bottom: 13px;
@@ -12,14 +13,14 @@
     margin-left: 5px;
     margin-right: 5px;
     width: 90px;
-    height: 47px;
-    line-height: 47px;
+    height: 44px;
+    line-height: 44px;
   }
   @media (min-width: 680px) and (max-width: 879px) {
     margin-left: 0px;
     margin-right: 0px;
     width: 120px;
-        height: 47px;
+    height: 47px;
     line-height: 47px;
   }
     @media (min-width: 880px) and (max-width: 1069px) {
@@ -116,14 +117,14 @@ hr.prod {
   padding-bottom: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  width: 120px;
+  width: 128px;
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
-  @media (max-width: 499px){
-    width: 84px;
+  @media (max-width: 679px) {
+    width: 80px;
   }
-  @media (min-width: 500px) and (max-width: 679px) {
-    width: 84px;
+  @media (min-width: 680px) and (max-width: 879px) {
+    width: 96px;
   }
 }

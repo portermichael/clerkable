@@ -5,14 +5,31 @@
 	  <div class="usernav">
     	<span class="userlink"><%= link_to "Users", users_path %></span>
     	<span class="userlink"><%= link_to "Profile", current_user %></span>
+    	<span class="userlink"><%= link_to "Edit", edit_user_path(current_user) %></span>
     	<span class="userlink"><%= link_to "Log out", logout_path, method: "delete" %></span>
-        <span class="userlink"><%= link_to "Settings", edit_user_path(current_user) %></span>
       </div>
+
 		<div class="indexlocale">
-			<h1>All users</h1>
-			<% @users.each do |user| %>
-				<div class="form"><%= link_to user.user_name, user %></div>
-			<% end %>
+			<h1>All Users</h1>
+			<table>
+				<th>
+					user_name
+				</th>
+				<th>
+					user_email
+				</th>
+				<% @users.each do |user| %>
+					<tr>
+						<td>
+							<%= link_to user.user_name, edit_user_path(user)  %>
+						</td>
+						<td>
+							<%= user.email %>
+						</td>
+						<td><%= link_to "delete", user, method: :delete, data: { confirm: "Delete this?"} %></td>
+					</tr>
+				<% end %>
+			</table>
 		</div>
 	</div>
 </div>

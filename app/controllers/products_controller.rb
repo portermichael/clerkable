@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
-  #this isn't currently used
 	def index
     @products = Product.all
 	end
@@ -42,7 +41,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-  end
+    @product = Product.find(params[:id]).destroy
+    flash[:success] = "Relationship Deleted"
+    redirect_to root_url
+    end
 
   private
 

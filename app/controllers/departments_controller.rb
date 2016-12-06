@@ -45,8 +45,9 @@ class DepartmentsController < ApplicationController
   end
 
   def destroy
-    @department = Department.find(params[:id])
-    @department.destroy
+    @department = Department.find(params[:id]).destroy
+    flash[:success] = "Relationship Deleted"
+    redirect_to action: "index"
   end
 
   private

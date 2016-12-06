@@ -729,41 +729,8 @@ hr.index {
   }
 }
 
-hr.dept {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 120px;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
-  @media (max-width: 499px){
-    width: 84px;
-  }
-  @media (min-width: 500px) and (max-width: 679px) {
-    width: 84px;
-  }
-  @media (min-width: 680px) and (max-width: 1069px) {
-      width: 120px;
-  }
-}
-hr.prod {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 120px;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
-  @media (max-width: 499px){
-    width: 84px;
-  }
-  @media (min-width: 500px) and (max-width: 679px) {
-    width: 84px;
-  }
-}
+
+
 .index_room{
   padding-top: 30px;
   overflow: auto;
@@ -1345,4 +1312,13 @@ h6 {
   padding-top: 20px;
 
   background-color: red;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;    
 }

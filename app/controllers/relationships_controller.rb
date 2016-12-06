@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :logged_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
   	@relationships = Relationship.all
@@ -9,6 +10,13 @@ class RelationshipsController < ApplicationController
   end
 
   def create
+      @relationship = current_user.relationships.build(relationship_params)
+    if @relationship.save
+      flash[:success] = "Relationship Created!"
+      redirect_to action: "index"
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -17,19 +25,22 @@ class RelationshipsController < ApplicationController
 
   def update
   	  @relationship = Relationship.find(params[:id])
-    if @relationship.update_attributes(product_params)
+    if @relationship.update_attributes(relationship_params)
       flash[:success] = "Product updated"
-      redirect_to root_url
+      redirect_to action: "index"
     else
       render 'edit'
     end
   end
 
   def destroy
+    @relationship = Relationship.find(params[:id]).destroy
+    flash[:success] = "Relationship Deleted"
+    redirect_to action: "index"
   end
 
   private
     def relationship_params
-      params.require(:relationship).permit(:follower_id, :followed_id)
+      params.require(:relationship).permit(:department_id, :follower_id)
     end
 end
