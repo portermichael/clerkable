@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20161122061916) do
   end
 
   add_index "departments", ["ancestry"], name: "index_departments_on_ancestry"
+  add_index "departments", ["id", "ancestry"], name: "index_departments_on_id_and_ancestry"
+  add_index "departments", ["id"], name: "index_departments_on_id"
   add_index "departments", ["user_id"], name: "index_departments_on_user_id"
 
   create_table "products", force: :cascade do |t|
@@ -85,6 +87,8 @@ ActiveRecord::Schema.define(version: 20161122061916) do
   end
 
   add_index "products", ["department_id"], name: "index_products_on_department_id"
+  add_index "products", ["id", "department_id"], name: "index_products_on_id_and_department_id"
+  add_index "products", ["id"], name: "index_products_on_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "department_id"

@@ -42,5 +42,7 @@ class CreateProducts < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :products, :id
+    add_index :products, [:id, :department_id]
   end
 end

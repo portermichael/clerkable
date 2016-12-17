@@ -24,6 +24,8 @@ class CreateDepartments < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :departments, [:id]
     add_index :departments, [:ancestry]
+    add_index :departments, [:id, :ancestry]
   end
 end

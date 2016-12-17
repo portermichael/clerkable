@@ -2,7 +2,7 @@ class DepartmentsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @departments = Department.all
+    @departments = Department.roots
   end
 
   def show

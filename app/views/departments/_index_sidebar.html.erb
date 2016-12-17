@@ -4,12 +4,16 @@
         <h4 id="department_header">
           <%= link_to_unless_current "Departments", root_path %>
         </h4>
+
         <div id="department">
-          <% Department.roots.each do |department| %>
-            <div>
-              <%= link_to department.department_name, department %>
-            </div>
+          <% @departments.each do |department| %>
+            <% cache(department) do %>
+              <div>
+                <%= link_to department.department_name, department %>
+              </div>
+            <% end %>
           <% end %>
+        
         </div>
         <div id="bottom_filler">
         </div>
