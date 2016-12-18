@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-	belongs_to :department
+	belongs_to :department, touch: true
 	belongs_to :user
 
 	validates :product_name, presence: true;
