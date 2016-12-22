@@ -76,7 +76,7 @@
 		<% end %>
 	<% end %>
 	<div class="dept_room">
-		<% @department.children.each do |department| %>
+		<% @children.each do |department| %>
 		<div class="dept_content">
 			<div class="dept_header">
 				<span class="centertext">
@@ -89,6 +89,7 @@
 			</div>
 		</div>	
 		<% end %>
+		<% cache @followers do %>
 		<% @followers.each do |follower| %>
 		<div class="dept_content">
 			<div class="dept_header">
@@ -101,6 +102,7 @@
 				<%= embed_thumbnail(follower.youtube_thumbnail_id) %>
 			</div>
 		</div>	
+		<% end %>
 		<% end %>
 	</div>
 	</div>

@@ -7,7 +7,10 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-		@department = Department.find(@product.department_id)
+		@department = @product.department
+    @roots = Department.roots
+    @ancestors = @department.ancestors
+    @children = @department.children
 		@products = @department.products
     @following = @department.following
 	end

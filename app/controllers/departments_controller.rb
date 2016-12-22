@@ -7,6 +7,9 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params[:id])
+    @roots = Department.roots
+    @children = @department.children
+    @ancestors = @department.ancestors
     @products = @department.products
     @followers = @department.followers
     @following = @department.following
