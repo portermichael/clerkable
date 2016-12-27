@@ -126,3 +126,58 @@ relationship_list = [
 relationship_list.each do |department_id, follower_id, user_id |
   Relationship.create( department_id: department_id, follower_id: follower_id, user_id: user_id )
 end
+
+#faker
+#fakeusers
+
+99.times do |n|
+  user_name  = Faker::Name.name
+  email = Faker::Internet.unique.email
+  password = "password"
+  User.create!(user_name:  user_name,
+               email: email,
+               password:              password,
+               password_confirmation: password)
+end
+
+#fakedepartments
+
+25.times do |n|
+  department_name = Faker::Commerce.unique.department
+  ancestry = Faker::Number.between(1,10)
+  youtube_id = "jK7SFNx5mug"
+  youtube_thumbnail_id = "Eqm8r1jXAt8"
+
+  Department.create!(department_name: department_name,
+                     ancestry: ancestry,
+                     youtube_id: youtube_id,
+                     youtube_thumbnail_id: youtube_thumbnail_id)
+end
+
+
+#fakeproducts
+
+#goal:assemble an array of departments with no children
+empty_array = []
+array = Department.all
+array.each do |c|
+  if c.is_childless?
+    empty_array.push(c.id)
+  end
+end
+
+1000.times do |n|
+  product_name = Faker::Commerce.product_name
+  department_id = empty_array.sample
+  youtube_id = "jK7SFNx5mug"
+  youtube_thumbnail_id = "Eqm8r1jXAt8"
+  msrp = Faker::Commerce.price
+  expected = Faker::Commerce.price
+
+  Product.create!(product_name: product_name,
+                  department_id: department_id,
+                  youtube_id: youtube_id,
+                  youtube_thumbnail_id: youtube_thumbnail_id,
+                  msrp: msrp,
+                  expected: expected)
+end
