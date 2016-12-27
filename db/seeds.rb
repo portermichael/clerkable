@@ -80,14 +80,6 @@ department_list = [
   [ "Consoles", "4/23/31", "PUBnqS1qcvk", "lPwlfbeQOBg"],
   [ "Games", "4/23/31", "lN-rVlMIJZs", "lPwlfbeQOBg"],
   [ "Accessories", "4/23/31", "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Uncharted 4", "4/23/31/39", "PUBnqS1qcvk", "lPwlfbeQOBg"],
-  [ "Overwatch", "4/23/31/39", "lN-rVlMIJZs", "lPwlfbeQOBg"],
-  [ "Doom", "4/23/31/39", "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Batman", "4/23/31/39", "PUBnqS1qcvk", "lPwlfbeQOBg"],
-  [ "Little Big Planet", "4/23/31/39", "lN-rVlMIJZs", "lPwlfbeQOBg"],
-  [ "GT Sport", "4/23/31/39", "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Valkyria Chronicles", "4/23/31/39", "PUBnqS1qcvk", "lPwlfbeQOBg"],
-  [ "No Man's Sky", "4/23/31/39", "lN-rVlMIJZs", "lPwlfbeQOBg"],
 
 ]
 
@@ -158,26 +150,78 @@ end
 #fakeproducts
 
 #goal:assemble an array of departments with no children
-empty_array = []
-array = Department.all
-array.each do |c|
+no_kids = []
+departments = Department.all
+departments.each do |c|
   if c.is_childless?
-    empty_array.push(c.id)
+    no_kids.push(c.id)
   end
 end
 
 1000.times do |n|
   product_name = Faker::Commerce.product_name
-  department_id = empty_array.sample
+  department_id = no_kids.sample
   youtube_id = "jK7SFNx5mug"
   youtube_thumbnail_id = "Eqm8r1jXAt8"
   msrp = Faker::Commerce.price
   expected = Faker::Commerce.price
+  first_seller = "Amazon"
+  first_price = Faker::Commerce.price
+  second_seller = "Walmart"
+  second_price = Faker::Commerce.price
 
   Product.create!(product_name: product_name,
                   department_id: department_id,
                   youtube_id: youtube_id,
                   youtube_thumbnail_id: youtube_thumbnail_id,
                   msrp: msrp,
-                  expected: expected)
+                  expected: expected,
+                  first_seller: first_seller,
+                  first_price: first_price,
+                  second_seller: second_seller,
+                  second_price: second_price)
 end
+
+#fakerelationships
+kids = []
+departments.each do |c|
+  unless c.is_childless?
+    kids.push(c.id)
+  end
+end
+
+no_roots = []
+departments.each do |c|
+  unless c.is_root?
+    no_roots.push(c.id)
+  end
+end
+#we might get relationship duplicates, but it shouldn't be a big problem. solve by pre-creating hash
+#removing dups - how? I could check duplicates in each array value of hash, and compare them to eachother?
+# I want to go through each element pair and compare the element pairs to eachother - I could isolate each duplicate
+#on one array and compare a shorter list
+# and doing .each do to whatever is left in the array and assigning data accordingly
+d = Hash.new
+f = Hash.new
+400.times do |n|
+  d = { :department_id => kids.sample, :follower_id => no_roots.sample }
+end
+dept_array = []
+dept_array.push(d)
+#i have a hash with 400 key value pairs, now i need to check dups
+
+
+dept_array.uniq { |a_dept| [a_dept[:department_id], a_dept[:follower_id] ] }
+
+dept_array.each do |n, k|
+
+#4000.times do |n|
+#  department_id = kids.sample
+#  follower_id = no_roots.sample.id
+  user_id = 1
+
+  Relationship.create!(department_id: n,
+                       follower_id: k,
+                       user_id: user_id)
+end
+
