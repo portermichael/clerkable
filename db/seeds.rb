@@ -183,13 +183,16 @@ end
 end
 
 #fakerelationships
+#use departments that have children, so we aren't adding children
+#to departments that have products
 kids = []
 departments.each do |c|
-  unless c.is_childless?
+  if c.has_children?
     kids.push(c.id)
   end
 end
-
+#use departments that aren't root, because I don't want root following
+#a department
 no_roots = []
 departments.each do |c|
   unless c.is_root?
@@ -201,27 +204,24 @@ end
 # I want to go through each element pair and compare the element pairs to eachother - I could isolate each duplicate
 #on one array and compare a shorter list
 # and doing .each do to whatever is left in the array and assigning data accordingly
-d = Hash.new
-f = Hash.new
-400.times do |n|
-  d = { :department_id => kids.sample, :follower_id => no_roots.sample }
-end
+d = {}
 dept_array = []
-dept_array.push(d)
+20.times do |n|
+  d = { :department_id => kids.sample, :follower_id => no_roots.sample }
+  dept_array.push(d)
+end
 #i have a hash with 400 key value pairs, now i need to check dups
 
 
-dept_array.uniq { |a_dept| [a_dept[:department_id], a_dept[:follower_id] ] }
+dept_array.uniq! { |a_dept| [a_dept[:department_id], a_dept[:follower_id] ] }
 
-dept_array.each do |n, k|
-
-#4000.times do |n|
-#  department_id = kids.sample
-#  follower_id = no_roots.sample.id
+dept_array.each do |dept|
+  department_id = dept[:department_id]
+  follower_id = dept[:follower_id]
   user_id = 1
 
-  Relationship.create!(department_id: n,
-                       follower_id: k,
+  Relationship.create!(department_id: department_id,
+                       follower_id: follower_id,
                        user_id: user_id)
 end
 
