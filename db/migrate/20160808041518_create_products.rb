@@ -3,6 +3,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :product_name
       t.references :department, index: true, foreign_key: true
+      t.references :user, index:true, foreign_key: true
       t.string :youtube_id
       t.string :youtube_thumbnail_id
       t.decimal :msrp

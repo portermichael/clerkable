@@ -1,0 +1,2 @@
+class GlancesController < ApplicationController
+end
