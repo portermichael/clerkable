@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122061916) do
+ActiveRecord::Schema.define(version: 20161229020224) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "department_name"
@@ -43,9 +43,21 @@ ActiveRecord::Schema.define(version: 20161122061916) do
   add_index "departments", ["id"], name: "index_departments_on_id"
   add_index "departments", ["user_id"], name: "index_departments_on_user_id"
 
+  create_table "glances", force: :cascade do |t|
+    t.string   "glance_name"
+    t.integer  "department_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "glances", ["department_id"], name: "index_glances_on_department_id"
+  add_index "glances", ["user_id"], name: "index_glances_on_user_id"
+
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.integer  "department_id"
+    t.integer  "user_id"
     t.string   "youtube_id"
     t.string   "youtube_thumbnail_id"
     t.decimal  "msrp"
@@ -59,7 +71,6 @@ ActiveRecord::Schema.define(version: 20161122061916) do
     t.string   "third_seller"
     t.decimal  "third_price"
     t.string   "third_link"
-    t.integer  "user_id"
     t.string   "fourth_seller"
     t.decimal  "fourth_price"
     t.string   "fourth_link"
@@ -89,6 +100,7 @@ ActiveRecord::Schema.define(version: 20161122061916) do
   add_index "products", ["department_id"], name: "index_products_on_department_id"
   add_index "products", ["id", "department_id"], name: "index_products_on_id_and_department_id"
   add_index "products", ["id"], name: "index_products_on_id"
+  add_index "products", ["user_id"], name: "index_products_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "department_id"

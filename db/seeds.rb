@@ -46,7 +46,7 @@ department_first_list = [
   [ "Video Games", "4", "PUBnqS1qcvk", "lPwlfbeQOBg"],
   [ "BoardGames", "4", "lN-rVlMIJZs", "lPwlfbeQOBg"],
   [ "Live Games", "4", "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Streaming Devices", "5", "PUBnqS1qcvk", "lPwlfbeQOBg", "User Interface", "Computing Power", "Value", "Style", "Max Resolution", "Stores", "Headphone Jack", "Remote", "Video", "Audio", "Weight", "Size", "Color", "Networking", "Screen Mirror"],
+  [ "Streaming Devices", "5", "PUBnqS1qcvk", "lPwlfbeQOBg"],
   [ "Home Audio", "5", "lN-rVlMIJZs", "lPwlfbeQOBg"],
   [ "Camera and Photo", "5", "BzmFbfCEv9k", "lPwlfbeQOBg"],
   [ "Cell Phones", "5", "PUBnqS1qcvk", "lPwlfbeQOBg"],
@@ -54,8 +54,8 @@ department_first_list = [
 
   ]
 
-department_first_list.each do |name, ancestry, youtube_id, youtube_thumbnail_id, first_glance_name, second_glance_name, third_glance_name, fourth_glance_name, fifth_glance_name, first_feature_name, second_feature_name, third_feature_name, fourth_feature_name, fifth_feature_name, first_spec_name, second_spec_name, third_spec_name, fourth_spec_name, fifth_spec_name |
-  Department.create( department_name: name, ancestry: ancestry, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, first_glance_name: first_glance_name, second_glance_name: second_glance_name, third_glance_name: third_glance_name, fourth_glance_name: fourth_glance_name, fifth_glance_name: fifth_glance_name, first_feature_name: first_feature_name, second_feature_name: second_feature_name, third_feature_name: third_feature_name, fourth_feature_name: fourth_feature_name, fifth_feature_name: fifth_feature_name, first_spec_name: first_spec_name, second_spec_name: second_spec_name, third_spec_name: third_spec_name, fourth_spec_name: fourth_spec_name, fifth_spec_name: fifth_spec_name)
+department_first_list.each do |name, ancestry, youtube_id, youtube_thumbnail_id |
+  Department.create( department_name: name, ancestry: ancestry, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id)
 end
 
 department_second_list = [
@@ -89,19 +89,18 @@ end
 
 product_list = [
 
-  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 39.99, 35.99, 'Amazon', 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Target", 35.99, "#", "RadioSh", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "High Quality, Voice Search, Mobile App, Headphone Jack, Connect on the Go"],
-  [ "Roku 2", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 45.99, 'Amazon', 45.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "Great Price Point, Mobile App, Connect on the Go"],
-  [ "Apple TV", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 50.01, 50.01, 'Amazon', 50.01, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "High Quality"],
-  [ "Roku 4", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 9930.09, 30.09, 'Amazon', 30.09, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "Highest End Device, 4K Content!, Lost Remote Finder, Headphone Jack, Voice Search"],
-  [ "Nvidia Shield", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 25.99, 25.99, 'Amazon', 25.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 9930.09, "#", "Radio", 9930.09, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "High End Product, Great for Gaming"],
-  [ "Roku 1", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 49.99, 'Amazon', 49.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "Great Price Point, Mobile App, Connect on the Go"],
-  [ "Google Whatever", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 22.99, 22.99, 'Amazon', 22.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "Good Price Point"],
-  [ "Amazon Fire", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 14.99, 14.99, 'Amazon', 14.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "Good Price Point"],
-
+  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 39.99, 35.99],  
+  [ "Roku 2", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 45.99],
+  [ "Apple TV", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 50.01, 50.01],  
+  [ "Roku 4", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 9930.09, 30.09],
+  [ "Nvidia Shield", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 25.99, 25.99], 
+  [ "Roku 1", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 49.99],
+  [ "Google Whatever", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 22.99, 22.99],
+  [ "Amazon Fire", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 14.99, 14.99],
 ]
 
-product_list.each do |product_name, department_id, youtube_id, youtube_thumbnail_id, msrp, expected, first_seller, first_price, first_link, second_seller, second_price, second_link, third_seller, third_price, third_link, fourth_seller, fourth_price, fourth_link, fifth_seller, fifth_price, fifth_link, first_glance, second_glance, third_glance, fourth_glance, fifth_glance, first_feature, second_feature, third_feature, fourth_feature, fifth_feature, first_spec, second_spec, third_spec, fourth_spec, fifth_spec, benefits|
-  Product.create( product_name: product_name, department_id: department_id, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, msrp: msrp, expected: expected, first_seller: first_seller, first_price: first_price, first_link: first_link, second_seller: second_seller, second_price: second_price, second_link: second_link, third_seller: third_seller, third_price: third_price, third_link: third_link, fourth_seller: fourth_seller, fourth_price: fourth_price, fourth_link: fourth_link, fifth_seller: fifth_seller, fifth_price: fifth_price, fifth_link: fifth_link, first_glance: first_glance, second_glance: second_glance, third_glance: third_glance, fourth_glance: fourth_glance, fifth_glance: fifth_glance, first_feature: first_feature, second_feature: second_feature, third_feature: third_feature, fourth_feature: fourth_feature, fifth_feature: fifth_feature, first_spec: first_spec, second_spec: second_spec, third_spec: third_spec, fourth_spec: fourth_spec, fifth_spec: fifth_spec, benefits: benefits)
+product_list.each do |product_name, department_id, youtube_id, youtube_thumbnail_id, msrp, expected |
+  Product.create( product_name: product_name, department_id: department_id, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, msrp: msrp, expected: expected)
 end
 
 relationship_list = [
@@ -119,9 +118,8 @@ relationship_list.each do |department_id, follower_id, user_id |
   Relationship.create( department_id: department_id, follower_id: follower_id, user_id: user_id )
 end
 
-#faker
+#faker - Let's make fake databases of everything!
 #fakeusers
-
 99.times do |n|
   user_name  = Faker::Name.name
   email = Faker::Internet.unique.email
@@ -131,25 +129,24 @@ end
                password:              password,
                password_confirmation: password)
 end
-
+users = User.all
 #fakedepartments
-
 25.times do |n|
   department_name = Faker::Commerce.unique.department
   ancestry = Faker::Number.between(1,10)
   youtube_id = "jK7SFNx5mug"
   youtube_thumbnail_id = "Eqm8r1jXAt8"
+  user_id = users.sample
 
   Department.create!(department_name: department_name,
                      ancestry: ancestry,
                      youtube_id: youtube_id,
-                     youtube_thumbnail_id: youtube_thumbnail_id)
+                     youtube_thumbnail_id: youtube_thumbnail_id,
+                     user_id: user_id)
 end
 
-
-#fakeproducts
-
-#goal:assemble an array of departments with no children
+#assemble an array of departments with no children
+#these are the departments that should have products
 no_kids = []
 departments = Department.all
 departments.each do |c|
@@ -158,63 +155,139 @@ departments.each do |c|
   end
 end
 
+#fakecritics - these are the people who evaluate a group of product based on whatever(x) merits
+#i could work this into user, but they need their own individual videos
+50.times do |n|
+  department_id = no_kids.sample
+  user_id = users.sample
+  youtube_id = "jK7SFNx5mug"
+
+  Critic.create!(department_id: department_id,
+                 user_id: user_id,
+                 youtube_id: youtube_id)
+end
+
+critics = Critic.all
+5.times do |n|
+  critics.each do |k|
+    critic_id = k.id
+    user_id = k.user_id
+    glance_name = Faker::Pokemon.location
+    feature_name = Faker::Pokemon.location
+    spec_name = Faker::Pokemon.location
+    concern_name = Faker::Pokemon.location
+
+    Glance_name.create!(critic_id: critic_id,
+                        user_id: user_id,
+                        glance_name: glance_name)
+    Feature_name.create!(critic_id: critic_id,
+                        user_id: user_id,
+                        feature_name: feature_name)
+    Spec_name.create!(critic_id: critic_id,
+                        user_id: user_id,
+                        spec_name: spec_name)
+    Concern_name.create!(critic_id: critic_id,
+                        user_id: user_id,
+                        concern_name: concern_name)
+  end
+end
+
+#fakeproducts
 1000.times do |n|
   product_name = Faker::Commerce.product_name
   department_id = no_kids.sample
+  user_id = users.sample
   youtube_id = "jK7SFNx5mug"
   youtube_thumbnail_id = "Eqm8r1jXAt8"
   msrp = Faker::Commerce.price
   expected = Faker::Commerce.price
-  first_seller = "Amazon"
-  first_price = Faker::Commerce.price
-  second_seller = "Walmart"
-  second_price = Faker::Commerce.price
 
   Product.create!(product_name: product_name,
                   department_id: department_id,
+                  user_id: user_id,
                   youtube_id: youtube_id,
                   youtube_thumbnail_id: youtube_thumbnail_id,
                   msrp: msrp,
-                  expected: expected,
-                  first_seller: first_seller,
-                  first_price: first_price,
-                  second_seller: second_seller,
-                  second_price: second_price)
+                  expected: expected)
 end
 
-#fakerelationships
-#use departments that have children, so we aren't adding children
-#to departments that have products
+Product.each do |n|
+  product_id = n.id
+  critic_id = critics.sample
+  user_id = 1
+  youtube_id = "jK7SFNx5mug"
+
+  Review.create!(product_id: product_id,
+                 critic_id: critic_id,
+                 user_id: user_id,
+                 youtube_id: youtube_id)
+end
+
+reviews = Review.all
+
+5.times do |n|
+  reviews.each do |k|
+    review_id = k.id
+    user_id = k.user_id
+    glance = Faker::Pokemon.name
+    feature = Faker::Pokemon.name
+    spec = Faker::Pokemon.name
+    concern = Faker::Pokemon.name
+
+    Glance.create!(review_id: review_id,
+                   glance_content: glance_name,
+                   user_id: user_id)
+    Feature.create!(review_id: review_id,
+                    feature: feature,
+                    user_id: user_id)
+    Spec.create!(review_id: review_id,
+                 spec: spec,
+                 user_id: user_id)
+    Concern.create!(review_id: review_id,
+                    concern: concern,
+                    user_id: user_id)
+  end
+end
+#fake relationships
+#assemble an array of departments that have children
+#we aren't adding children to departments that have products
+#the app should also function wide, rather than deep, this helps that idea
 kids = []
 departments.each do |c|
   if c.has_children?
     kids.push(c.id)
   end
 end
-#use departments that aren't root, because I don't want root following
-#a department
+
+#assemble an array of departments that aren't root
+#we don't want root following a department
 no_roots = []
 departments.each do |c|
   unless c.is_root?
     no_roots.push(c.id)
   end
 end
-#we might get relationship duplicates, but it shouldn't be a big problem. solve by pre-creating hash
-#removing dups - how? I could check duplicates in each array value of hash, and compare them to eachother?
-# I want to go through each element pair and compare the element pairs to eachother - I could isolate each duplicate
-#on one array and compare a shorter list
-# and doing .each do to whatever is left in the array and assigning data accordingly
+
+#Create an array of dictionaries. The dictionary is a pair of key value pairs, kids(depts with kids) and no_roots
+#(depts that aren't root)
 d = {}
 dept_array = []
 20.times do |n|
   d = { :department_id => kids.sample, :follower_id => no_roots.sample }
   dept_array.push(d)
 end
-#i have a hash with 400 key value pairs, now i need to check dups
 
+#Might get relationship duplicates, which are invalid. uniq removes duplicates in an array. I have 50 departments.
+#removing dups - pass block that compares dept_id and follower_id to all other dept and follower_ids and removes dups
+#this isn't working for some reason...
+
+#work on this, don't remember the logic behind it
 
 dept_array.uniq! { |a_dept| [a_dept[:department_id], a_dept[:follower_id] ] }
 
+#iterate over each array and create department and follower
+
+#work on this, don't remember the logic behind it
 dept_array.each do |dept|
   department_id = dept[:department_id]
   follower_id = dept[:follower_id]
@@ -223,5 +296,47 @@ dept_array.each do |dept|
   Relationship.create!(department_id: department_id,
                        follower_id: follower_id,
                        user_id: user_id)
+end
+
+
+#fakeaddresses
+#create a primary and secondary address for mailing
+
+
+#should consider billing address
+users.each do |n|
+  user_id = n.id
+  status = 1
+  address_name = "home"
+  street = Faker::Address.street_address
+  city = Faker::Address.city
+  state = Faker::Address.state
+  zip_code = Faker::Address.zip
+
+  Address.create!(user_id: user_id,
+                  status: status,
+                  address_name: address_name,
+                  street: street,
+                  city: city,
+                  state: state,
+                  zip_code: zip_code)
+end
+
+users.each do |n|
+  user_id = n.id
+  status = 2
+  name = "Mom's House"
+  street = Faker::Address.street_address
+  city = Faker::Address.city
+  state = Faker::Address.state
+  zip_code = Faker::Address.zip
+
+  Address.create!(user_id: user_id,
+                  status: status,
+                  address_name: address_name,
+                  street: street,
+                  city: city,
+                  state: state,
+                  zip_code: zip_code)
 end
 

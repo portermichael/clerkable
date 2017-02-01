@@ -1,0 +1,2 @@
+class ConcernNamesController < ApplicationController
+end
