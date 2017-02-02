@@ -340,3 +340,132 @@ users.each do |n|
                   zip_code: zip_code)
 end
 
+users.each do |n|
+  user_id = n.id
+  status = 2
+  name = "Grandma's House"
+  street = Faker::Address.street_address
+  city = Faker::Address.city
+  state = Faker::Address.state
+  zip_code = Faker::Address.zip
+
+  Address.create!(user_id: user_id,
+                  status: status,
+                  address_name: address_name,
+                  street: street,
+                  city: city,
+                  state: state,
+                  zip_code: zip_code)
+end
+
+addresses = User.find(params[:id]).addresses
+
+users.each do |n|
+  user_id = n.id
+  status = 1
+  ordered_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
+  prepared_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
+  received_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
+  address_id = addresses.first.id
+  address_name = addresses.first.address_name
+  street = addresses.first.street
+  city = addresses.first.city
+  zip_code = addresses.first.zip_code
+  pretotal = Faker::Commerce.price
+  tax = Faker::Commerce.price
+  total = pretotal + tax
+
+
+  Order.create!(user_id: user_id,
+                status: status,
+                ordered_date: order_date,
+                prepared_date: prepared_date,
+                received_date: received_date,
+                address_id: address_id,
+                address_name: address_name,
+                street: street,
+                city: city,
+                zip_code: zip_code,
+                pretotal: pretotal,
+                tax: tax,
+                total: total)
+end
+
+users.each do |n|
+  user_id = n.id
+  status = 2
+  ordered_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
+  prepared_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
+  received_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
+  address_id = addresses.first.id
+  address_name = addresses.first.address_name
+  street = addresses.first.street
+  city = addresses.first.city
+  zip_code = addresses.first.zip_code
+  pretotal = Faker::Commerce.price
+  tax = Faker::Commerce.price
+  total = pretotal + tax
+
+
+  Order.create!(user_id: user_id,
+                status: status,
+                ordered_date: order_date,
+                prepared_date: prepared_date,
+                received_date: received_date,
+                address_id: address_id,
+                address_name: address_name,
+                street: street,
+                city: city,
+                zip_code: zip_code,
+                pretotal: pretotal,
+                tax: tax,
+                total: total)
+end
+
+orders = Order.all
+products = Product.all
+
+
+3.times do |n|
+  orders.each do |k|
+    order_id = k.id
+    product_id = products.sample
+    price = Faker::Commerce.price
+    
+    Ordered_product.create!(order_id: order_id,
+                            product_id: product_id,
+                            price: price)
+  end
+end
+
+users.each do |n|
+  user_id = n.id
+  count = Faker::Number.between(1, 10)
+  status = 1
+
+  Cart.create!(user_id: user_id,
+               count: count,
+               status: status)
+end
+
+users.each do |n|
+  user_id = n.id
+  count = Faker::Number.between(1, 10)
+  status = 2
+
+  Cart.create!(user_id: user_id,
+               count: count,
+               status: status)
+end
+
+carts = Cart.all
+
+3.times do |n|
+  carts.each do |k|
+    cart_id = k.id
+    product_id = products.sample
+
+    Carted_product.create!(cart_id: cart_id,
+                           product_id: product_id)
+  end
+end
