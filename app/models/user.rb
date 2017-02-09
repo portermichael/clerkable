@@ -12,11 +12,8 @@ class User < ActiveRecord::Base
   has_many :features
   has_many :concerns
   has_many :spec_names
-
   has_many :addresses
-
   has_many :orders
-
   has_one :cart
 
 

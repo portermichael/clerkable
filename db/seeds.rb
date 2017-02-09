@@ -157,46 +157,59 @@ end
 
 #fakecritics - these are the people who evaluate a group of product based on whatever(x) merits
 #i could work this into user, but they need their own individual videos
-50.times do |n|
-  department_id = no_kids.sample
-  user_id = users.sample
-  youtube_id = "jK7SFNx5mug"
 
-  Critic.create!(department_id: department_id,
-                 user_id: user_id,
-                 youtube_id: youtube_id)
+3.times do |n|
+  no_kids.each do |k|
+    no_kid = Department.find(k)
+    department_id = no_kid.id
+    user_id = users.ids.sample
+    youtube_id = "jK7SFNx5mug"
+
+    Critic.create!(department_id: department_id,
+                   user_id: user_id,
+                   youtube_id: youtube_id)
+  end
 end
 
 critics = Critic.all
 5.times do |n|
   critics.each do |k|
-    critic_id = k.id
-    user_id = k.user_id
+    critic = Critic.find(k)
+    critic_id = critic.id
+    user_id = critic.user_id
     glance_name = Faker::Pokemon.location
     feature_name = Faker::Pokemon.location
     spec_name = Faker::Pokemon.location
     concern_name = Faker::Pokemon.location
+    question_content = Faker::Zelda.game
 
-    Glance_name.create!(critic_id: critic_id,
+    GlanceName.create!(critic_id: critic_id,
                         user_id: user_id,
                         glance_name: glance_name)
-    Feature_name.create!(critic_id: critic_id,
+    FeatureName.create!(critic_id: critic_id,
                         user_id: user_id,
                         feature_name: feature_name)
-    Spec_name.create!(critic_id: critic_id,
+    SpecName.create!(critic_id: critic_id,
                         user_id: user_id,
                         spec_name: spec_name)
-    Concern_name.create!(critic_id: critic_id,
+    ConcernName.create!(critic_id: critic_id,
                         user_id: user_id,
                         concern_name: concern_name)
+    Question.create!(critic_id: critic_id,
+                     question_content: question_content)
+    3.times do |z|
+      answer_content = Faker::Zelda.character
+      Answer.create!(critic_id: critic_id,
+                     answer_content: answer_content)
+    end
   end
 end
 
 #fakeproducts
-1000.times do |n|
+100.times do |n|
   product_name = Faker::Commerce.product_name
   department_id = no_kids.sample
-  user_id = users.sample
+  user_id = users.ids.sample
   youtube_id = "jK7SFNx5mug"
   youtube_thumbnail_id = "Eqm8r1jXAt8"
   msrp = Faker::Commerce.price
@@ -211,9 +224,11 @@ end
                   expected: expected)
 end
 
-Product.each do |n|
-  product_id = n.id
-  critic_id = critics.sample
+products = Product.all
+products.each do |n|
+  product = Product.find(n)
+  product_id = product.id
+  critic_id = critics.ids.sample
   user_id = 1
   youtube_id = "jK7SFNx5mug"
 
@@ -227,24 +242,25 @@ reviews = Review.all
 
 5.times do |n|
   reviews.each do |k|
-    review_id = k.id
-    user_id = k.user_id
-    glance = Faker::Pokemon.name
-    feature = Faker::Pokemon.name
-    spec = Faker::Pokemon.name
-    concern = Faker::Pokemon.name
+    review = Review.find(k)
+    review_id = review.id
+    user_id = review.user_id
+    glance_content = Faker::Pokemon.name
+    feature_content = Faker::Pokemon.name
+    spec_content = Faker::Pokemon.name
+    concern_content = Faker::Pokemon.name
 
     Glance.create!(review_id: review_id,
-                   glance_content: glance_name,
+                   glance_content: glance_content,
                    user_id: user_id)
     Feature.create!(review_id: review_id,
-                    feature: feature,
+                    feature_content: feature_content,
                     user_id: user_id)
     Spec.create!(review_id: review_id,
-                 spec: spec,
+                 spec_content: spec_content,
                  user_id: user_id)
     Concern.create!(review_id: review_id,
-                    concern: concern,
+                    concern_content: concern_content,
                     user_id: user_id)
   end
 end
@@ -302,10 +318,9 @@ end
 #fakeaddresses
 #create a primary and secondary address for mailing
 
-
-#should consider billing address
 users.each do |n|
-  user_id = n.id
+  user = User.find(n)
+  user_id = user.id
   status = 1
   address_name = "home"
   street = Faker::Address.street_address
@@ -323,7 +338,8 @@ users.each do |n|
 end
 
 users.each do |n|
-  user_id = n.id
+  user = User.find(n)
+  user_id = user.id
   status = 2
   name = "Mom's House"
   street = Faker::Address.street_address
@@ -341,7 +357,8 @@ users.each do |n|
 end
 
 users.each do |n|
-  user_id = n.id
+  user = User.find(n)
+  user_id = user.id
   status = 2
   name = "Grandma's House"
   street = Faker::Address.street_address
@@ -358,15 +375,15 @@ users.each do |n|
                   zip_code: zip_code)
 end
 
-addresses = User.find(params[:id]).addresses
-
 users.each do |n|
-  user_id = n.id
+  user = User.find(n)
+  user_id = user.id
+  addresses = User.find(n).addresses
   status = 1
-  ordered_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
-  prepared_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
+  ordered_date = Faker::Time.between(DateTime.now - 4, DateTime.now - 3)
+  prepared_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
+  shipped_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
   received_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
-  address_id = addresses.first.id
   address_name = addresses.first.address_name
   street = addresses.first.street
   city = addresses.first.city
@@ -380,8 +397,8 @@ users.each do |n|
                 status: status,
                 ordered_date: order_date,
                 prepared_date: prepared_date,
+                shipped_date: shipped_date,
                 received_date: received_date,
-                address_id: address_id,
                 address_name: address_name,
                 street: street,
                 city: city,
@@ -392,12 +409,14 @@ users.each do |n|
 end
 
 users.each do |n|
-  user_id = n.id
-  status = 2
-  ordered_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
-  prepared_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
+  user = User.find(n)
+  user_id = user.id
+  addresses = User.find(n).addresses
+  status = 1
+  ordered_date = Faker::Time.between(DateTime.now - 4, DateTime.now - 3)
+  prepared_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
+  shipped_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
   received_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
-  address_id = addresses.first.id
   address_name = addresses.first.address_name
   street = addresses.first.street
   city = addresses.first.city
@@ -411,8 +430,8 @@ users.each do |n|
                 status: status,
                 ordered_date: order_date,
                 prepared_date: prepared_date,
+                shipped_date: shipped_date,
                 received_date: received_date,
-                address_id: address_id,
                 address_name: address_name,
                 street: street,
                 city: city,
@@ -428,7 +447,8 @@ products = Product.all
 
 3.times do |n|
   orders.each do |k|
-    order_id = k.id
+    order = Order.find(k)
+    order_id = order.id
     product_id = products.sample
     price = Faker::Commerce.price
     
@@ -439,7 +459,8 @@ products = Product.all
 end
 
 users.each do |n|
-  user_id = n.id
+  user = User.find(n)
+  user_id = user.id
   count = Faker::Number.between(1, 10)
   status = 1
 
@@ -449,7 +470,8 @@ users.each do |n|
 end
 
 users.each do |n|
-  user_id = n.id
+  user = User.find(n)
+  user_id = user.id
   count = Faker::Number.between(1, 10)
   status = 2
 
@@ -462,10 +484,12 @@ carts = Cart.all
 
 3.times do |n|
   carts.each do |k|
-    cart_id = k.id
+    cart = Cart.find(k)
+    cart_id = cart.id
     product_id = products.sample
 
     Carted_product.create!(cart_id: cart_id,
                            product_id: product_id)
   end
 end
+

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :glance_names
   resources :feature_names
   resources :spec_names
-  recourses :concern_names
+  resources :concern_names
   resources :reviews
   resources :glance
   resources :features

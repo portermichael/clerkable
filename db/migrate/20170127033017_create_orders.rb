@@ -7,14 +7,13 @@ class CreateOrders < ActiveRecord::Migration
       t.datetime :prepared_date
       t.datetime :shipped_date
       t.datetime :received_date
-      t.references :address, index:true, foreign_key: true
       t.string :address_name
       t.string :street
       t.string :city
       t.string :state
       t.integer :zip_code
       t.integer :pretotal
-      t.ingeger :tax
+      t.integer :tax
       t.integer :total
 
 

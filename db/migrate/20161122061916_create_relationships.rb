@@ -1,5 +1,8 @@
 class CreateRelationships < ActiveRecord::Migration
   def change
+
+    #Both department_id and follower_id are department_ids.
+    #Department_id is the one that gets followed, follower_id is the one that follows.
     create_table :relationships do |t|
       t.integer :department_id
       t.integer :follower_id
