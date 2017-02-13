@@ -163,9 +163,9 @@ ActiveRecord::Schema.define(version: 20170128205139) do
     t.integer  "user_id"
     t.integer  "status"
     t.datetime "order_date"
-    t.datetime "prepared_date"
-    t.datetime "shipped_date"
-    t.datetime "received_date"
+    t.datetime "prepare_date"
+    t.datetime "ship_date"
+    t.datetime "receive_date"
     t.string   "address_name"
     t.string   "street"
     t.string   "city"
@@ -174,8 +174,8 @@ ActiveRecord::Schema.define(version: 20170128205139) do
     t.integer  "pretotal"
     t.integer  "tax"
     t.integer  "total"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"

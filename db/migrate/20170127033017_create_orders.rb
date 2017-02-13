@@ -4,9 +4,9 @@ class CreateOrders < ActiveRecord::Migration
       t.references :user, index:true, foreign_key: true
       t.integer :status
       t.datetime :order_date
-      t.datetime :prepared_date
-      t.datetime :shipped_date
-      t.datetime :received_date
+      t.datetime :prepare_date
+      t.datetime :ship_date
+      t.datetime :receive_date
       t.string :address_name
       t.string :street
       t.string :city

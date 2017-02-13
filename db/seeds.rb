@@ -341,7 +341,7 @@ users.each do |n|
   user = User.find(n)
   user_id = user.id
   status = 2
-  name = "Mom's House"
+  address_name = "Mom's House"
   street = Faker::Address.street_address
   city = Faker::Address.city
   state = Faker::Address.state
@@ -360,7 +360,7 @@ users.each do |n|
   user = User.find(n)
   user_id = user.id
   status = 2
-  name = "Grandma's House"
+  address_name = "Grandma's House"
   street = Faker::Address.street_address
   city = Faker::Address.city
   state = Faker::Address.state
@@ -374,16 +374,16 @@ users.each do |n|
                   state: state,
                   zip_code: zip_code)
 end
-
+addresses = Address.all
 users.each do |n|
   user = User.find(n)
   user_id = user.id
-  addresses = User.find(n).addresses
+  addresses = user.addresses
   status = 1
-  ordered_date = Faker::Time.between(DateTime.now - 4, DateTime.now - 3)
-  prepared_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
-  shipped_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
-  received_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
+  order_date = Faker::Time.between(DateTime.now - 4, DateTime.now - 3)
+  prepare_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
+  ship_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
+  receive_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
   address_name = addresses.first.address_name
   street = addresses.first.street
   city = addresses.first.city
@@ -395,10 +395,10 @@ users.each do |n|
 
   Order.create!(user_id: user_id,
                 status: status,
-                ordered_date: order_date,
-                prepared_date: prepared_date,
-                shipped_date: shipped_date,
-                received_date: received_date,
+                order_date: order_date,
+                prepare_date: prepare_date,
+                ship_date: ship_date,
+                receive_date: receive_date,
                 address_name: address_name,
                 street: street,
                 city: city,
@@ -413,10 +413,10 @@ users.each do |n|
   user_id = user.id
   addresses = User.find(n).addresses
   status = 1
-  ordered_date = Faker::Time.between(DateTime.now - 4, DateTime.now - 3)
-  prepared_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
-  shipped_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
-  received_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
+  order_date = Faker::Time.between(DateTime.now - 4, DateTime.now - 3)
+  prepare_date = Faker::Time.between(DateTime.now - 3, DateTime.now - 2)
+  ship_date = Faker::Time.between(DateTime.now - 2, DateTime.now - 1)
+  receive_date = Faker::Time.between(DateTime.now - 1, DateTime.now)
   address_name = addresses.first.address_name
   street = addresses.first.street
   city = addresses.first.city
@@ -428,10 +428,10 @@ users.each do |n|
 
   Order.create!(user_id: user_id,
                 status: status,
-                ordered_date: order_date,
-                prepared_date: prepared_date,
-                shipped_date: shipped_date,
-                received_date: received_date,
+                order_date: order_date,
+                prepare_date: prepare_date,
+                ship_date: ship_date,
+                receive_date: receive_date,
                 address_name: address_name,
                 street: street,
                 city: city,
@@ -452,7 +452,7 @@ products = Product.all
     product_id = products.sample
     price = Faker::Commerce.price
     
-    Ordered_product.create!(order_id: order_id,
+    OrderedProduct.create!(order_id: order_id,
                             product_id: product_id,
                             price: price)
   end
@@ -488,7 +488,7 @@ carts = Cart.all
     cart_id = cart.id
     product_id = products.sample
 
-    Carted_product.create!(cart_id: cart_id,
+    CartedProduct.create!(cart_id: cart_id,
                            product_id: product_id)
   end
 end
