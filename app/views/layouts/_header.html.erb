@@ -7,4 +7,16 @@
     <div>
     	<%= link_to "Clerkable", root_path, id: "logo" %>
     </div>
+    <% if logged_in? %>
+	    <div class="mininav">
+ 		   	<%= link_to "Users", users_path %>
+   		 	<%= link_to "Profile", current_user %>
+    		<%= link_to "Log out", logout_path, method: "delete" %>
+    	    <%= link_to "Settings", edit_user_path(current_user) %>
+    	</div>
+    <% else %>
+    	<div class="mininav">
+    		<%= link_to "Log in", login_path %>
+    	<div>
+    <% end %>
 </header>
