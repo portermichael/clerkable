@@ -200,17 +200,13 @@ departments.each do |c|
   end
 end
 #we might get relationship duplicates, but it shouldn't be a big problem. solve by pre-creating hash
-#removing dups - how? I could check duplicates in each array value of hash, and compare them to eachother?
-# I want to go through each element pair and compare the element pairs to eachother - I could isolate each duplicate
-#on one array and compare a shorter list
-# and doing .each do to whatever is left in the array and assigning data accordingly
+#removing dups?
 d = {}
 dept_array = []
 20.times do |n|
   d = { :department_id => kids.sample, :follower_id => no_roots.sample }
   dept_array.push(d)
 end
-#i have a hash with 400 key value pairs, now i need to check dups
 
 
 dept_array.uniq! { |a_dept| [a_dept[:department_id], a_dept[:follower_id] ] }
