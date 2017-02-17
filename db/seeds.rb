@@ -89,7 +89,7 @@ end
 
 product_list = [
 
-  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 39.99, 35.99, 'Amazon', 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Target", 35.99, "#", "RadioSh", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "High Quality, Voice Search, Mobile App, Headphone Jack, Connect on the Go"],
+  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 39.99, 35.99, 'Amazon', 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Target", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Radio", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "BestBuy", 35.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "High Quality, Voice Search, Mobile App, Headphone Jack, Connect on the Go"],
   [ "Roku 2", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 45.99, 'Amazon', 45.99, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "Great Price Point, Mobile App, Connect on the Go"],
   [ "Apple TV", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 50.01, 50.01, 'Amazon', 50.01, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "High Quality"],
   [ "Roku 4", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 9930.09, 30.09, 'Amazon', 30.09, "https://www.amazon.com/Logitech-Wireless-Mouse-Large-Computer/dp/B003NR57BY/ref=lp_11036491_1_1?s=pc&ie=UTF8&qid=1470870088&sr=1-1", "Walmart", 35.99, "#", "Target", 35.99, "#", "Radio", 35.99, "#", "BestBuy", 35.99, "#", "8/10", "7/10", "8/10", "8/10", "1080p", "Amazon", "No", "Remote/Phone", "HDMI", "HDMI/Analog L/R", "3.5oz", "3.7inX3.7inX1.2in", "Black", "802.11", "On Android/Windows", "Highest End Device, 4K Content!, Lost Remote Finder, Headphone Jack, Voice Search"],
@@ -158,29 +158,29 @@ departments.each do |c|
   end
 end
 
-1000.times do |n|
-  product_name = Faker::Commerce.product_name
-  department_id = no_kids.sample
-  youtube_id = "jK7SFNx5mug"
-  youtube_thumbnail_id = "Eqm8r1jXAt8"
-  msrp = Faker::Commerce.price
-  expected = Faker::Commerce.price
-  first_seller = "Amazon"
-  first_price = Faker::Commerce.price
-  second_seller = "Walmart"
-  second_price = Faker::Commerce.price
-
-  Product.create!(product_name: product_name,
-                  department_id: department_id,
-                  youtube_id: youtube_id,
-                  youtube_thumbnail_id: youtube_thumbnail_id,
-                  msrp: msrp,
-                  expected: expected,
-                  first_seller: first_seller,
-                  first_price: first_price,
-                  second_seller: second_seller,
-                  second_price: second_price)
-end
+#1000.times do |n|
+#  product_name = Faker::Commerce.product_name
+#  department_id = no_kids.sample
+#  youtube_id = "jK7SFNx5mug"
+#  youtube_thumbnail_id = "Eqm8r1jXAt8"
+#  msrp = Faker::Commerce.price
+#  expected = Faker::Commerce.price
+#  first_seller = "Amazon"
+#  first_price = Faker::Commerce.price
+#  second_seller = "Walmart"
+#  second_price = Faker::Commerce.price
+#
+#  Product.create!(product_name: product_name,
+#                  department_id: department_id,
+#                  youtube_id: youtube_id,
+#                  youtube_thumbnail_id: youtube_thumbnail_id,
+#                  msrp: msrp,
+#                  expected: expected,
+#                  first_seller: first_seller,
+#                  first_price: first_price,
+#                  second_seller: second_seller,
+#                  second_price: second_price)
+#end
 
 #fakerelationships
 #use departments that have children, so we aren't adding children

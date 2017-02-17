@@ -1,5 +1,4 @@
-Implemented sessions, but not cookies for closing browser and remembering. Also didn't set up password recovery.
+This is a branch from December. It conceptualizes the project. I just tidied up some navigation issues.
 
-also skipped destroying users.
 
-My current plan is to not include creating or destroying users and use it at the command line of the server. So the destroy and create commands are not included. They aren't added in the controllers, but the create views exist. The destroy is not present. Follow ch 10 destroy code.
+The basic idea here is to create a browsable store with videos that highlight products and product reviews.  Right now it just has filler videos and some filler content. Major issues are: cookies aren't enabled, no password recovery, no admin functionality and product features are inflexible. At the time I was fleshing out what it would look like, and how a user might interact with the site.
