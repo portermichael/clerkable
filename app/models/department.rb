@@ -11,7 +11,5 @@ class Department < ActiveRecord::Base
 	validates :department_name, presence: true;
 	validates :youtube_id, presence: true;
 	validates :youtube_thumbnail_id, presence: true;
-	#validates :first_glance_name, presence: true;
-	#validates :second_glance_name, presence: true;
-	#validates :third_glance_name, presence: true;
+
 end

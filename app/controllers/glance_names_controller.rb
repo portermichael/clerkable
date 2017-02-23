@@ -1,2 +1,0 @@
-class GlanceNamesController < ApplicationController
-end

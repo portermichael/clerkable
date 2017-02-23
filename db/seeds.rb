@@ -177,24 +177,17 @@ critics = Critic.all
     critic = Critic.find(k)
     critic_id = critic.id
     user_id = critic.user_id
-    glance_name = Faker::Pokemon.location
-    feature_name = Faker::Pokemon.location
-    spec_name = Faker::Pokemon.location
-    concern_name = Faker::Pokemon.location
     question_content = Faker::Zelda.game
 
-    GlanceName.create!(critic_id: critic_id,
-                        user_id: user_id,
-                        glance_name: glance_name)
-    FeatureName.create!(critic_id: critic_id,
-                        user_id: user_id,
-                        feature_name: feature_name)
-    SpecName.create!(critic_id: critic_id,
-                        user_id: user_id,
-                        spec_name: spec_name)
-    ConcernName.create!(critic_id: critic_id,
-                        user_id: user_id,
-                        concern_name: concern_name)
+    (1..4).each do |y|
+      feature_name_type = y
+      feature_name = Faker::Pokemon.location
+      FeatureName.create!(critic_id: critic_id,
+                          feature_name: feature_name,
+                          feature_name_type: feature_name_type,
+                          user_id: user_id)
+    end
+
     Question.create!(critic_id: critic_id,
                      question_content: question_content)
     3.times do |z|
@@ -245,23 +238,16 @@ reviews = Review.all
     review = Review.find(k)
     review_id = review.id
     user_id = review.user_id
-    glance_content = Faker::Pokemon.name
-    feature_content = Faker::Pokemon.name
-    spec_content = Faker::Pokemon.name
-    concern_content = Faker::Pokemon.name
 
-    Glance.create!(review_id: review_id,
-                   glance_content: glance_content,
-                   user_id: user_id)
-    Feature.create!(review_id: review_id,
-                    feature_content: feature_content,
-                    user_id: user_id)
-    Spec.create!(review_id: review_id,
-                 spec_content: spec_content,
-                 user_id: user_id)
-    Concern.create!(review_id: review_id,
-                    concern_content: concern_content,
-                    user_id: user_id)
+    (1..4).each do |y|
+      feature_type = y
+      feature_content = Faker::Pokemon.name
+      Feature.create!(review_id: review_id,
+                      feature_content: feature_content,
+                      feature_type: feature_type,
+                      user_id: user_id)
+    end
+
   end
 end
 #fake relationships

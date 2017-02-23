@@ -56,28 +56,6 @@ ActiveRecord::Schema.define(version: 20170128205139) do
 
   add_index "carts", ["user_id"], name: "index_carts_on_user_id"
 
-  create_table "concern_names", force: :cascade do |t|
-    t.string   "concern_name"
-    t.integer  "critic_id"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "concern_names", ["critic_id"], name: "index_concern_names_on_critic_id"
-  add_index "concern_names", ["user_id"], name: "index_concern_names_on_user_id"
-
-  create_table "concerns", force: :cascade do |t|
-    t.integer  "review_id"
-    t.string   "concern_content"
-    t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  add_index "concerns", ["review_id"], name: "index_concerns_on_review_id"
-  add_index "concerns", ["user_id"], name: "index_concerns_on_user_id"
-
   create_table "critics", force: :cascade do |t|
     t.integer  "department_id"
     t.integer  "user_id"
@@ -105,11 +83,12 @@ ActiveRecord::Schema.define(version: 20170128205139) do
   add_index "departments", ["user_id"], name: "index_departments_on_user_id"
 
   create_table "feature_names", force: :cascade do |t|
-    t.string   "feature_name"
     t.integer  "critic_id"
+    t.string   "feature_name"
+    t.integer  "feature_name_type"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "feature_names", ["critic_id"], name: "index_feature_names_on_critic_id"
@@ -118,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170128205139) do
   create_table "features", force: :cascade do |t|
     t.integer  "review_id"
     t.string   "feature_content"
+    t.integer  "feature_type"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -125,28 +105,6 @@ ActiveRecord::Schema.define(version: 20170128205139) do
 
   add_index "features", ["review_id"], name: "index_features_on_review_id"
   add_index "features", ["user_id"], name: "index_features_on_user_id"
-
-  create_table "glance_names", force: :cascade do |t|
-    t.integer  "critic_id"
-    t.integer  "user_id"
-    t.string   "glance_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "glance_names", ["critic_id"], name: "index_glance_names_on_critic_id"
-  add_index "glance_names", ["user_id"], name: "index_glance_names_on_user_id"
-
-  create_table "glances", force: :cascade do |t|
-    t.integer  "review_id"
-    t.string   "glance_content"
-    t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "glances", ["review_id"], name: "index_glances_on_review_id"
-  add_index "glances", ["user_id"], name: "index_glances_on_user_id"
 
   create_table "ordered_products", force: :cascade do |t|
     t.integer  "order_id"
@@ -231,28 +189,6 @@ ActiveRecord::Schema.define(version: 20170128205139) do
   add_index "reviews", ["critic_id"], name: "index_reviews_on_critic_id"
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
-
-  create_table "spec_names", force: :cascade do |t|
-    t.string   "spec_name"
-    t.integer  "critic_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "spec_names", ["critic_id"], name: "index_spec_names_on_critic_id"
-  add_index "spec_names", ["user_id"], name: "index_spec_names_on_user_id"
-
-  create_table "specs", force: :cascade do |t|
-    t.integer  "review_id"
-    t.string   "spec_content"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "specs", ["review_id"], name: "index_specs_on_review_id"
-  add_index "specs", ["user_id"], name: "index_specs_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"

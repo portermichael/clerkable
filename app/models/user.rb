@@ -4,14 +4,8 @@ class User < ActiveRecord::Base
 	has_many :products, dependent: :destroy
   has_many :relationships
   has_many :critics
-  has_many :glance_names
   has_many :feature_names
-  has_many :spec_names
-  has_many :concern_names
-  has_many :glances
   has_many :features
-  has_many :concerns
-  has_many :spec_names
   has_many :addresses
   has_many :orders
   has_one :cart

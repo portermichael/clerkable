@@ -1,2 +1,0 @@
-class ConcernsController < ApplicationController
-end

@@ -1,2 +1,0 @@
-class ConcernNamesController < ApplicationController
-end

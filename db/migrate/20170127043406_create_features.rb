@@ -3,6 +3,7 @@ class CreateFeatures < ActiveRecord::Migration
     create_table :features do |t|
       t.references :review, index:true, foreign_key: true
       t.string :feature_content
+      t.integer :feature_type
       t.references :user, index:true, foreign_key: true
 
       t.timestamps null: false
