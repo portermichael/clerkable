@@ -2,7 +2,7 @@ class RelationshipsController < ApplicationController
   before_action :logged_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-  	@relationships = Relationship.all
+  	@relationships = Relationship.paginate(page: params[:page], per_page: 30)
   end
   
   def new
@@ -26,7 +26,7 @@ class RelationshipsController < ApplicationController
   def update
   	  @relationship = Relationship.find(params[:id])
     if @relationship.update_attributes(relationship_params)
-      flash[:success] = "Product updated"
+      flash[:success] = "Relationship updated"
       redirect_to action: "index"
     else
       render 'edit'
