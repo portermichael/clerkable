@@ -142,7 +142,6 @@ ActiveRecord::Schema.define(version: 20170128205139) do
     t.string   "product_name"
     t.integer  "department_id"
     t.integer  "user_id"
-    t.string   "youtube_id"
     t.string   "youtube_thumbnail_id"
     t.decimal  "msrp"
     t.decimal  "expected"
@@ -191,14 +190,17 @@ ActiveRecord::Schema.define(version: 20170128205139) do
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "user_name"
     t.string   "email"
+    t.integer  "admin"
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.string   "user_name"
+    t.string   "critic_name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["id"], name: "index_users_on_id"
 
 end

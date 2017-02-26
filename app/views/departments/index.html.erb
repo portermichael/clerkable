@@ -11,9 +11,11 @@
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %></div>
+      <% cache @video do %>
       <div class="embed-dept-container">
-        <%= embed("Rd8n74XDQUY") %>
+        <%= embed(@video.youtube_id) %>
       </div>
+      <% end %>
     </div>
       <div class="index_room">
         <% @departments.each do |department| %>    

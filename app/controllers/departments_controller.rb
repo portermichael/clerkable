@@ -3,6 +3,7 @@ class DepartmentsController < ApplicationController
 
   def index
     @departments = Department.roots
+    @video = Critic.find(1)
   end
 
   def show
@@ -11,6 +12,7 @@ class DepartmentsController < ApplicationController
     @children = @department.children
     @ancestors = @department.ancestors
     @products = @department.products
+    @critics = @department.critics
     @followers = @department.followers
     @following = @department.following
       respond_to do |format|

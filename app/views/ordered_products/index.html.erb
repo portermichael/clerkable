@@ -1,0 +1,35 @@
+
+<% provide(:title, 'All Relationships') %>
+<style>
+
+</style>
+<div class="page">
+	<div class="content">
+	  <div class="usernav">
+	    <span class="userlink"><%= link_to "Profile", current_user %></span>
+    	<span class="userlink"><%= link_to "Create", new_relationship_path %></span>
+      </div>
+		<div class="indexlocale">
+			<h1>All Relationships</h1>
+			<table>
+				<th>
+					department_id
+				</th>
+				<th>
+					follower_id
+				</th>
+				<% @relationships.each do |relationship| %>
+					<tr>
+						<td>
+							<%= link_to relationship.department_id, edit_relationship_path(relationship)  %>
+						</td>
+						<td>
+							<%= relationship.follower_id %>
+						</td>
+						<td><%= link_to "delete", relationship, method: :delete, data: { confirm: "Delete this?"} %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>

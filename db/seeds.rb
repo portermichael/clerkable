@@ -1,11 +1,11 @@
 user_first_list = [
 
-  [ "bigfoot", "bigfoot@gmail.com", "frogtime", "frogtime"],
+  [ "Michael Porter", "bigfoot@gmail.com", "frogtime", "frogtime", "Mike Porter"],
 
 ]
 
-user_first_list.each do |name, email, password, password_confirmation |
-  User.create( user_name: name, email: email, password: password, password_confirmation: password_confirmation)
+user_first_list.each do |user_name, email, password, password_confirmation, critic_name |
+  User.create( user_name: user_name, email: email, password: password, password_confirmation: password_confirmation, critic_name: critic_name)
 end
 
 #1-10
@@ -89,18 +89,18 @@ end
 
 product_list = [
 
-  [ "Roku 3", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 39.99, 35.99],  
-  [ "Roku 2", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 45.99],
-  [ "Apple TV", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 50.01, 50.01],  
-  [ "Roku 4", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 9930.09, 30.09],
-  [ "Nvidia Shield", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 25.99, 25.99], 
-  [ "Roku 1", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 49.99, 49.99],
-  [ "Google Whatever", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 22.99, 22.99],
-  [ "Amazon Fire", 26, "jK7SFNx5mug", "Eqm8r1jXAt8", 14.99, 14.99],
+  [ "Roku 3", 26, "Eqm8r1jXAt8", 39.99, 35.99],  
+  [ "Roku 2", 26, "Eqm8r1jXAt8", 49.99, 45.99],
+  [ "Apple TV", 26, "Eqm8r1jXAt8", 50.01, 50.01],  
+  [ "Roku 4", 26, "Eqm8r1jXAt8", 9930.09, 30.09],
+  [ "Nvidia Shield", 26, "Eqm8r1jXAt8", 25.99, 25.99], 
+  [ "Roku 1", 26, "Eqm8r1jXAt8", 49.99, 49.99],
+  [ "Google Whatever", 26, "Eqm8r1jXAt8", 22.99, 22.99],
+  [ "Amazon Fire", 26, "Eqm8r1jXAt8", 14.99, 14.99],
 ]
 
-product_list.each do |product_name, department_id, youtube_id, youtube_thumbnail_id, msrp, expected |
-  Product.create( product_name: product_name, department_id: department_id, youtube_id: youtube_id, youtube_thumbnail_id: youtube_thumbnail_id, msrp: msrp, expected: expected)
+product_list.each do |product_name, department_id, youtube_thumbnail_id, msrp, expected |
+  Product.create( product_name: product_name, department_id: department_id, youtube_thumbnail_id: youtube_thumbnail_id, msrp: msrp, expected: expected)
 end
 
 relationship_list = [
@@ -124,10 +124,12 @@ end
   user_name  = Faker::Name.name
   email = Faker::Internet.unique.email
   password = "password"
+  critic_name = Faker::Name.title
   User.create!(user_name:  user_name,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               critic_name: critic_name)
 end
 users = User.all
 #fakedepartments
@@ -157,6 +159,19 @@ end
 
 #fakecritics - these are the people who evaluate a group of product based on whatever(x) merits
 #i could work this into user, but they need their own individual videos
+
+critic_first_list = [
+
+  [ 1, 1, "Rd8n74XDQUY"],
+
+]
+
+user_first_list.each do |department_id, user_id, youtube_id |
+  Critic.create( department_id: department_id, 
+                user_id: user_id, 
+                youtube_id: youtube_id)
+end
+
 
 3.times do |n|
   no_kids.each do |k|
@@ -203,7 +218,6 @@ end
   product_name = Faker::Commerce.product_name
   department_id = no_kids.sample
   user_id = users.ids.sample
-  youtube_id = "jK7SFNx5mug"
   youtube_thumbnail_id = "Eqm8r1jXAt8"
   msrp = Faker::Commerce.price
   expected = Faker::Commerce.price
@@ -211,7 +225,6 @@ end
   Product.create!(product_name: product_name,
                   department_id: department_id,
                   user_id: user_id,
-                  youtube_id: youtube_id,
                   youtube_thumbnail_id: youtube_thumbnail_id,
                   msrp: msrp,
                   expected: expected)
