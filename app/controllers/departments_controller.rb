@@ -13,6 +13,8 @@ class DepartmentsController < ApplicationController
     @ancestors = @department.ancestors
     @products = @department.products
     @critics = @department.critics
+    #@users = User.where(id: @critics.ids)
+    @feature_names = FeatureName.where(critic: @critics)
     @followers = @department.followers
     @following = @department.following
       respond_to do |format|

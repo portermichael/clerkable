@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :products
   resources :users
   resources :relationships
+  resources :critics
+  resources :feature_names
 end

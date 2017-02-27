@@ -46,7 +46,7 @@ department_first_list = [
   [ "Video Games", "4", "PUBnqS1qcvk", "lPwlfbeQOBg"],
   [ "BoardGames", "4", "lN-rVlMIJZs", "lPwlfbeQOBg"],
   [ "Live Games", "4", "BzmFbfCEv9k", "lPwlfbeQOBg"],
-  [ "Streaming Devices", "5", "PUBnqS1qcvk", "lPwlfbeQOBg"],
+  [ "Streaming Devices", "5", "", "lPwlfbeQOBg"],
   [ "Home Audio", "5", "lN-rVlMIJZs", "lPwlfbeQOBg"],
   [ "Camera and Photo", "5", "BzmFbfCEv9k", "lPwlfbeQOBg"],
   [ "Cell Phones", "5", "PUBnqS1qcvk", "lPwlfbeQOBg"],

@@ -9,8 +9,27 @@
 			<h1 class="title">
 				<%= @department.department_name %>
 			</h1>
+			<% if @department.has_children? %>
 			<div class="embed-container">
 				<%= embed(@department.youtube_id) %>
+			</div>
+			<% end %>
+			<div class="scrollcritic">
+				<% @critics.each do |critic| %>		
+				<div class="critic_content">			
+					<span class="critic_header">
+						<%= User.find(critic.user_id).user_name %>
+						:
+						<%= User.find(critic.user_id).critic_name %>
+						<span class="centertext">
+						</span>
+						<hr class="dept"/>
+					</span>
+					<span class="embed-container">
+						<%= embed(critic.youtube_id) %>
+					</span>
+				</div>
+				<% end %>
 			</div>
 			<%= render "departments/department_head" %>
 		</div>
