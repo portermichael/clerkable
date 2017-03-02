@@ -4,6 +4,9 @@ class CreateReviews < ActiveRecord::Migration
       t.references :product, index:true, foreign_key: true
       t.references :critic, index:true, foreign_key: true
       t.references :user, index:true, foreign_key: true
+      t.integer :rank
+      t.string :title
+      t.string :color
       t.string :youtube_id
 
 

@@ -236,11 +236,17 @@ products.each do |n|
   product_id = product.id
   critic_id = critics.ids.sample
   user_id = 1
+  rank = Faker::Number.between(1, 15)
+  title = Faker::Company.buzzword
+  color = Faker::Color.color_name
   youtube_id = "jK7SFNx5mug"
 
   Review.create!(product_id: product_id,
                  critic_id: critic_id,
                  user_id: user_id,
+                 rank: rank,
+                 title: title,
+                 color: color,
                  youtube_id: youtube_id)
 end
 
