@@ -21,6 +21,13 @@
 						<%= User.find(critic.user_id).user_name %>
 						:
 						<%= User.find(critic.user_id).critic_name %>
+						:
+						<% critic.review_info.each do |review| %>
+							<%= review.color %>
+							<% end %>
+						:
+
+						testindd
 						<span class="centertext">
 						</span>
 						<hr class="dept"/>

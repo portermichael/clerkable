@@ -17,7 +17,6 @@ class DepartmentsController < ApplicationController
     @feature_names = FeatureName.where(critic: @critics)
     @reviews = Review.where(critic: @critics).order(rank: :desc)
     @productsmain = Product.where(review: @reviews)
-    @traits = Trait.where(review: @reviews)
     @questions = Question.where(critic: @critics)
     @answers = Answer.where(critic: @critics)
     @followers = @department.followers
@@ -60,6 +59,12 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id]).destroy
     flash[:success] = "Relationship Deleted"
     redirect_to action: "index"
+  end
+
+  attr_accessor :critic_info
+
+  def critic_info
+    User.find(critic.user_id).user_name
   end
 
   private
