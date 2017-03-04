@@ -205,14 +205,17 @@ critics = Critic.all
 
     Question.create!(critic_id: critic_id,
                      question_content: question_content)
-    3.times do |z|
-      answer_content = Faker::Zelda.character
-      Answer.create!(critic_id: critic_id,
-                     answer_content: answer_content)
-    end
+
   end
 end
-
+questions = Question.all
+3.times do |n|
+  questions.each do |k|
+    question_id = Question.find(k).id
+    answer_content = Faker::Zelda.character
+     Answer.create!(critic_id: critic_id,
+                    answer_content: answer_content)
+end
 #fakeproducts
 100.times do |n|
   product_name = Faker::Commerce.product_name

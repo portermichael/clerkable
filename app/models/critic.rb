@@ -8,11 +8,6 @@ class Critic < ActiveRecord::Base
 	has_many :products, through: :reviews
 
 
-  attr_accessor :review_info, :review, :color, :critic
-  def critic_info
-    User.find(critic.user_id).user_name
-  end
-
   def review_info
   	Review.where(critic_id: id)
   end
