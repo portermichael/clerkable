@@ -19,13 +19,16 @@
 				<div class="critic_content">			
 					<span class="critic_header">
 						<% User.find(critic.user_id).user_name %>
-						:
-						<% User.find(critic.user_id).critic_name %>
-						:
+						: <%= critic.id %>
+						<% User.find(critic.user_id).title %>
+						: 
 						<% FeatureName.where(critic_id: critic).each do |feature| %>
-							<%= feature.feature_name %>
+							<% feature.feature_name %>
 							<% end %>
+							
 						<% critic.review_info.each do |review| %>
+							
+							<%= review.id %>
 							<%= review.color %>
 							<%= Product.where(id: review).first.youtube_thumbnail_id %>
 							<%= Feature.where(id: review).first.feature_content %>

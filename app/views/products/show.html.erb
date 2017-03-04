@@ -9,9 +9,12 @@
 			<h1 class="title">
 				<%= @product.product_name %>
 			</h1>
+			I need more product info. this page needs a whole redesign to focus more on the product. we are already allowing comparison on the previous page. Here we just have easier direct comparison. but that's not even our biggest selling point. our biggest selling point is clerk videos. This page needs to be about the product hype. The marketing. It needs to finish the sale!
+			<% @critics.each do |critic| %>
 			<div class="embed-container">
-				<%= embed(@product.youtube_id) %>
+				<%= embed(critic.youtube_id) %>
 			</div>
+			<% end %>
 			<%= render "products/product_head" %>
 		</div>
 		<%= render "products/product_topic" %>

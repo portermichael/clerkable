@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
     @children = @department.children
 		@products = @department.products
     @following = @department.following
+    @critics = @product.critics
 	end
 
 	def new
