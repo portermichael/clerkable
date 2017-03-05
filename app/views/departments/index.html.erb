@@ -12,7 +12,7 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %></div>
       <% cache @video do %>
-      <div class="embed-dept-container">
+      <div class="embed-index-container">
         <%= embed(@video.youtube_id) %>
       </div>
       <% end %>

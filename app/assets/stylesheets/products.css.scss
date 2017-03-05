@@ -1,3 +1,101 @@
+
+/* product */
+
+/* embed container is currently equivalent to .embed in dept*/
+.embed-prod-container iframe,
+.embed-container object,
+.embed-container embed {
+  float: left;
+  margin-left: 50px;
+  margin-right: 30px;
+  border-style: solid;
+  border-color: #777;
+  border-width: 1px;
+  @media (max-width: 499px){
+    width: 320px;
+    height: 180px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-left: none;
+    border-right: none;
+  }
+  @media (min-width: 500px) and (max-width: 679px) {
+    width: 300px;
+    height: 168px;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+  @media (min-width: 680px) and (max-width: 879px) {
+    width: 380px;
+    height: 214px;
+  }
+  @media (min-width: 880px){
+    width: 560px;
+    height: 315px;
+  }  
+  @media (min-width: 1070px){
+    width: 560px;
+    height: 315px;
+  }  
+}
+
+/* prod_room is currently equivalent to deptprod_room, it holds the prod comparison*/
+.prod_room{
+  float: left;
+  padding-top: 30px;
+  display: block;
+  @media (max-width: 499px){
+    padding-top: 10px;
+    width: 320px;
+  }
+  @media (min-width: 500px) and (max-width: 679px) {
+    padding-top: 10px;
+    margin-left: 12px;
+    width: 320px;
+  }
+  @media (min-width: 680px) {
+    width: 460px;
+    margin-left: 10px;
+  }
+  @media (min-width: 880px){
+    width: 648px;
+    margin-left: 10px;
+  }
+  @media (min-width: 1070px){
+    width: 841px;
+    margin-left: 10px;
+  }
+}
+
+/* individual product on left */
+.product_content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 160px;
+  float: left;
+  background-color: rgba(0,0,0,0);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  text-align: center;
+  display: block;
+  @media (max-width: 679px) {
+    width: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  @media (min-width: 680px) and (max-width: 879px) {
+    width: 120px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: 6px;
+  }
+}
+
 .product_header {
   position: relative;
   font-size: 120%;
@@ -32,34 +130,50 @@
   }
 }
 
-.product_content {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 12px;
-  padding-right: 12px;
-  width: 160px;
-  float: left;
-  background-color: rgba(0,0,0,0);
-  border-style: solid;
-  border-width: 1px;
-  border-color: #e6e6e6;
-  text-align: center;
-  display: block;
+hr.prod {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 128px;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
   @media (max-width: 679px) {
-    width: 100px;
-    padding-left: 0px;
-    padding-right: 0px;
+    width: 80px;
   }
   @media (min-width: 680px) and (max-width: 879px) {
-    width: 120px;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-left: 6px;
+    width: 96px;
   }
 }
 
+.embed-thumbnail-container iframe,
+.embed-container object,
+.embed-container embed {
+  float: left;
+  width: 160px;
+  height: 90px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 8px;
+  border-style: solid;
+  border-color: #777;
+  border-width: 1px;
+  border-left: none;
+  border-right: none;
+  @media (max-width: 679px){
+    width: 100px;
+    height: 56px;
+    border-left: none;
+    border-right: none;
+  }
+  @media (min-width: 680px) and (max-width: 879px) {
+    width: 120px;
+    height: 68px;
+  }
+}
+
+/* products on the right for comparison */
 .product_room{
   float: left;
   display: block;
@@ -112,19 +226,3 @@
   }
 }
 
-hr.prod {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  width: 128px;
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #808080, #808080, rgba(0, 0, 0, 0));
-  @media (max-width: 679px) {
-    width: 80px;
-  }
-  @media (min-width: 680px) and (max-width: 879px) {
-    width: 96px;
-  }
-}
