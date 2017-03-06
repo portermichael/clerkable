@@ -8,7 +8,11 @@ class Critic < ActiveRecord::Base
 	has_many :products, through: :reviews
 
 
-  def review_info
+  def review_critic
   	Review.where(critic_id: id)
+  end
+
+  def product_critic
+  	Product.where(review_id: id)
   end
 end

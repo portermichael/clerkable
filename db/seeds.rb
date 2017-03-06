@@ -67,7 +67,7 @@ end
 #faker - expanding the database with faker
 
 #fakeusers - 100 total
-99.times do |n|
+500.times do |n|
   user_name  = Faker::Name.name
   email = Faker::Internet.unique.email
   password = "password"
@@ -134,7 +134,7 @@ critic_first_list.each do |department_id, user_id, youtube_id |
 end
 
 #departments with no kids should have products. they all get 3 critics
-3.times do |n|
+5.times do |n|
   no_kids.each do |k|
     no_kid = Department.find(k)
     department_id = no_kid.id
@@ -182,7 +182,7 @@ questions = Question.all
 end
 
 #fakeproducts - a small handful
-100.times do |n|
+500.times do |n|
   product_name = Faker::Commerce.product_name
   department_id = no_kids.sample
   user_id = users.ids.sample
@@ -202,14 +202,18 @@ products = Product.all
 
 #each critic has a review. We browse based on critics/reviews, so products without reviews
 #aren't visible to the general user
-critics.each do |n|
-  critic_id = Critic.find(n).id
-  product_id = products.ids.sample
-  user_id = 1
-  rank = Faker::Number.between(1, 15)
-  title = Faker::Company.buzzword
-  color = Faker::Color.color_name
-  youtube_id = "jK7SFNx5mug"
+
+
+no_kids.each do |z|
+  5.times do |y|
+    critic_id = critics.ids.sample
+    z.products.each do |k|
+      product_id = k.id
+      user_id = 1
+      rank = Faker::Number.between(1, 15)
+      title = Faker::Company.buzzword
+      color = Faker::Color.color_name
+      youtube_id = "jK7SFNx5mug"
 
   Review.create!(product_id: product_id,
                  critic_id: critic_id,
@@ -218,6 +222,8 @@ critics.each do |n|
                  title: title,
                  color: color,
                  youtube_id: youtube_id)
+    end
+  end
 end
 
 reviews = Review.all
@@ -338,7 +344,6 @@ end
 
 orders = Order.all
 
-products = Product.all
 
 #every order consists of 3 ordered products
 3.times do |n|

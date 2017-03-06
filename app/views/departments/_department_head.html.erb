@@ -1,43 +1,59 @@
 	<div class="deptprod_room">
-		<% @products.in_groups_of(3, false) do |product_groups| %>
-			<% product_groups.each do |product| %>
-			<div class="deptprod_content">
-				<span class="deptprod_header">
-					<span class="centertext">
-						<%= link_to product.product_name, product %>
-					</span>
-					<hr class="dept"/>
-				</span>
-				<span class="embed-deptprod-thumbnail-container">
-					<%= embed_thumbnail(@department.youtube_id) %>
-				</span>
-				<span class="affiliate_big_box">
-					<span class="price_box">
-						<span class="basic"><span class="centertext">$<%= product.msrp %></span></span>
-						<span class="basic"><span class="centertext">$<%= product.expected %></span></span>
-
-					</span>
-					<span class="source_box">
-						<span class="basic"><span class="centertext">MSRP</span></span>
-						<span class="basic"><span class="centertext">Expected</span></span>
-
+		<span class="scrollprod">
+    	<% @critics.each do |critic| %>	
+	    	<% Review.where(critic_id: critic).in_groups_of(3, false) do |review_groups| %>
+    			<% review_groups.each do |review| %>
+					<div class="deptprod_content">
+						<span class="deptprod_header">
+							<span class="centertext">
+								<%= link_to Product.find(review.product_id).product_name, product_path %>
+							</span>
+							<hr class="dept"/>
 						</span>
-					</span>
-					<span class="hideglance">
-						<span class="gap"></span>
-
-					</span>
-					<span class="hidefeature">
-						<span class="gap"></span>
-
-					</span>
-					<span class="hidespec">
-						<span class="gap"></span>
-
-					</span>
-				</span>
-			</div>
+						<span class="embed-deptprod-thumbnail-container">
+							<%= embed_thumbnail(review.youtube_id) %>
+						</span>
+						<span class="affiliate_big_box">
+							<span class="price_box">
+								<span class="basic">
+									<span class="centertext">
+										$<%= Product.find(review.product_id).msrp %>	
+									</span>
+								</span>
+								<span class="basic">
+									<span class="centertext">
+										$<%= Product.find(review.product_id).expected %>
+									</span>
+								</span>
+							</span>
+							<span class="source_box">
+								<span class="basic">
+									<span class="centertext">
+										MSRP
+									</span>
+								</span>
+								<span class="basic">
+									<span class="centertext">
+										Expected
+									</span>
+								</span>
+							</span>
+						</span>
+						<span class="hideglance">
+							<span class="gap"></span>
+						</span>
+						<span class="hidefeature">
+							<span class="gap"></span>
+						</span>
+						<span class="hidespec">
+							<span class="gap"></span>
+						</span>
+					</div>
+					<% end %>
 			<% end %>
+		</span>
+				
+
 		<% unless @department.has_children? %>
 			<div class="showstats">
 			<%= render "departments/department_topic" %>
@@ -63,19 +79,19 @@
 		</div>	
 		<% end %>
 		<% cache @followers do %>
-		<% @followers.each do |follower| %>
-		<div class="dept_content">
-			<div class="dept_header">
-				<span class="centertext">
-					<%= link_to follower.department_name, follower %>
-				</span>
-				<hr class="dept"/>
-			</div>
-			<div class="embed-dept-thumbnail-container">
-				<%= embed_thumbnail(follower.youtube_thumbnail_id) %>
-			</div>
-		</div>	
-		<% end %>
+			<% @followers.each do |follower| %>
+				<div class="dept_content">
+					<div class="dept_header">
+						<span class="centertext">
+							<%= link_to follower.department_name, follower %>
+						</span>
+					<hr class="dept"/>
+					</div>
+					<div class="embed-dept-thumbnail-container">
+						<%= embed_thumbnail(follower.youtube_thumbnail_id) %>
+					</div>
+				</div>	
+			<% end %>
 		<% end %>
 	</div>
 	</div>

@@ -24,13 +24,15 @@
 						: 
 						<% FeatureName.where(critic_id: critic).each do |feature| %>
 							<% feature.feature_name %>
-							<% end %>
+						<% end %>
 							
-						<% critic.review_info.each do |review| %>
+						<% critic.review_critic.each do |review| %>
 							
 							<%= review.id %>
 							<%= review.color %>
-							<%= Product.where(id: review).first.youtube_thumbnail_id %>
+							<% Product.where(id: review).each do |product| %>
+							<%= product.youtube_thumbnail_id %>
+							<% end %>
 							<%= Feature.where(id: review).first.feature_content %>
 
 						<% end %>
