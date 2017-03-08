@@ -198,16 +198,17 @@ end
                   expected: expected)
 end
 
-products = Product.all
+@products = Product.all
 
 #each critic has a review. We browse based on critics/reviews, so products without reviews
 #aren't visible to the general user
 
 
 no_kids.each do |z|
-  5.times do |y|
-    critic_id = critics.ids.sample
-    z.products.each do |k|
+  criticals = Critic.where(department_id: z)
+  criticals.each do |n|
+    critic_id = n.id
+    Product.where(department_id: z).each do |k|
       product_id = k.id
       user_id = 1
       rank = Faker::Number.between(1, 15)
@@ -243,39 +244,6 @@ reviews = Review.all
                       user_id: user_id)
     end
   end
-end
-
-#fake relationships
-
-
-#Create an array of dictionaries. The dictionary is a pair of key value pairs, kids(depts with kids) and no_roots
-#(depts that aren't root)
-d = {}
-dept_array = []
-20.times do |n|
-  d = { :department_id => kids.sample, :follower_id => no_roots.sample }
-  dept_array.push(d)
-end
-
-#Might get relationship duplicates, which are invalid. uniq removes duplicates in an array. I have 50 departments.
-#removing dups - pass block that compares dept_id and follower_id to all other dept and follower_ids and removes dups
-#this isn't working for some reason...
-
-#work on this, don't remember the logic behind it
-
-dept_array.uniq! { |a_dept| [a_dept[:department_id], a_dept[:follower_id] ] }
-
-#iterate over each array and create department and follower
-
-#work on this, don't remember the logic behind it
-dept_array.each do |dept|
-  department_id = dept[:department_id]
-  follower_id = dept[:follower_id]
-  user_id = 1
-
-  Relationship.create!(department_id: department_id,
-                       follower_id: follower_id,
-                       user_id: user_id)
 end
 
 
@@ -350,7 +318,7 @@ orders = Order.all
   orders.each do |k|
     order = Order.find(k)
     order_id = order.id
-    product_id = products.sample
+    product_id = @products.sample
     price = Faker::Commerce.price
     
     OrderedProduct.create!(order_id: order_id,
@@ -388,9 +356,43 @@ carts = Cart.all
   carts.each do |k|
     cart = Cart.find(k)
     cart_id = cart.id
-    product_id = products.sample
+    product_id = @products.ids.sample
 
     CartedProduct.create!(cart_id: cart_id,
                            product_id: product_id)
   end
+end
+
+
+#fake relationships
+
+
+#Create an array of dictionaries. The dictionary is a pair of key value pairs, kids(depts with kids) and no_roots
+#(depts that aren't root)
+d = {}
+dept_array = []
+20.times do |n|
+  d = { :department_id => kids.sample, :follower_id => no_roots.sample }
+  dept_array.push(d)
+end
+
+#Might get relationship duplicates, which are invalid. uniq removes duplicates in an array. I have 50 departments.
+#removing dups - pass block that compares dept_id and follower_id to all other dept and follower_ids and removes dups
+#this isn't working for some reason...
+
+#work on this, don't remember the logic behind it
+
+dept_array.uniq! { |a_dept| [a_dept[:department_id], a_dept[:follower_id] ] }
+
+#iterate over each array and create department and follower
+
+#work on this, don't remember the logic behind it
+dept_array.each do |dept|
+  department_id = dept[:department_id]
+  follower_id = dept[:follower_id]
+  user_id = 1
+
+  Relationship.create!(department_id: department_id,
+                       follower_id: follower_id,
+                       user_id: user_id)
 end

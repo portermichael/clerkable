@@ -29,11 +29,11 @@
 						<% critic.review_critic.each do |review| %>
 							
 							<%= review.id %>
-							<%= review.color %>
+							<% review.color %>
 							<% Product.where(id: review).each do |product| %>
-							<%= product.youtube_thumbnail_id %>
+							<%= product.id %>
 							<% end %>
-							<%= Feature.where(id: review).first.feature_content %>
+							<% Feature.where(id: review).first.id %>
 
 						<% end %>
 						:

@@ -1,12 +1,13 @@
 	<div class="deptprod_room">
-		<span class="scrollprod">
+	<div class="scrollcritic2">
     	<% @critics.each do |critic| %>	
+    	<div>
 	    	<% Review.where(critic_id: critic).in_groups_of(3, false) do |review_groups| %>
     			<% review_groups.each do |review| %>
-					<div class="deptprod_content">
+					<span class="deptprod_content">
 						<span class="deptprod_header">
 							<span class="centertext">
-								<%= link_to Product.find(review.product_id).product_name, product_path %>
+								<%= link_to Product.find(review.product_id).id, product_path %>
 							</span>
 							<hr class="dept"/>
 						</span>
@@ -48,22 +49,22 @@
 						<span class="hidespec">
 							<span class="gap"></span>
 						</span>
-					</div>
+					</span>
 					<% end %>
-			<% end %>
-		</span>
-				
+			
 
 		<% unless @department.has_children? %>
-			<div class="showstats">
+			<span class="showstats">
 			<%= render "departments/department_topic" %>
 				<button class="seller">More Sellers</button>
 				<button class="glance">At a Glance</button>
 				<button class="feature">Features</button>
 				<button class="spec">Specs</button>
-			</div>
-		<% end %>
+			</span>
+		<% end %><% end %>
+		</div>
 	<% end %>
+	</div>
 	<div class="dept_room">
 		<% @children.each do |department| %>
 		<div class="dept_content">
