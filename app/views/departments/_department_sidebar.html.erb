@@ -45,7 +45,7 @@
 					<% cache @products do %>
 					<% @products.each do |product| %>
 						<div>
-							<%= link_to_unless_current product.id, product %>
+							<%= link_to_unless_current product.product_name, product %>
 						</div>
 					<% end %>
 					<% end %>
