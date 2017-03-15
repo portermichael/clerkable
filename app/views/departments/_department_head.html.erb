@@ -1,9 +1,9 @@
 	<div class="deptprod_room">
-	<div class="scrollcritic2">
+	<div>
     	<% @critics.each do |critic| %>	
     	<div>
-	    	<% Review.where(critic_id: critic).in_groups_of(3, false) do |review_groups| %>
-    			<% review_groups.each do |review| %>
+	    	<% Review.where(critic_id: critic).order(:rank).limit(3).each do |review| %>
+    			
 					<span class="deptprod_content">
 						<span class="deptprod_header">
 							<span class="centertext">
@@ -61,7 +61,7 @@
 				<button class="feature">Features</button>
 				<button class="spec">Specs</button>
 			</span>
-		<% end %><% end %>
+		<% end %>
 		</div>
 	<% end %>
 	</div>

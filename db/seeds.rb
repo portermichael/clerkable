@@ -208,10 +208,12 @@ no_kids.each do |z|
   criticals = Critic.where(department_id: z)
   criticals.each do |n|
     critic_id = n.id
+    @count = 0
     Product.where(department_id: z).each do |k|
       product_id = k.id
       user_id = 1
-      rank = Faker::Number.between(1, 15)
+      @count += 1
+      rank = @count
       title = Faker::Company.buzzword
       color = Faker::Color.color_name
       youtube_id = "jK7SFNx5mug"
