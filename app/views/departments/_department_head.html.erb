@@ -1,70 +1,58 @@
 	<div class="deptprod_room">
-	<div>
-    	<% @critics.each do |critic| %>	
-    	<div>
-	    	<% Review.where(critic_id: critic).order(:rank).limit(3).each do |review| %>
-    			
-					<span class="deptprod_content">
-						<span class="deptprod_header">
-							<span class="centertext">
-								<%= link_to Product.find(review.product_id).id, product_path %>
-							</span>
-							<hr class="dept"/>
-						</span>
-						<span class="embed-deptprod-thumbnail-container">
-							<%= embed_thumbnail(review.youtube_id) %>
-						</span>
-						<span class="affiliate_big_box">
-							<span class="price_box">
-								<span class="basic">
-									<span class="centertext">
-										$<%= Product.find(review.product_id).msrp %>	
-									</span>
-								</span>
-								<span class="basic">
-									<span class="centertext">
-										$<%= Product.find(review.product_id).expected %>
-									</span>
-								</span>
-							</span>
-							<span class="source_box">
-								<span class="basic">
-									<span class="centertext">
-										MSRP
-									</span>
-								</span>
-								<span class="basic">
-									<span class="centertext">
-										Expected
-									</span>
-								</span>
-							</span>
-						</span>
-						<span class="hideglance">
-							<span class="gap"></span>
-						</span>
-						<span class="hidefeature">
-							<span class="gap"></span>
-						</span>
-						<span class="hidespec">
-							<span class="gap"></span>
+<% @products.in_groups_of(3, false) do |product_groups| %>
+			<% product_groups.each do |product| %>
+			<div class="deptprod_content">
+				<span class="deptprod_header">
+					<span class="centertext">
+						<%= link_to product.product_name, product %>
+					</span>
+					<hr class="dept"/>
+				</span>
+				<span class="embed-deptprod-thumbnail-container">
+					<%= embed_thumbnail(@department.youtube_id) %>
+				</span>
+				<span class="affiliate_big_box">
+					<span class="price_box">
+						<span class="basic"><span class="centertext">$<%= product.msrp %></span></span>
+						<span class="basic"><span class="centertext">$<%= product.expected %></span></span>
+
+					</span>
+					<span class="source_box">
+						<span class="basic"><span class="centertext">MSRP</span></span>
+						<span class="basic"><span class="centertext">Expected</span></span>
+
 						</span>
 					</span>
-					<% end %>
-			
+					<span class="hideglance">
+						<span class="gap"></span>
+						<% product.reviews.each do |review| %> 
+						<% Feature.where("review_id = ? AND feature_type = ?", review, 1).each do |feature| %>
+							<span class = "on"><%= feature.feature_content %></span>
+						<% end %><% end %>
 
+					</span>
+					<span class="hidefeature">
+						<span class="gap"></span>
+
+					</span>
+					<span class="hidespec">
+						<span class="gap"></span>
+
+					</span>
+				</span>
+			</div>
+			<% end %>
 		<% unless @department.has_children? %>
-			<span class="showstats">
+			<div class="showstats">
 			<%= render "departments/department_topic" %>
 				<button class="seller">More Sellers</button>
 				<button class="glance">At a Glance</button>
 				<button class="feature">Features</button>
 				<button class="spec">Specs</button>
-			</span>
+			</div>
 		<% end %>
-		</div>
 	<% end %>
-	</div>
+	
 	<div class="dept_room">
 		<% @children.each do |department| %>
 		<div class="dept_content">

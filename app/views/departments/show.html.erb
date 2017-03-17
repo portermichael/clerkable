@@ -16,7 +16,8 @@
 			<% end %>
 			<div class="scrollcritic">
 				<% @critics.each do |critic| %>		
-				<div class="critic_content">			
+				<div>
+				<span class="critic_content">			
 					<span class="critic_header">
 						<% User.find(critic.user_id).user_name %>
 						: <%= critic.id %>
@@ -44,13 +45,14 @@
 					<span class="embed-container">
 						<%= embed(critic.youtube_id) %>
 					</span>
+					</span>
 					<span class="deptprod_room">
 				<% Review.where(critic_id: critic).order(:rank).limit(3).each do |review| %>
     			
 					<span class="deptprod_content">
 						<span class="deptprod_header">
 							<span class="centertext">
-								<%= link_to Product.find(review.product_id).id, product_path %>
+								<%= link_to Product.find(review.product_id).product_name, product_path %>
 							</span>
 							<hr class="dept"/>
 						</span>
@@ -82,15 +84,30 @@
 									</span>
 								</span>
 							</span>
-						</span>
+						</span>:
+						
+							
+							:
 						<span class="hideglance">
 							<span class="gap"></span>
+							<% Feature.where("review_id = ? AND feature_type = ?", review, 1).each do |feature| %>
+							<span class = "on"><%= feature.feature_content %></span>
+							<% end %>
+							
+							
+							
 						</span>
 						<span class="hidefeature">
 							<span class="gap"></span>
+							<% Feature.where("review_id = ? AND feature_type = ?", review, 2).each do |feature| %>
+							<span class = "off"><%= feature.feature_content %></span>
+							<% end %>
 						</span>
 						<span class="hidespec">
 							<span class="gap"></span>
+							<% Feature.where("review_id = ? AND feature_type = ?", review, 3).each do |feature| %>
+							<span class = "on"><%= feature.feature_content %></span>
+							<% end %>
 						</span>
 					</span>
 					<% end %>

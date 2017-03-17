@@ -232,12 +232,13 @@ end
 reviews = Review.all
 
 #every review gets 20 features of 4 different types
-5.times do |n|
+
   reviews.each do |k|
     review = Review.find(k)
     review_id = review.id
     user_id = review.user_id
     (1..4).each do |y|
+      5.times do |n|
       feature_type = y
       feature_content = Faker::Pokemon.name
       Feature.create!(review_id: review_id,
