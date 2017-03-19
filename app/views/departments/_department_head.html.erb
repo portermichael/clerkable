@@ -25,10 +25,12 @@
 					</span>
 					<span class="hideglance">
 						<span class="gap"></span>
-						<% product.reviews.each do |review| %> 
+						<% review = Review.find_by product_id: product %> 
 						<% Feature.where("review_id = ? AND feature_type = ?", review, 1).each do |feature| %>
-							<span class = "on"><%= feature.feature_content %></span>
-						<% end %><% end %>
+							<span class = "on">
+								<%= feature.id %>
+							</span><% end %>
+						
 
 					</span>
 					<span class="hidefeature">
