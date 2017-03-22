@@ -10,125 +10,14 @@
 				<%= @department.department_name %>
 			</h1>
 			<% if @department.has_children? %>
-			<div class="embed-container">
-				<%= embed(@department.youtube_id) %>
-			</div>
-			<% end %>
-			<div class="scrollcritic">
-				<% @critics.each do |critic| %>		
-				<div>
-				<span class="critic_content">			
-					<span class="critic_header">
-						<% User.find(critic.user_id).user_name %>
-						: <%= critic.id %>
-						<% User.find(critic.user_id).title %>
-						: 
-						<% FeatureName.where(critic_id: critic).each do |feature| %>
-							<% feature.feature_name %>
-						<% end %>
-							
-						<% critic.review_critic.each do |review| %>
-							
-							<%= review.id %>
-							<% review.color %>
-							<% Product.where(id: review).each do |product| %>
-							<%= product.id %>
-							<% end %>
-							<% Feature.where(id: review).first.id %>
-
-						<% end %>
-						:
-						<span class="centertext">
-						</span>
-						<hr class="dept"/>
-					</span>
-					<span class="embed-container">
-						<%= embed(critic.youtube_id) %>
-					</span>
-					</span>
-					<span class="deptprod_room">
-				<% Review.where(critic_id: critic).order(:rank).limit(3).each do |review| %>
-    			
-					<span class="deptprod_content">
-						<span class="deptprod_header">
-							<span class="centertext">
-								<%= link_to Product.find(review.product_id).product_name, product_path %>
-							</span>
-							<hr class="dept"/>
-						</span>
-						<span class="embed-deptprod-thumbnail-container">
-							<%= embed_thumbnail(review.youtube_id) %>
-						</span>
-						<span class="affiliate_big_box">
-							<span class="price_box">
-								<span class="basic">
-									<span class="centertext">
-										$<%= Product.find(review.product_id).msrp %>	
-									</span>
-								</span>
-								<span class="basic">
-									<span class="centertext">
-										$<%= Product.find(review.product_id).expected %>
-									</span>
-								</span>
-							</span>
-							<span class="source_box">
-								<span class="basic">
-									<span class="centertext">
-										MSRP
-									</span>
-								</span>
-								<span class="basic">
-									<span class="centertext">
-										Expected
-									</span>
-								</span>
-							</span>
-						</span>:
-						
-							
-							:
-						<span class="hideglance">
-							<span class="gap"></span>
-							<% Feature.where("review_id = ? AND feature_type = ?", review, 1).each do |feature| %>
-							<span class = "on"><%= feature.feature_content %></span>
-							<% end %>
-							
-							
-							
-						</span>
-						<span class="hidefeature">
-							<span class="gap"></span>
-							<% Feature.where("review_id = ? AND feature_type = ?", review, 2).each do |feature| %>
-							<span class = "off"><%= feature.feature_content %></span>
-							<% end %>
-						</span>
-						<span class="hidespec">
-							<span class="gap"></span>
-							<% Feature.where("review_id = ? AND feature_type = ?", review, 3).each do |feature| %>
-							<span class = "on"><%= feature.feature_content %></span>
-							<% end %>
-						</span>
-					</span>
-					<% end %>
-			
-
-		<% unless @department.has_children? %>
-			<span class="showstats">
-			<%= render "departments/department_topic" %>
-				<button class="seller">More Sellers</button>
-				<button class="glance">At a Glance</button>
-				<button class="feature">Features</button>
-				<button class="spec">Specs</button>
-			</span>
-			</span>
-		<% end %>
+				<div class="embed-container">
+					<%= embed(@department.youtube_id) %>
 				</div>
-
-				<% end %>
-			</div>
+			<% end %>
+			<%= render "departments/department_slider" %>
 			<%= render "departments/department_head" %>
 		</div>
 	</div>
 </body>
+
 <% end %>
