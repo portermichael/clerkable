@@ -8,7 +8,7 @@
 								<%= User.find(critic.user_id).title %>
 								<span class="centertext">
 								</span>
-								<hr class="dept"/>
+								<hr class="critic"/>
 							</span>
 							<span class="embed-container">
 								<%= embed(critic.youtube_id) %>
@@ -19,7 +19,7 @@
 								<span class="deptprod_content">
 									<span class="deptprod_header">
 										<span class="centertext">
-											<%= link_to Product.find(review.product_id).product_name, product_path %>
+											<%= link_to Product.find(review.product_id).product_name, Product.find(review.product_id) %>
 										</span>
 										<hr class="dept"/>
 									</span>
@@ -33,22 +33,22 @@
 												$<%= Product.find(review.product_id).msrp %>	
 												</span>
 											</span>
-										</span>
-										<span class="basic">
-											<span class="centertext">
-												$<%= Product.find(review.product_id).expected %>
+											<span class="basic">
+												<span class="centertext">
+													$<%= Product.find(review.product_id).expected %>
+												</span>
 											</span>
 										</span>
-									</span>
-									<span class="source_box">
-										<span class="basic">
-											<span class="centertext">
-												MSRP
+										<span class="source_box">
+											<span class="basic">
+												<span class="centertext">
+													MSRP
+												</span>
 											</span>
-										</span>
-										<span class="basic">
-											<span class="centertext">
-												Expected
+											<span class="basic">
+												<span class="centertext">
+													Expected
+												</span>
 											</span>
 										</span>
 									</span>
@@ -84,7 +84,30 @@
 						</span></span>
 						<% unless @department.has_children? %>
 							<span class="showstats">
-								<%= render "departments/department_topic" %>
+									<div class="fititin">
+		<div class="hidetopic">
+		    <div class="hideseller">
+		    	<span class="sellerfiller">
+		        	<span class="source"><span class="centertext">secret</span></span>
+		        	<span class="source"><span class="centertext">place</span></span>
+		        	<span class="source"><span class="centertext">here</span></span>
+		       	</span>
+		    </div>
+			<span class="hideglance">
+				<span class="gap"></span>
+
+			</span>
+			<span class="hidefeature">
+				<span class="gap"></span>
+
+			</span>
+			<span class="hidespec">
+				<span class="gap"></span>
+
+			</span>
+		</div>
+	</div>
+
 								<button class="seller">More Sellers</button>
 								<button class="glance">At a Glance</button>
 								<button class="feature">Features</button>

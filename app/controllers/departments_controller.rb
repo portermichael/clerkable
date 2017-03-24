@@ -13,7 +13,6 @@ class DepartmentsController < ApplicationController
     @ancestors = @department.ancestors
     @products = @department.products
     @reviews = Review.where(product: @products)
-
     @critics = @department.critics
     @followers = @department.followers
     @following = @department.following
