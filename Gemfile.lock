@@ -82,6 +82,7 @@ GEM
     multi_json (1.12.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.20.0)
     rack (1.6.5)
     rack-mini-profiler (0.10.2)
       rack (>= 1.2.0)
@@ -162,6 +163,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-slick-rails
+  pg (= 0.20.0)
   rack-mini-profiler
   rails (= 4.2.7)
   sass-rails (~> 5.0)
